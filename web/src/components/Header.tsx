@@ -5,9 +5,10 @@ import type { GlobePoint } from '../types';
 interface HeaderProps {
   points: GlobePoint[];
   onSelect: (point: GlobePoint) => void;
+  onFocusCountry: (country: string) => void;
 }
 
-export default function Header({ points, onSelect }: HeaderProps) {
+export default function Header({ points, onSelect, onFocusCountry }: HeaderProps) {
   const [query, setQuery] = useState('');
   const [hoverStat, setHoverStat] = useState<null | 'bots' | 'league' | 'countries'>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -142,11 +143,18 @@ export default function Header({ points, onSelect }: HeaderProps) {
             <div className="stat-pop">
               <div className="stat-pop-card">
                 {countryBreakdown.map(([country, count]) => (
-                  <div className="stat-pop-row" key={country}>
+                  <button
+                    className="stat-pop-row"
+                    key={country}
+                    onClick={() => {
+                      setHoverStat(null);
+                      onFocusCountry(country);
+                    }}
+                  >
                     <span className="stat-pop-flag">{flagEmoji(country)}</span>
                     <span>{country}</span>
                     <span className="stat-pop-count">{count}</span>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>

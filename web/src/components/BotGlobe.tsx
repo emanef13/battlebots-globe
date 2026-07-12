@@ -129,6 +129,7 @@ interface BotGlobeProps {
   fights: Fight[];
   matchVideos: Record<string, FightVideo>;
   onPlayVideo: (video: FightVideo) => void;
+  focus: { lat: number; lng: number; altitude: number; nonce: number } | null;
 }
 
 /** Aggregated head-to-head record between two mapped bots. */
@@ -169,7 +170,7 @@ function loadCities(): Promise<[number, number][]> {
   return cityCache;
 }
 
-export default function BotGlobe({ points, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo }: BotGlobeProps) {
+export default function BotGlobe({ points, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus }: BotGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -246,6 +247,16 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
       setAutoRotate(true);
     }
   }, [selected, setAutoRotate]);
+
+  // Country focus from the header stats: pause rotation and fly there.
+  useEffect(() => {
+    if (!focus) return;
+    handleInteractionStart();
+    globeRef.current?.pointOfView(
+      { lat: focus.lat, lng: focus.lng, altitude: focus.altitude },
+      1200,
+    );
+  }, [focus, handleInteractionStart]);
 
   const markers = useMemo(() => {
     const list = clusterPoints(points, radiusForAltitude(altitude), selected?.id);

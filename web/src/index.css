@@ -236,10 +236,20 @@ body,
   align-items: center;
   gap: 9px;
   padding: 6px 8px;
+  width: 100%;
   min-width: 190px;
   font-size: 13.5px;
   color: var(--ink-primary);
   white-space: nowrap;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stat-pop-row:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .stat-pop-flag {

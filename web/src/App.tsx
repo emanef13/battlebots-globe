@@ -58,6 +58,7 @@ export default function App() {
   const [playing, setPlaying] = useState<FightVideo | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<GlobePoint | null>(null);
+  const [focus, setFocus] = useState<{ lat: number; lng: number; altitude: number; nonce: number } | null>(null);
   // Always Night — Classic; ?map= still works for demos.
   const mapStyle = useMemo(
     () =>
@@ -90,6 +91,21 @@ export default function App() {
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
 
+  // Fly the camera to a country: centroid of its teams, altitude by spread.
+  const focusCountry = (country: string) => {
+    const members = points.filter((p) => p.country === country);
+    if (members.length === 0) return;
+    const lat = members.reduce((s, p) => s + p.lat, 0) / members.length;
+    const lng = members.reduce((s, p) => s + p.lng, 0) / members.length;
+    const spread = Math.max(
+      ...members.map((p) => Math.hypot(p.lat - lat, p.lng - lng)),
+      0,
+    );
+    const altitude = Math.min(2.2, Math.max(0.5, spread * 0.055 + 0.35));
+    setSelected(null);
+    setFocus({ lat, lng, altitude, nonce: Date.now() });
+  };
+
   // Escape closes the panel (the video modal handles its own Escape first)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -109,8 +125,9 @@ export default function App() {
         fights={fights}
         matchVideos={matchVideos}
         onPlayVideo={setPlaying}
+        focus={focus}
       />
-      <Header points={points} onSelect={setSelected} />
+      <Header points={points} onSelect={setSelected} onFocusCountry={focusCountry} />
 
       <div className="legend" role="note" aria-label="Map legend">
         <span className="legend-item">
