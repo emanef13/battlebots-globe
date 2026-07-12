@@ -28,7 +28,7 @@ export const MAP_STYLES: MapStyle[] = [
     atmosphere: '#3987e5',
     vector: { ocean: '#182642', land: '#46587a', border: '#61749c', cities: '#ffd27a' },
   },
-  { id: 'night-classic', label: 'Night — Classic', url: '/textures/earth-night.jpg', atmosphere: '#5b9ff0' },
+  { id: 'night-classic', label: 'Night — Classic', url: '/textures/earth-night-coast.jpg', atmosphere: '#5b9ff0' },
   { id: 'blue-marble', label: 'Day — Blue Marble', url: '/textures/earth-blue-marble.jpg', atmosphere: '#6db3f2' },
 ];
 
