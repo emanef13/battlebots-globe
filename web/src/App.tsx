@@ -125,7 +125,11 @@ export default function App() {
 
   // While a challenger waits, the next bot picked becomes the opponent.
   const handleSelect = (p: GlobePoint | null) => {
-    if (fightPair) return; // fight mode owns the screen until closed
+    if (fightPair) {
+      // clicking the globe backs out of fight mode, like closing the panel
+      if (!p) setFightPair(null);
+      return;
+    }
     if (challenger && p && p.id !== challenger.id) {
       startFight(challenger, p);
       return;
