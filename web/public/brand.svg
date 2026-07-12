@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 26">
+  <defs>
+    <linearGradient id="shadeR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f25454"/>
+      <stop offset="55%" stop-color="#d92f2f"/>
+      <stop offset="100%" stop-color="#a91f1f"/>
+    </linearGradient>
+    <linearGradient id="shadeB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4fc3f2"/>
+      <stop offset="55%" stop-color="#28a3dd"/>
+      <stop offset="100%" stop-color="#1878ab"/>
+    </linearGradient>
+    <linearGradient id="shadeG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffc63d"/>
+      <stop offset="55%" stop-color="#eda100"/>
+      <stop offset="100%" stop-color="#b87a00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- B (red) -->
+  <path fill="url(#shadeR)" stroke="#14141d" stroke-width="1.6" stroke-linejoin="round" fill-rule="evenodd" d="
+    M2 2 H13 L17 5.2 V9.4 L14.8 12 L17 14.6 V20.8 L13 24 H2 Z
+    M6.6 6.4 v3.2 h5.8 l1 -1.6 l-1 -1.6 Z
+    M6.6 16.4 v3.2 h5.8 l1 -1.6 l-1 -1.6 Z"/>
+
+  <!-- B (blue) -->
+  <path fill="url(#shadeB)" stroke="#14141d" stroke-width="1.6" stroke-linejoin="round" fill-rule="evenodd" d="
+    M20.5 2 H31.5 L35.5 5.2 V9.4 L33.3 12 L35.5 14.6 V20.8 L31.5 24 H20.5 Z
+    M25.1 6.4 v3.2 h5.8 l1 -1.6 l-1 -1.6 Z
+    M25.1 16.4 v3.2 h5.8 l1 -1.6 l-1 -1.6 Z"/>
+
+  <!-- G (gold) -->
+  <path fill="url(#shadeG)" stroke="#14141d" stroke-width="1.6" stroke-linejoin="round" d="
+    M42 2 H54 V6.6 H43.6 V19.4 H49.6 V15.6 H46.4 V11.4 H54 V21 L50.5 24 H39.5 L39 21 V5.2 Z"/>
+</svg>

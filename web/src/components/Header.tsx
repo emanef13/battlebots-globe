@@ -44,7 +44,7 @@ export default function Header({ points, onSelect }: HeaderProps) {
   return (
     <header className="app-header">
       <div className="brand">
-        <img className="brand-logo" src="/favicon.svg" alt="BBG" />
+        <img className="brand-logo" src="/brand.svg" alt="BBG" />
         <div>
           <h1>
             BattleBots <span className="brand-accent">Globe</span>
