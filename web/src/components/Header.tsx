@@ -9,6 +9,7 @@ interface HeaderProps {
 
 export default function Header({ points, onSelect }: HeaderProps) {
   const [query, setQuery] = useState('');
+  const [hoverStat, setHoverStat] = useState<null | 'bots' | 'league' | 'countries'>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const stats = useMemo(() => {
@@ -19,6 +20,31 @@ export default function Header({ points, onSelect }: HeaderProps) {
       countries: countries.size,
     };
   }, [points]);
+
+  const countryBreakdown = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const p of points) {
+      if (p.country) counts.set(p.country, (counts.get(p.country) ?? 0) + 1);
+    }
+    return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+  }, [points]);
+
+  const pickFromStat = (p: GlobePoint) => {
+    setHoverStat(null);
+    onSelect(p);
+  };
+
+  const botGrid = (list: GlobePoint[]) => (
+    <div className="stat-pop">
+      <div className="stat-pop-card stat-pop-grid">
+        {list.map((p) => (
+          <button key={p.id} title={p.bot} onClick={() => pickFromStat(p)}>
+            {p.marker ? <img src={p.marker} alt={p.bot} loading="lazy" /> : <span>{p.bot[0]}</span>}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -31,8 +57,7 @@ export default function Header({ points, onSelect }: HeaderProps) {
           (p.city ?? '').toLowerCase().includes(q) ||
           (p.region ?? '').toLowerCase().includes(q) ||
           (p.country ?? '').toLowerCase().includes(q),
-      )
-      .slice(0, 8);
+      );
   }, [query, points]);
 
   const pick = (p: GlobePoint) => {
@@ -88,17 +113,44 @@ export default function Header({ points, onSelect }: HeaderProps) {
       </div>
 
       <div className="header-stats">
-        <div className="stat">
+        <div
+          className="stat"
+          onMouseEnter={() => setHoverStat('bots')}
+          onMouseLeave={() => setHoverStat(null)}
+        >
           <span className="stat-value">{stats.bots}</span>
           <span className="stat-label">bots</span>
+          {hoverStat === 'bots' && botGrid(points)}
         </div>
-        <div className="stat">
+        <div
+          className="stat"
+          onMouseEnter={() => setHoverStat('league')}
+          onMouseLeave={() => setHoverStat(null)}
+        >
           <span className="stat-value stat-amber">{stats.active}</span>
           <span className="stat-label">in Pro League</span>
+          {hoverStat === 'league' && botGrid(points.filter((p) => p.active))}
         </div>
-        <div className="stat">
+        <div
+          className="stat"
+          onMouseEnter={() => setHoverStat('countries')}
+          onMouseLeave={() => setHoverStat(null)}
+        >
           <span className="stat-value">{stats.countries}</span>
           <span className="stat-label">countries</span>
+          {hoverStat === 'countries' && (
+            <div className="stat-pop">
+              <div className="stat-pop-card">
+                {countryBreakdown.map(([country, count]) => (
+                  <div className="stat-pop-row" key={country}>
+                    <span className="stat-pop-flag">{flagEmoji(country)}</span>
+                    <span>{country}</span>
+                    <span className="stat-pop-count">{count}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </header>
