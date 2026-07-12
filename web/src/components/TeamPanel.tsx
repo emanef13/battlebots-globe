@@ -7,9 +7,10 @@ interface TeamPanelProps {
   record: { wins: number; losses: number } | null;
   onPlay: (video: FightVideo) => void;
   onClose: () => void;
+  onChallenge: () => void;
 }
 
-export default function TeamPanel({ team, videos, record, onPlay, onClose }: TeamPanelProps) {
+export default function TeamPanel({ team, videos, record, onPlay, onClose, onChallenge }: TeamPanelProps) {
   const place = [team.city, team.region, team.country].filter(Boolean).join(', ');
   const flag = flagEmoji(team.country);
 
@@ -74,6 +75,10 @@ export default function TeamPanel({ team, videos, record, onPlay, onClose }: Tea
           </div>
         )}
       </dl>
+
+      <button className="panel-challenge" onClick={onChallenge}>
+        ⚔ CHALLENGE
+      </button>
 
       {team.url && (
         <a className="panel-link" href={team.url} target="_blank" rel="noopener noreferrer">

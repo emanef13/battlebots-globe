@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import BotGlobe from './components/BotGlobe';
+import FightMode from './components/FightMode';
 import Header from './components/Header';
 import TeamPanel from './components/TeamPanel';
 import VideoModal from './components/VideoModal';
+import { recordFor } from './fightStats';
 import { resolveMapStyle } from './mapStyles';
 import type { Fight, FightsFile, FightVideo, GlobePoint, MatchVideosFile, Team, TeamsFile, VideosFile } from './types';
 
@@ -37,18 +39,6 @@ function toGlobePoints(teams: Team[]): GlobePoint[] {
   return points;
 }
 
-/** Win–loss record for a bot across the mapped fight history. */
-function recordFor(fights: Fight[], id: string): { wins: number; losses: number } | null {
-  let wins = 0;
-  let losses = 0;
-  for (const f of fights) {
-    if (f.a !== id && f.b !== id) continue;
-    if (f.winner === id) wins += 1;
-    else if (f.winner) losses += 1;
-  }
-  return wins + losses > 0 ? { wins, losses } : null;
-}
-
 export default function App() {
   const [data, setData] = useState<TeamsFile | null>(null);
   const [videos, setVideos] = useState<VideosFile | null>(null);
@@ -57,6 +47,9 @@ export default function App() {
   const [playing, setPlaying] = useState<FightVideo | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<GlobePoint | null>(null);
+  // Head-to-head: a challenger waiting for an opponent, then the locked pair.
+  const [challenger, setChallenger] = useState<GlobePoint | null>(null);
+  const [fightPair, setFightPair] = useState<[GlobePoint, GlobePoint] | null>(null);
   const [focus, setFocus] = useState<{ lat: number; lng: number; altitude: number; nonce: number } | null>(null);
   const [filter, setFilter] = useState<'all' | 'active' | 'historical'>('all');
   // Always Night — Classic; ?map= still works for demos.
@@ -122,29 +115,68 @@ export default function App() {
     setFocus({ lat, lng, altitude, nonce: Date.now() });
   };
 
-  // Escape closes the panel (the video modal handles its own Escape first)
+  const startFight = (a: GlobePoint, b: GlobePoint) => {
+    if (a.id === b.id) return;
+    setChallenger(null);
+    setSelected(null);
+    setFocus(null);
+    setFightPair([a, b]);
+  };
+
+  // While a challenger waits, the next bot picked becomes the opponent.
+  const handleSelect = (p: GlobePoint | null) => {
+    if (fightPair) return; // fight mode owns the screen until closed
+    if (challenger && p && p.id !== challenger.id) {
+      startFight(challenger, p);
+      return;
+    }
+    setSelected(p);
+  };
+
+  // Escape backs out one layer: video modal handles its own Escape first,
+  // then fight mode, then opponent-select, then the team panel.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && !playing) setSelected(null);
+      if (e.key !== 'Escape' || playing) return;
+      if (fightPair) setFightPair(null);
+      else if (challenger) setChallenger(null);
+      else setSelected(null);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [playing]);
+  }, [playing, fightPair, challenger]);
 
   return (
     <div className="app">
       <BotGlobe
         points={globePoints}
         selected={selected}
-        onSelect={setSelected}
+        onSelect={handleSelect}
         mapStyle={mapStyle}
         fights={fights}
         matchVideos={matchVideos}
         onPlayVideo={setPlaying}
         focus={focus}
+        fightPair={fightPair}
+        onFight={startFight}
       />
-      <Header points={points} onSelect={setSelected} onFocusCountry={focusCountry} />
+      <Header
+        points={points}
+        onSelect={handleSelect}
+        onFocusCountry={focusCountry}
+        onVersus={startFight}
+      />
 
+      {challenger && !fightPair && (
+        <div className="challenge-banner" role="status">
+          <span className="challenge-banner-text">
+            ⚔ Choose an opponent for <b>{challenger.bot}</b> — click any robot
+          </span>
+          <button onClick={() => setChallenger(null)}>Cancel</button>
+        </div>
+      )}
+
+      {!fightPair && (
       <div className="legend" role="note" aria-label="Map legend">
         <button
           className={`legend-item legend-toggle ${filter === 'historical' ? 'is-off' : ''}`}
@@ -174,14 +206,30 @@ export default function App() {
           </>
         )}
       </div>
+      )}
 
-      {selected && (
+      {selected && !fightPair && (
         <TeamPanel
           team={selected}
           videos={videos?.videos[selected.id] ?? []}
           record={recordFor(fights, selected.id)}
           onPlay={setPlaying}
           onClose={() => setSelected(null)}
+          onChallenge={() => {
+            setChallenger(selected);
+            setSelected(null);
+          }}
+        />
+      )}
+      {fightPair && (
+        <FightMode
+          a={fightPair[0]}
+          b={fightPair[1]}
+          points={points}
+          fights={fights}
+          matchVideos={matchVideos}
+          onPlayVideo={setPlaying}
+          onClose={() => setFightPair(null)}
         />
       )}
       {playing && <VideoModal video={playing} onClose={() => setPlaying(null)} />}

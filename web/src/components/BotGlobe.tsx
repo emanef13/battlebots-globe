@@ -130,6 +130,8 @@ interface BotGlobeProps {
   matchVideos: Record<string, FightVideo>;
   onPlayVideo: (video: FightVideo) => void;
   focus: { lat: number; lng: number; altitude: number; nonce: number } | null;
+  fightPair: [GlobePoint, GlobePoint] | null;
+  onFight: (a: GlobePoint, b: GlobePoint) => void;
 }
 
 /** Aggregated head-to-head record between two mapped bots. */
@@ -142,6 +144,8 @@ export interface PairRecord {
 }
 
 interface ArcDatum {
+  /** the single highlighted arc between the two fight-mode contestants */
+  fight?: boolean;
   pair: PairRecord;
   /** head-to-head outcome from the selected bot's perspective */
   outcome: 'won' | 'lost' | 'even';
@@ -170,7 +174,7 @@ function loadCities(): Promise<[number, number][]> {
   return cityCache;
 }
 
-export default function BotGlobe({ points, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus }: BotGlobeProps) {
+export default function BotGlobe({ points, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -263,7 +267,48 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
     );
   }, [focus, handleInteractionStart]);
 
+  // Fight mode: frame both fighters — camera at their 3D midpoint, zoomed
+  // to fit the angular distance between them. Ref-guarded like `focus` so
+  // re-renders don't replay the flight.
+  const handledFightKey = useRef<string | null>(null);
+  useEffect(() => {
+    if (!fightPair) {
+      handledFightKey.current = null;
+      return;
+    }
+    const key = `${fightPair[0].id}|${fightPair[1].id}`;
+    if (handledFightKey.current === key) return;
+    handledFightKey.current = key;
+    const rad = Math.PI / 180;
+    const vec = (p: GlobePoint) => [
+      Math.cos(p.glat * rad) * Math.cos(p.glng * rad),
+      Math.cos(p.glat * rad) * Math.sin(p.glng * rad),
+      Math.sin(p.glat * rad),
+    ];
+    const [va, vb] = [vec(fightPair[0]), vec(fightPair[1])];
+    const mid = va.map((v, i) => v + vb[i]);
+    const len = Math.hypot(...mid) || 1;
+    const lat = Math.asin(mid[2] / len) / rad;
+    const lng = Math.atan2(mid[1] / len, mid[0] / len) / rad;
+    const angle = Math.acos(Math.min(1, Math.max(-1, va[0] * vb[0] + va[1] * vb[1] + va[2] * vb[2])));
+    const altitude = Math.min(2.6, Math.max(0.7, 0.55 + angle * 1.15));
+    setAutoRotate(false);
+    globeRef.current?.pointOfView({ lat, lng, altitude }, 1100);
+  }, [fightPair, setAutoRotate]);
+
   const markers = useMemo(() => {
+    if (fightPair) {
+      // only the two fighters stay on the map, both at hero size
+      return fightPair.map((p) => ({
+        key: `f:${p.id}`,
+        kind: 'single' as const,
+        lat: p.glat,
+        lng: p.glng,
+        point: p,
+        active: p.active,
+        selected: true,
+      }));
+    }
     const list = clusterPoints(points, radiusForAltitude(altitude), selected?.id);
     if (selected) {
       list.push({
@@ -277,7 +322,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
       });
     }
     return list;
-  }, [points, altitude, selected]);
+  }, [points, altitude, selected, fightPair]);
 
   const makeMarker = useCallback(
     (m: Marker): THREE.Sprite => {
@@ -328,13 +373,16 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
   );
 
   const rings = useMemo(() => {
+    if (fightPair) {
+      return fightPair.map((p) => ({ lat: p.glat, lng: p.glng, __selected: true }));
+    }
     const base = markers
       .filter((m) => m.active && !m.selected)
       .map((m) => ({ lat: m.lat, lng: m.lng, __selected: false }));
     return selected
       ? [...base, { lat: selected.glat, lng: selected.glng, __selected: true }]
       : base;
-  }, [markers, selected]);
+  }, [markers, selected, fightPair]);
 
   // head-to-head aggregation: one record per pair of mapped bots
   const pairRecords = useMemo(() => {
@@ -361,6 +409,26 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
   // fanning out from it, colored by the head-to-head outcome (green = leads,
   // red = trails, amber = even).
   const arcs = useMemo<ArcDatum[]>(() => {
+    if (fightPair) {
+      const [a, b] = fightPair;
+      const pair =
+        pairRecords.find(
+          (r) =>
+            (r.a.id === a.id && r.b.id === b.id) || (r.a.id === b.id && r.b.id === a.id),
+        ) ?? { a, b, count: 0, aWins: 0, bWins: 0 };
+      return [
+        {
+          fight: true,
+          pair,
+          outcome: 'even' as const,
+          video: matchVideos[[a.id, b.id].sort().join('|')] ?? null,
+          startLat: a.glat,
+          startLng: a.glng,
+          endLat: b.glat,
+          endLng: b.glng,
+        },
+      ];
+    }
     if (!selected) return [];
     return pairRecords
       .filter((r) => r.a.id === selected.id || r.b.id === selected.id)
@@ -382,7 +450,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
           endLng: opponent.glng,
         };
       });
-  }, [pairRecords, selected, matchVideos]);
+  }, [pairRecords, selected, matchVideos, fightPair]);
 
   // texture styles use a plain material; vector styles tint the bare sphere
   // as the ocean and draw land as crisp polygons on top
@@ -465,16 +533,28 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
         arcEndLat="endLat"
         arcEndLng="endLng"
         arcColor={(d: object) => {
-          const o = (d as ArcDatum).outcome;
+          const arc = d as ArcDatum;
+          if (arc.fight) return ['rgba(237, 161, 0, 0.95)', 'rgba(255, 214, 130, 0.9)'];
+          const o = arc.outcome;
           return o === 'won' ? ARC_WON : o === 'lost' ? ARC_LOST : ARC_EVEN;
         }}
-        arcStroke={(d: object) => Math.min(0.38, 0.14 + (d as ArcDatum).pair.count * 0.05)}
+        arcStroke={(d: object) => {
+          const arc = d as ArcDatum;
+          return arc.fight ? 0.55 : Math.min(0.38, 0.14 + arc.pair.count * 0.05);
+        }}
         arcAltitudeAutoScale={0.35}
         arcsTransitionDuration={300}
-        onArcHover={(d) => setHoveredArc((d as ArcDatum | null) ?? null)}
+        onArcHover={(d) => {
+          const arc = d as ArcDatum | null;
+          setHoveredArc(arc && !arc.fight ? arc : null);
+        }}
         onArcClick={(d) => {
           const arc = d as ArcDatum;
-          if (arc.video) onPlayVideo(arc.video);
+          if (arc.fight) {
+            if (arc.video) onPlayVideo(arc.video);
+          } else {
+            onFight(arc.pair.a, arc.pair.b);
+          }
         }}
       />
       {hovered?.kind === 'single' && hovered.point && (
@@ -504,7 +584,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
               {hoveredArc.pair.count} fight{hoveredArc.pair.count > 1 ? 's' : ''} ·{' '}
               {hoveredArc.pair.aWins}–{hoveredArc.pair.bWins}
             </div>
-            {hoveredArc.video && <div className="arc-tip-cta">▶ Click the arc to watch this fight</div>}
+            <div className="arc-tip-cta">⚔ Click the arc for fight mode</div>
           </div>
         </div>
       )}

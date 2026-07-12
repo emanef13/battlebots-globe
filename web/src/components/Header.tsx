@@ -6,9 +6,10 @@ interface HeaderProps {
   points: GlobePoint[];
   onSelect: (point: GlobePoint) => void;
   onFocusCountry: (country: string) => void;
+  onVersus: (a: GlobePoint, b: GlobePoint) => void;
 }
 
-export default function Header({ points, onSelect, onFocusCountry }: HeaderProps) {
+export default function Header({ points, onSelect, onFocusCountry, onVersus }: HeaderProps) {
   const [query, setQuery] = useState('');
   const [hoverStat, setHoverStat] = useState<null | 'bots' | 'league' | 'countries'>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -46,6 +47,17 @@ export default function Header({ points, onSelect, onFocusCountry }: HeaderProps
       </div>
     </div>
   );
+
+  // "tombstone vs minotaur" jumps straight into fight mode
+  const versus = useMemo(() => {
+    const m = query.toLowerCase().match(/^(.{2,}?)\s+vs\.?\s+(.{2,})$/);
+    if (!m) return null;
+    const find = (needle: string) =>
+      points.find((p) => p.bot.toLowerCase().includes(needle.trim()));
+    const a = find(m[1]);
+    const b = find(m[2]);
+    return a && b && a.id !== b.id ? ([a, b] as const) : null;
+  }, [query, points]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -99,13 +111,36 @@ export default function Header({ points, onSelect, onFocusCountry }: HeaderProps
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && results.length > 0) pick(results[0]);
+            if (e.key === 'Enter') {
+              if (versus) {
+                onVersus(versus[0], versus[1]);
+                setQuery('');
+                inputRef.current?.blur();
+              } else if (results.length > 0) pick(results[0]);
+            }
             if (e.key === 'Escape') setQuery('');
           }}
           aria-label="Search bots, teams or cities"
         />
-        {results.length > 0 && (
+        {(results.length > 0 || versus) && (
           <ul className="search-results">
+            {versus && (
+              <li>
+                <button
+                  className="search-versus"
+                  onClick={() => {
+                    onVersus(versus[0], versus[1]);
+                    setQuery('');
+                    inputRef.current?.blur();
+                  }}
+                >
+                  <span className="result-bot">
+                    ⚔ {versus[0].bot} vs {versus[1].bot}
+                  </span>
+                  <span className="result-place">Fight mode</span>
+                </button>
+              </li>
+            )}
             {results.map((p) => (
               <li key={p.id}>
                 <button onClick={() => pick(p)}>
