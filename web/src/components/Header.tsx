@@ -70,12 +70,20 @@ export default function Header({ points, onSelect, onFocusCountry }: HeaderProps
   return (
     <header className="app-header">
       <div className="brand">
-        <img className="brand-logo" src="/brand.svg" alt="BBG" />
         <div>
           <h1>
             BattleBots <span className="brand-accent">Globe</span>
           </h1>
           <p className="tagline">The BattleBots world, live on one globe</p>
+          <p className="brand-links">
+            <a href="https://github.com/emanef13/battlebots-globe" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <span aria-hidden="true"> · </span>
+            <a href="https://github.com/emanef13" target="_blank" rel="noopener noreferrer">
+              by emanef13
+            </a>
+          </p>
         </div>
       </div>
 
