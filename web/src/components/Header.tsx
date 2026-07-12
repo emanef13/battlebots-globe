@@ -45,12 +45,7 @@ export default function Header({ points, onSelect }: HeaderProps) {
     <header className="app-header">
       <div className="brand">
         <h1>
-          BattleBots{' '}
-          <span className="brand-accent">
-            Gl
-            <img className="brand-globe" src="/favicon.svg" alt="o" />
-            be
-          </span>
+          BattleBots <span className="brand-accent">Globe</span>
         </h1>
         <p className="tagline">The BattleBots world, live on one globe</p>
       </div>
