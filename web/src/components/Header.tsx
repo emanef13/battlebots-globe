@@ -44,10 +44,13 @@ export default function Header({ points, onSelect }: HeaderProps) {
   return (
     <header className="app-header">
       <div className="brand">
-        <h1>
-          BattleBots <span className="brand-accent">Globe</span>
-        </h1>
-        <p className="tagline">The BattleBots world, live on one globe</p>
+        <img className="brand-logo" src="/favicon.svg" alt="BBG" />
+        <div>
+          <h1>
+            BattleBots <span className="brand-accent">Globe</span>
+          </h1>
+          <p className="tagline">The BattleBots world, live on one globe</p>
+        </div>
       </div>
 
       <div className="search-box">

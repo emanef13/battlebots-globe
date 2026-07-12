@@ -55,6 +55,17 @@ body,
   pointer-events: auto;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 38px;
+  flex: none;
+}
+
 .brand h1 {
   font-size: 26px;
   font-weight: 800;
