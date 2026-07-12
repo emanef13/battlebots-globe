@@ -80,8 +80,12 @@ export default function Header({ points, onSelect, onFocusCountry }: HeaderProps
               GitHub
             </a>
             <span aria-hidden="true"> · </span>
-            <a href="https://github.com/emanef13" target="_blank" rel="noopener noreferrer">
-              by emanef13
+            <a
+              href="https://www.linkedin.com/in/manolis-efthymiou-054574157/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              by Manolis Efthymiou
             </a>
           </p>
         </div>
