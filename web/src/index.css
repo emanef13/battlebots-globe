@@ -307,6 +307,27 @@ body,
   gap: 7px;
 }
 
+.legend-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 2px 6px;
+  margin: -2px -6px;
+  border-radius: 7px;
+  transition: opacity 0.15s;
+}
+
+.legend-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink-primary);
+}
+
+.legend-toggle.is-off {
+  opacity: 0.35;
+}
+
 .legend-dot,
 .result-dot,
 .status-dot {

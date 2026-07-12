@@ -59,6 +59,7 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<GlobePoint | null>(null);
   const [focus, setFocus] = useState<{ lat: number; lng: number; altitude: number; nonce: number } | null>(null);
+  const [filter, setFilter] = useState<'all' | 'active' | 'historical'>('all');
   // Always Night — Classic; ?map= still works for demos.
   const mapStyle = useMemo(
     () =>
@@ -91,6 +92,22 @@ export default function App() {
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
 
+  // Legend filter: show only one category on the globe when selected.
+  const globePoints = useMemo(
+    () =>
+      filter === 'all' ? points : points.filter((p) => (filter === 'active' ? p.active : !p.active)),
+    [points, filter],
+  );
+
+  const toggleFilter = (category: 'active' | 'historical') => {
+    setFilter((f) => (f === category ? 'all' : category));
+    setSelected((sel) =>
+      sel && ((category === 'active' && !sel.active) || (category === 'historical' && sel.active))
+        ? null
+        : sel,
+    );
+  };
+
   // Fly the camera to a country: centroid of its teams, altitude by spread.
   const focusCountry = (country: string) => {
     const members = points.filter((p) => p.country === country);
@@ -118,7 +135,7 @@ export default function App() {
   return (
     <div className="app">
       <BotGlobe
-        points={points}
+        points={globePoints}
         selected={selected}
         onSelect={setSelected}
         mapStyle={mapStyle}
@@ -130,12 +147,20 @@ export default function App() {
       <Header points={points} onSelect={setSelected} onFocusCountry={focusCountry} />
 
       <div className="legend" role="note" aria-label="Map legend">
-        <span className="legend-item">
+        <button
+          className={`legend-item legend-toggle ${filter === 'historical' ? 'is-off' : ''}`}
+          onClick={() => toggleFilter('active')}
+          title="Show only Pro League robots"
+        >
           <span className="legend-ring" aria-hidden="true" /> Pro League 2026
-        </span>
-        <span className="legend-item">
+        </button>
+        <button
+          className={`legend-item legend-toggle ${filter === 'active' ? 'is-off' : ''}`}
+          onClick={() => toggleFilter('historical')}
+          title="Show only historical robots"
+        >
           <span className="legend-dot is-historical" aria-hidden="true" /> Historical robot
-        </span>
+        </button>
         {selected && (
           <>
             <span className="legend-item">
