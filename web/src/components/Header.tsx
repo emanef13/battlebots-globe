@@ -13,6 +13,11 @@ interface HeaderProps {
 export default function Header({ points, onSelect, onFocusCountry, onVersus }: HeaderProps) {
   const [query, setQuery] = useState('');
   const [hoverStat, setHoverStat] = useState<null | 'bots' | 'league' | 'countries'>(null);
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  const statHandlers = (key: 'bots' | 'league' | 'countries') =>
+    canHover
+      ? { onMouseEnter: () => setHoverStat(key), onMouseLeave: () => setHoverStat(null) }
+      : { onClick: () => setHoverStat((h) => (h === key ? null : key)) };
   const inputRef = useRef<HTMLInputElement>(null);
 
   const stats = useMemo(() => {
@@ -165,8 +170,7 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
       <div className="header-stats">
         <div
           className="stat"
-          onMouseEnter={() => setHoverStat('bots')}
-          onMouseLeave={() => setHoverStat(null)}
+          {...statHandlers('bots')}
         >
           <span className="stat-value">{stats.bots}</span>
           <span className="stat-label">bots</span>
@@ -174,8 +178,7 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
         </div>
         <div
           className="stat"
-          onMouseEnter={() => setHoverStat('league')}
-          onMouseLeave={() => setHoverStat(null)}
+          {...statHandlers('league')}
         >
           <span className="stat-value stat-amber">{stats.active}</span>
           <span className="stat-label">in Pro League</span>
@@ -183,8 +186,7 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
         </div>
         <div
           className="stat"
-          onMouseEnter={() => setHoverStat('countries')}
-          onMouseLeave={() => setHoverStat(null)}
+          {...statHandlers('countries')}
         >
           <span className="stat-value">{stats.countries}</span>
           <span className="stat-label">countries</span>
