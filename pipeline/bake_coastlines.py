@@ -20,8 +20,8 @@ GEO = ROOT / "web" / "public" / "data" / "world-land.geojson"
 SRC = ROOT / "web" / "public" / "textures" / "earth-night.jpg"
 OUT = ROOT / "web" / "public" / "textures" / "earth-night-coast.jpg"
 
-HALO = (76, 110, 148, 52)  # wide, dim
-CORE = (128, 160, 194, 95)  # narrow, brighter
+HALO = (70, 102, 138, 30)  # wide, dim
+CORE = (116, 148, 182, 58)  # narrow, brighter
 
 
 def rings_from_geojson(path: pathlib.Path):
