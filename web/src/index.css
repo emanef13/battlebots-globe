@@ -975,12 +975,21 @@ body,
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
 }
 
+.fight-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.3), box-shadow 0.25s;
+}
+
 .fight-card.corner-red {
   left: 26px;
   transform: translateY(-50%);
   border-left: 3px solid var(--active);
   box-shadow: -12px 0 44px rgba(230, 103, 103, 0.28), 0 18px 44px rgba(0, 0, 0, 0.5);
   animation: card-in-left 0.5s cubic-bezier(0.2, 1.25, 0.4, 1) backwards;
+}
+
+.fight-card.corner-red:hover {
+  transform: translateY(-50%) scale(1.035) rotate(-0.8deg);
+  box-shadow: -16px 0 60px rgba(230, 103, 103, 0.5), 0 22px 54px rgba(0, 0, 0, 0.6);
 }
 
 .fight-card.corner-amber {
@@ -990,6 +999,11 @@ body,
   box-shadow: 12px 0 44px rgba(237, 161, 0, 0.24), 0 18px 44px rgba(0, 0, 0, 0.5);
   animation: card-in-right 0.5s cubic-bezier(0.2, 1.25, 0.4, 1) 0.15s backwards;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+
+.fight-card.corner-amber:hover {
+  transform: translateY(-50%) scale(1.035) rotate(0.8deg);
+  box-shadow: 16px 0 60px rgba(237, 161, 0, 0.45), 0 22px 54px rgba(0, 0, 0, 0.6);
 }
 
 @keyframes card-in-left {
@@ -1019,6 +1033,29 @@ body,
   max-height: 100%;
   max-width: 88%;
   object-fit: contain;
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+}
+
+/* hover: the bot revs up — a slight raise plus an engine-idle rumble */
+.fight-card:hover .fight-card-sprite img {
+  transform: translateY(-5px) scale(1.06);
+  animation: sprite-rumble 0.28s linear 0.25s infinite;
+}
+
+@keyframes sprite-rumble {
+  0%, 100% {
+    transform: translate(0, -5px) scale(1.06) rotate(0deg);
+  }
+  25% {
+    transform: translate(-1.5px, -4px) scale(1.06) rotate(-0.7deg);
+  }
+  75% {
+    transform: translate(1.5px, -6px) scale(1.06) rotate(0.7deg);
+  }
+}
+
+.fight-card:hover .fight-card-name {
+  text-shadow: 0 0 18px currentColor;
 }
 
 .fight-card-initial {
@@ -1254,8 +1291,14 @@ body,
   .fight-vs,
   .fight-center,
   .fight-bar-fill,
-  .challenge-banner {
+  .challenge-banner,
+  .fight-card:hover .fight-card-sprite img {
     animation: none;
+  }
+
+  .fight-card,
+  .fight-card-sprite img {
+    transition: none;
   }
 }
 
