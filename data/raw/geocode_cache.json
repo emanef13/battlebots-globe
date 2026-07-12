@@ -1,0 +1,358 @@
+{
+  "Cambridge, Massachusetts, USA": {
+    "lat": 42.3656347,
+    "lng": -71.1040018
+  },
+  "Oceanside, California, USA": {
+    "lat": 33.1958696,
+    "lng": -117.379483
+  },
+  "Denver, Colorado, USA": {
+    "lat": 39.7392364,
+    "lng": -104.984862
+  },
+  "Brisbane, Australia": {
+    "lat": -27.4689623,
+    "lng": 153.0235009
+  },
+  "Tucson, Arizona, USA": {
+    "lat": 32.2228765,
+    "lng": -110.974847
+  },
+  "Auckland, Auckland, New Zealand": {
+    "lat": -36.852095,
+    "lng": 174.7631803
+  },
+  "Chennai, India": {
+    "lat": 13.0836939,
+    "lng": 80.270186
+  },
+  "South Windsor, Connecticut, USA": {
+    "lat": 41.8352395,
+    "lng": -72.5562712
+  },
+  "Miami, Florida, USA": {
+    "lat": 25.7741566,
+    "lng": -80.1935973
+  },
+  "Las Vegas, Nevada, USA": {
+    "lat": 36.1674263,
+    "lng": -115.1484131
+  },
+  "Pomona, California, USA": {
+    "lat": 34.0553813,
+    "lng": -117.7517496
+  },
+  "Parker, Colorado, USA": {
+    "lat": 39.5184514,
+    "lng": -104.7612638
+  },
+  "San Jose, California, USA": {
+    "lat": 37.3361663,
+    "lng": -121.890591
+  },
+  "Tempe, Arizona, USA": {
+    "lat": 33.4255117,
+    "lng": -111.940016
+  },
+  "Rio de Janeiro, Rio de Janeiro, Brazil": {
+    "lat": -22.9110137,
+    "lng": -43.2093727
+  },
+  "Waterloo, Ontario, Canada": {
+    "lat": 43.4652699,
+    "lng": -80.5222961
+  },
+  "Somerville, Massachusetts, USA": {
+    "lat": 42.3875968,
+    "lng": -71.0994968
+  },
+  "Moraga, California, USA": {
+    "lat": 37.834897,
+    "lng": -122.12883
+  },
+  "Dallas, Texas, USA": {
+    "lat": 32.7762719,
+    "lng": -96.7968559
+  },
+  "Long Beach, California, USA": {
+    "lat": 33.7690164,
+    "lng": -118.191604
+  },
+  "Mountain View, California, USA": {
+    "lat": 37.3893889,
+    "lng": -122.0832101
+  },
+  "Folsom, California, USA": {
+    "lat": 38.6779591,
+    "lng": -121.176058
+  },
+  "Berkeley, California, USA": {
+    "lat": 37.8708393,
+    "lng": -122.272863
+  },
+  "Gujarat, India": {
+    "lat": 22.3850051,
+    "lng": 71.745261
+  },
+  "Vero Beach, Florida, USA": {
+    "lat": 27.6387163,
+    "lng": -80.3975399
+  },
+  "Rohnert Park, California, USA": {
+    "lat": 38.3396367,
+    "lng": -122.701098
+  },
+  "Salem, New Jersey, USA": {
+    "lat": 39.5980987,
+    "lng": -75.3488201
+  },
+  "Phoenix, Arizona, USA": {
+    "lat": 33.4484367,
+    "lng": -112.074141
+  },
+  "Oxfordshire, UK": {
+    "lat": 51.833333,
+    "lng": -1.25
+  },
+  "Seattle, Washington, USA": {
+    "lat": 47.6038321,
+    "lng": -122.330062
+  },
+  "Belmont, California, USA": {
+    "lat": 37.5164926,
+    "lng": -122.2941914
+  },
+  "Itajub\u00e1, Brazil": {
+    "lat": -22.4238234,
+    "lng": -45.4524156
+  },
+  "Edison, New Jersey, USA": {
+    "lat": 40.5005351,
+    "lng": -74.3983939
+  },
+  "Seoul, South Korea": {
+    "lat": 37.5666791,
+    "lng": 126.9782914
+  },
+  "Atlanta, Georgia, USA": {
+    "lat": 33.7544657,
+    "lng": -84.3898151
+  },
+  "Sausalito, California, USA": {
+    "lat": 37.8590272,
+    "lng": -122.485469
+  },
+  "Los Angeles, California, USA": {
+    "lat": 34.0536909,
+    "lng": -118.242766
+  },
+  "Ormond Beach, Florida, USA": {
+    "lat": 29.2854132,
+    "lng": -81.0557921
+  },
+  "Gardena, California, USA": {
+    "lat": 33.8815601,
+    "lng": -118.2935879
+  },
+  "San Francisco, California, USA": {
+    "lat": 37.7879363,
+    "lng": -122.4075201
+  },
+  "Oakland, California, USA": {
+    "lat": 37.8044557,
+    "lng": -122.271356
+  },
+  "Norfolk, Virginia, USA": {
+    "lat": 36.8493695,
+    "lng": -76.2899539
+  },
+  "China": {
+    "lat": 34.5412252,
+    "lng": 108.9237067
+  },
+  "Thousand Oaks, California, USA": {
+    "lat": 34.1705609,
+    "lng": -118.8375937
+  },
+  "San Diego, California, USA": {
+    "lat": 32.7174202,
+    "lng": -117.162772
+  },
+  "Wadsworth, Illinois, USA": {
+    "lat": 42.4286788,
+    "lng": -87.9067248
+  },
+  "Irvine, California, USA": {
+    "lat": 33.6856969,
+    "lng": -117.825981
+  },
+  "Denton, Texas, USA": {
+    "lat": 33.1838787,
+    "lng": -97.1413417
+  },
+  "Palo Alto, California, USA": {
+    "lat": 37.4443293,
+    "lng": -122.1598465
+  },
+  "Columbus, Ohio, USA": {
+    "lat": 39.9622601,
+    "lng": -83.0007065
+  },
+  "Dorchester, Wisconsin, USA": {
+    "lat": 45.0012665,
+    "lng": -90.3315461
+  },
+  "Raleigh, North Carolina, USA": {
+    "lat": 35.7803977,
+    "lng": -78.6390989
+  },
+  "San Leandro, California, USA": {
+    "lat": 37.7249296,
+    "lng": -122.1560768
+  },
+  "Joshua Tree, California, USA": {
+    "lat": 34.123375,
+    "lng": -116.3128656
+  },
+  "Roseville, California, USA": {
+    "lat": 38.7521235,
+    "lng": -121.2880059
+  },
+  "Palm Harbor, Florida, USA": {
+    "lat": 28.0856815,
+    "lng": -82.756907
+  },
+  "Liberty Hill, Texas, USA": {
+    "lat": 30.6649119,
+    "lng": -97.9225161
+  },
+  "Burlingame, California, USA": {
+    "lat": 37.5780965,
+    "lng": -122.3473099
+  },
+  "Titusville, Florida, USA": {
+    "lat": 28.6126236,
+    "lng": -80.8079545
+  },
+  "Ottawa, Canada": {
+    "lat": 45.4208777,
+    "lng": -75.6901106
+  },
+  "Ontario, Canada": {
+    "lat": 50.000678,
+    "lng": -86.000977
+  },
+  "Baltimore, Maryland, USA": {
+    "lat": 39.2908816,
+    "lng": -76.610759
+  },
+  "Portola Valley, California, USA": {
+    "lat": 37.3736298,
+    "lng": -122.219047
+  },
+  "Santa Monica, California, USA": {
+    "lat": 34.0194704,
+    "lng": -118.491227
+  },
+  "Coventry, UK": {
+    "lat": 52.4081812,
+    "lng": -1.510477
+  },
+  "Bradenton, Florida, USA": {
+    "lat": 27.4989278,
+    "lng": -82.5748194
+  },
+  "Tilburg, Netherlands": {
+    "lat": 51.5856185,
+    "lng": 5.0660616
+  },
+  "San Luis Obispo, California, USA": {
+    "lat": 35.3540209,
+    "lng": -120.375716
+  },
+  "Hudson, New Hampshire, USA": {
+    "lat": 42.7655784,
+    "lng": -71.4393423
+  },
+  "Staten Island, New York, USA": {
+    "lat": 40.5834557,
+    "lng": -74.1496048
+  },
+  "Herndon, Virginia, USA": {
+    "lat": 38.9695316,
+    "lng": -77.3859479
+  },
+  "Anna Paulowna, Netherlands": {
+    "lat": 52.8602975,
+    "lng": 4.8246904
+  },
+  "Houston, Texas, USA": {
+    "lat": 29.7589382,
+    "lng": -95.3676974
+  },
+  "Birmingham, UK": {
+    "lat": 52.4948994,
+    "lng": -1.8518439
+  },
+  "Bournemouth, UK": {
+    "lat": 50.7446718,
+    "lng": -1.8579514
+  },
+  "Spanish Fork, Utah, USA": {
+    "lat": 40.1150133,
+    "lng": -111.6547774
+  },
+  "Venice, California, USA": {
+    "lat": 33.995044,
+    "lng": -118.4668875
+  },
+  "Tarzana, California, USA": {
+    "lat": 34.1689262,
+    "lng": -118.5365791
+  },
+  "Boston, Massachusetts, USA": {
+    "lat": 42.3588336,
+    "lng": -71.0578303
+  },
+  "Antioch, Illinois, USA": {
+    "lat": 42.4767131,
+    "lng": -88.0950691
+  },
+  "Jacumba, California, USA": {
+    "lat": 32.6302081,
+    "lng": -116.1750008
+  },
+  "Brooklyn, New York, USA": {
+    "lat": 40.6526006,
+    "lng": -73.9497211
+  },
+  "New York, New York, USA": {
+    "lat": 40.7127281,
+    "lng": -74.0060152
+  },
+  "Sacramento, California, USA": {
+    "lat": 38.5810606,
+    "lng": -121.493895
+  },
+  "Malvern, Pennsylvania, USA": {
+    "lat": 40.036202,
+    "lng": -75.5138959
+  },
+  "Divonne-les-Bains, Auvergne-Rhone-Alpes, France": {
+    "lat": 46.3569916,
+    "lng": 6.142994
+  },
+  "Shanghai, China": {
+    "lat": 31.2312707,
+    "lng": 121.4700152
+  },
+  "Whittier, California, USA": {
+    "lat": 33.9749136,
+    "lng": -118.0338664
+  },
+  "Birmingham, Alabama, USA": {
+    "lat": 33.5206824,
+    "lng": -86.8024326
+  }
+}

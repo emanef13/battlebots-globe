@@ -1,0 +1,5901 @@
+{
+ "generated_at": "2026-07-12T12:21:57+00:00",
+ "source": "battlebots.fandom.com match tables",
+ "notes": "1v1 fights only between the 130 rostered bots; rumbles, tag-team and multi-bot matches excluded. Modern-era pages parsed from {{Battle}} result templates; Comedy Central era pages without those templates parsed from Competition/Wins/Losses tables (no method info available there). Forfeits, byes, withdrawals and TBD/upcoming or unknown-result matches omitted (no fight took place). Destruct-A-Thon/Proving Ground live-show exhibition fights included under the 'Destruct-A-Thon/Proving Ground' season label. Fights deduplicated across both robots' pages by (pair, season, order), including known cross-page season-label mismatches (e.g. re:MARS fights filed under the adjacent World Championship on one page); 4 fights appear on only one robot's page and were kept. winner=null means draw/no winner declared.",
+ "fights": [
+  {
+   "a": "atom-94",
+   "b": "big-dill",
+   "winner": "big-dill",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "atom-94",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "atom-94",
+   "b": "perfect-phoenix",
+   "winner": "perfect-phoenix",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "atom-94",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "captain-shrederator",
+   "winner": "captain-shrederator",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "deep-six",
+   "winner": "deep-six",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "malice",
+   "winner": "malice",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "mammoth",
+   "winner": "mammoth",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "monsoon",
+   "winner": "monsoon",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "texas-twister",
+   "winner": "texas-twister",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "axe-backwards",
+   "b": "war-hawk",
+   "winner": "war-hawk",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "backlash",
+   "b": "ziggo",
+   "winner": "ziggo",
+   "season": "Season 2.0",
+   "method": null
+  },
+  {
+   "a": "bale-spear",
+   "b": "chomp",
+   "winner": "bale-spear",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "bale-spear",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "bale-spear",
+   "b": "petunia",
+   "winner": "petunia",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "banshee",
+   "b": "blip",
+   "winner": "blip",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "banshee",
+   "b": "claw-viper",
+   "winner": "claw-viper",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "Crowd"
+  },
+  {
+   "a": "banshee",
+   "b": "cobalt",
+   "winner": "cobalt",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "banshee",
+   "b": "emulsifier",
+   "winner": "emulsifier",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "banshee",
+   "b": "horizon",
+   "winner": "banshee",
+   "season": "World Championship VII",
+   "method": "Split JD"
+  },
+  {
+   "a": "banshee",
+   "b": "lucky",
+   "winner": "banshee",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "Crowd"
+  },
+  {
+   "a": "banshee",
+   "b": "switchback",
+   "winner": "switchback",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "banshee",
+   "b": "valkyrie",
+   "winner": "banshee",
+   "season": "World Championship VII",
+   "method": "Split JD"
+  },
+  {
+   "a": "beta",
+   "b": "black-dragon",
+   "winner": "black-dragon",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "bloodsport",
+   "winner": "beta",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "double-tap",
+   "winner": "beta",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "free-shipping",
+   "winner": "free-shipping",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "kraken",
+   "winner": "beta",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "lucky",
+   "winner": "beta",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "nightmare",
+   "winner": "beta",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "overhaul",
+   "winner": "beta",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "rotator",
+   "winner": "beta",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "rusty",
+   "winner": "beta",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "beta",
+   "b": "shatter",
+   "winner": "beta",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "beta",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "blip",
+   "winner": "blip",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "bloodsport",
+   "winner": "bloodsport",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "bloodsport",
+   "winner": "big-dill",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "big-dill",
+   "b": "free-shipping",
+   "winner": "big-dill",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "hijinx",
+   "winner": "hijinx",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "big-dill",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "big-dill",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "big-dill",
+   "b": "overhaul",
+   "winner": "overhaul",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "big-dill",
+   "b": "perfect-phoenix",
+   "winner": "big-dill",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "big-dill",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "biohazard",
+   "b": "killerhurtz",
+   "winner": "biohazard",
+   "season": "Long Beach 1999",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "killerhurtz",
+   "winner": "biohazard",
+   "season": "Long Beach 1999",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "nightmare",
+   "winner": "biohazard",
+   "season": "Season 2.0",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "nightmare",
+   "winner": "biohazard",
+   "season": "Season 4.0",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "overkill",
+   "winner": "biohazard",
+   "season": "Season 3.0",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "overkill",
+   "winner": "biohazard",
+   "season": "Season 4.0",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "Season 3.0",
+   "method": "JD"
+  },
+  {
+   "a": "biohazard",
+   "b": "vlad-the-impaler",
+   "winner": "vlad-the-impaler",
+   "season": "Las Vegas 1999",
+   "method": null
+  },
+  {
+   "a": "biohazard",
+   "b": "vlad-the-impaler",
+   "winner": "biohazard",
+   "season": "Season 2.0",
+   "method": null
+  },
+  {
+   "a": "bite-force",
+   "b": "blacksmith",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "bombshell",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "bronco",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "chomp",
+   "winner": "chomp",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "end-game",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "ghost-raptor",
+   "winner": "bite-force",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "huge",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "hypershock",
+   "winner": "bite-force",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "hypershock",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "hypershock",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "icewave",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "lock-jaw",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "minotaur",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "mohawk",
+   "winner": "bite-force",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "monsoon",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "overhaul",
+   "winner": "bite-force",
+   "season": "World Championship I",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "rotator",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "tombstone",
+   "winner": "bite-force",
+   "season": "World Championship I",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "tombstone",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "uppercut",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "warhead",
+   "winner": "bite-force",
+   "season": "World Championship I",
+   "method": "JD"
+  },
+  {
+   "a": "bite-force",
+   "b": "whiplash",
+   "winner": "bite-force",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "whiplash",
+   "winner": "bite-force",
+   "season": "re:MARS 2019",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "witch-doctor",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bite-force",
+   "b": "yeti",
+   "winner": "bite-force",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "blip",
+   "winner": "black-dragon",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "bloodsport",
+   "winner": "black-dragon",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "captain-shrederator",
+   "winner": "black-dragon",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "claw-viper",
+   "winner": "black-dragon",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "claw-viper",
+   "winner": "black-dragon",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "copperhead",
+   "winner": "copperhead",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "icewave",
+   "winner": "black-dragon",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "kraken",
+   "winner": "black-dragon",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "madcatter",
+   "winner": "black-dragon",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "madcatter",
+   "winner": "black-dragon",
+   "season": "World Championship VI",
+   "method": "Split JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "minotaur",
+   "winner": "black-dragon",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "monsoon",
+   "winner": "black-dragon",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "overhaul",
+   "winner": "black-dragon",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "perfect-phoenix",
+   "winner": "black-dragon",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "ribbot",
+   "winner": "black-dragon",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "ripperoni",
+   "winner": "black-dragon",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "skorpios",
+   "winner": "black-dragon",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "slammo",
+   "winner": "black-dragon",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "texas-twister",
+   "winner": "texas-twister",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "tombstone",
+   "winner": "black-dragon",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "war-hawk",
+   "winner": "black-dragon",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "black-dragon",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "black-dragon",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "bloodsport",
+   "winner": "bloodsport",
+   "season": "Champions I",
+   "method": "Split JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "bronco",
+   "winner": "bronco",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "blacksmith",
+   "b": "captain-shrederator",
+   "winner": "blacksmith",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "blacksmith",
+   "b": "free-shipping",
+   "winner": "blacksmith",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "kraken",
+   "winner": "blacksmith",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "malice",
+   "winner": "malice",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "blacksmith",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "rotator",
+   "winner": "blacksmith",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "switchback",
+   "winner": "blacksmith",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "blacksmith",
+   "b": "warhead",
+   "winner": "warhead",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "blacksmith",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "blade",
+   "b": "bloodsport",
+   "winner": "bloodsport",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "blade",
+   "b": "dragon-slayer",
+   "winner": "blade",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blade",
+   "b": "kraken",
+   "winner": "blade",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "blade",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blade",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "blade",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "end-game",
+   "winner": "end-game",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "blip",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "blip",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "jackpot",
+   "winner": "blip",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "lock-jaw",
+   "winner": "blip",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "blip",
+   "b": "overhaul",
+   "winner": "blip",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "rusty",
+   "winner": "blip",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "blip",
+   "b": "tantrum",
+   "winner": "blip",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "blip",
+   "b": "valkyrie",
+   "winner": "blip",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "blip",
+   "b": "whiplash",
+   "winner": "blip",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "chronos",
+   "winner": "bloodsport",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "claw-viper",
+   "winner": "bloodsport",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "copperhead",
+   "winner": "copperhead",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "end-game",
+   "winner": "bloodsport",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "gigabyte",
+   "winner": "bloodsport",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "gruff",
+   "winner": "bloodsport",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "hijinx",
+   "winner": "bloodsport",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "jackpot",
+   "winner": "bloodsport",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "lucky",
+   "winner": "bloodsport",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VI",
+   "method": "Split JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "rotator",
+   "winner": "bloodsport",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "sharko",
+   "winner": "bloodsport",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "Champions I",
+   "method": "Split JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "skorpios",
+   "winner": "bloodsport",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "subzero",
+   "winner": "bloodsport",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "switchback",
+   "winner": "bloodsport",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "bloodsport",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "bloodsport",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "bronco",
+   "winner": "bronco",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "cobalt",
+   "winner": "bombshell",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "cobalt",
+   "winner": "cobalt",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "complete-control",
+   "winner": "complete-control",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "bombshell",
+   "b": "duck",
+   "winner": "duck",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "minotaur",
+   "winner": "bombshell",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "poison-arrow",
+   "winner": "bombshell",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "red-devil",
+   "winner": "bombshell",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "bombshell",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "tombstone",
+   "winner": "bombshell",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bombshell",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "bronco",
+   "b": "duck",
+   "winner": "bronco",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "free-shipping",
+   "winner": "free-shipping",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "bronco",
+   "b": "free-shipping",
+   "winner": "bronco",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "bronco",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "lock-jaw",
+   "winner": "bronco",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "bronco",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "sawblaze",
+   "winner": "bronco",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "bronco",
+   "b": "stinger-the-killer-bee",
+   "winner": "bronco",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "war-hawk",
+   "winner": "bronco",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "witch-doctor",
+   "winner": "bronco",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "bronco",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "brutus",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "brutus",
+   "b": "lock-jaw",
+   "winner": "brutus",
+   "season": "World Championship II",
+   "method": "Split JD"
+  },
+  {
+   "a": "brutus",
+   "b": "red-devil",
+   "winner": "red-devil",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "brutus",
+   "b": "son-of-whyachi",
+   "winner": "brutus",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "brutus",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "brutus",
+   "b": "war-hawk",
+   "winner": "brutus",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "calypso",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "calypso",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "chomp",
+   "winner": "chomp",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "deathroll",
+   "winner": "captain-shrederator",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "emulsifier",
+   "winner": "emulsifier",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "end-game",
+   "winner": "end-game",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "ghost-raptor",
+   "winner": "ghost-raptor",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "hijinx",
+   "winner": "captain-shrederator",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "malice",
+   "winner": "malice",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "petunia",
+   "winner": "petunia",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "sharko",
+   "winner": "captain-shrederator",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "stinger-the-killer-bee",
+   "winner": "stinger-the-killer-bee",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "tombstone",
+   "winner": "captain-shrederator",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "wan-hoo",
+   "winner": "wan-hoo",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "captain-shrederator",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "chomp",
+   "b": "ghost-raptor",
+   "winner": "ghost-raptor",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "chomp",
+   "b": "hijinx",
+   "winner": "hijinx",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "chomp",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "chomp",
+   "b": "icewave",
+   "winner": "icewave",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "chomp",
+   "b": "kraken",
+   "winner": "chomp",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "chomp",
+   "b": "overdrive",
+   "winner": "overdrive",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "chomp",
+   "b": "overhaul",
+   "winner": "overhaul",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "chomp",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "chomp",
+   "b": "warhead",
+   "winner": "warhead",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "chomp",
+   "b": "warrior-clan",
+   "winner": "warrior-clan",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "chomp",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "chronos",
+   "b": "copperhead",
+   "winner": "copperhead",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "chronos",
+   "b": "copperhead",
+   "winner": "chronos",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "chronos",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "chronos",
+   "b": "p1",
+   "winner": "p1",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "defender",
+   "winner": "claw-viper",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "claw-viper",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "hijinx",
+   "winner": "claw-viper",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "claw-viper",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "kraken",
+   "winner": "kraken",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "claw-viper",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "World Championship VII",
+   "method": "Split JD"
+  },
+  {
+   "a": "claw-viper",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "minotaur",
+   "winner": "claw-viper",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "Crowd"
+  },
+  {
+   "a": "claw-viper",
+   "b": "ominous",
+   "winner": "claw-viper",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "claw-viper",
+   "b": "overhaul",
+   "winner": "claw-viper",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "claw-viper",
+   "b": "ribbot",
+   "winner": "claw-viper",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "claw-viper",
+   "b": "shatter",
+   "winner": "claw-viper",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "cobalt",
+   "b": "deathroll",
+   "winner": "cobalt",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "duck",
+   "winner": "duck",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "emulsifier",
+   "winner": "cobalt",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "end-game",
+   "winner": "end-game",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "fusion",
+   "winner": "fusion",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "ghost-raptor",
+   "winner": "cobalt",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "gruff",
+   "winner": "cobalt",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "lucky",
+   "winner": "cobalt",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "cobalt",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "monsoon",
+   "winner": "monsoon",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "overhaul",
+   "winner": "cobalt",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "overhaul",
+   "winner": "cobalt",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "skorpios",
+   "winner": "cobalt",
+   "season": "World Championship VI",
+   "method": "Crowd"
+  },
+  {
+   "a": "cobalt",
+   "b": "subzero",
+   "winner": "cobalt",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "cobalt",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "cobalt",
+   "b": "whiplash",
+   "winner": "cobalt",
+   "season": "World Championship VI",
+   "method": "Double KO, JD"
+  },
+  {
+   "a": "cobalt",
+   "b": "yeti",
+   "winner": "cobalt",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "complete-control",
+   "b": "ghost-raptor",
+   "winner": "ghost-raptor",
+   "season": "World Championship I",
+   "method": "JD"
+  },
+  {
+   "a": "complete-control",
+   "b": "hazard",
+   "winner": "hazard",
+   "season": "Season 4.0",
+   "method": null
+  },
+  {
+   "a": "complete-control",
+   "b": "warhead",
+   "winner": "warhead",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "end-game",
+   "winner": "copperhead",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "fusion",
+   "winner": "copperhead",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "gigabyte",
+   "winner": "copperhead",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "gruff",
+   "winner": "copperhead",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "jackpot",
+   "winner": "copperhead",
+   "season": "Pro League",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "kraken",
+   "winner": "copperhead",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "lock-jaw",
+   "winner": "copperhead",
+   "season": "World Championship VI",
+   "method": "Split JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "lucky",
+   "winner": "copperhead",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "mammoth",
+   "winner": "mammoth",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "p1",
+   "winner": "copperhead",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "ripperoni",
+   "winner": "ripperoni",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "riptide",
+   "winner": "copperhead",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "rotator",
+   "winner": "copperhead",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "rusty",
+   "winner": "copperhead",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "triton",
+   "winner": "copperhead",
+   "season": "World Championship VII",
+   "method": "Double KO, JD"
+  },
+  {
+   "a": "copperhead",
+   "b": "war-hawk",
+   "winner": "copperhead",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "copperhead",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "deadblow",
+   "b": "hazard",
+   "winner": "hazard",
+   "season": "Season 1.0",
+   "method": null
+  },
+  {
+   "a": "deathroll",
+   "b": "end-game",
+   "winner": "deathroll",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "foxtrot",
+   "winner": "deathroll",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "golden-fury",
+   "winner": "golden-fury",
+   "season": "Pro League",
+   "method": "Split JD"
+  },
+  {
+   "a": "deathroll",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "deathroll",
+   "b": "mammoth",
+   "winner": "deathroll",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "minotaur",
+   "winner": "deathroll",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "monsoon",
+   "winner": "monsoon",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "quantum",
+   "winner": "deathroll",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "rotator",
+   "winner": "deathroll",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "deathroll",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "slammo",
+   "winner": "deathroll",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "switchback",
+   "winner": "deathroll",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "deathroll",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "deathroll",
+   "b": "yeti",
+   "winner": "deathroll",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "deep-six",
+   "b": "huge",
+   "winner": "deep-six",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "deep-six",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "deep-six",
+   "b": "pain-train",
+   "winner": "deep-six",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "deep-six",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "deep-six",
+   "b": "shatter",
+   "winner": "deep-six",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "deep-six",
+   "b": "smee",
+   "winner": "smee",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "defender",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "defender",
+   "b": "retrograde",
+   "winner": "defender",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "defender",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "defender",
+   "b": "riptide",
+   "winner": "defender",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "disarray",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "disarray",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "disarray",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "disarray",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "FaceOffs",
+   "method": "Crowd"
+  },
+  {
+   "a": "disarray",
+   "b": "malice",
+   "winner": "disarray",
+   "season": "FaceOffs",
+   "method": "Crowd"
+  },
+  {
+   "a": "disarray",
+   "b": "orbitron",
+   "winner": "orbitron",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "disarray",
+   "b": "orbitron",
+   "winner": "orbitron",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "doom",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "doom",
+   "b": "horizon",
+   "winner": "doom",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "Crowd"
+  },
+  {
+   "a": "doom",
+   "b": "horizon",
+   "winner": "horizon",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "doom",
+   "b": "magnitude",
+   "winner": "magnitude",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "doom",
+   "b": "slammo",
+   "winner": "slammo",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "doom",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "doomba",
+   "b": "double-tap",
+   "winner": "double-tap",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "doomba",
+   "b": "dragon-king",
+   "winner": "dragon-king",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "doomba",
+   "b": "overhaul",
+   "winner": "doomba",
+   "season": "World Championship VII",
+   "method": "Split JD"
+  },
+  {
+   "a": "double-dutch",
+   "b": "gigabyte",
+   "winner": "gigabyte",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "double-jeopardy",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "double-tap",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "double-tap",
+   "b": "slammo",
+   "winner": "double-tap",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "dragon-king",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "dragon-slayer",
+   "b": "duck",
+   "winner": "dragon-slayer",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "dragon-slayer",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "dragon-slayer",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "duck",
+   "b": "end-game",
+   "winner": "end-game",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "duck",
+   "b": "gigabyte",
+   "winner": "duck",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "duck",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "duck",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "duck",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "duck",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "duck",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "duck",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "duck",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "emulsifier",
+   "b": "fusion",
+   "winner": "fusion",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "emulsifier",
+   "b": "malice",
+   "winner": "malice",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "emulsifier",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "end-game",
+   "b": "free-shipping",
+   "winner": "end-game",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "gigabyte",
+   "winner": "end-game",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "gruff",
+   "winner": "end-game",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "hydra",
+   "winner": "end-game",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "hypershock",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "hypershock",
+   "winner": "end-game",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "jackpot",
+   "winner": "end-game",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "lock-jaw",
+   "winner": "end-game",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "malice",
+   "winner": "malice",
+   "season": "Pro League",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "end-game",
+   "b": "perfect-phoenix",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "ribbot",
+   "winner": "end-game",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "ripperoni",
+   "winner": "ripperoni",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "rotator",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "end-game",
+   "b": "sawblaze",
+   "winner": "end-game",
+   "season": "Champions II",
+   "method": "Split JD"
+  },
+  {
+   "a": "end-game",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "end-game",
+   "b": "sawblaze",
+   "winner": "end-game",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "shatter",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "skorpios",
+   "winner": "end-game",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "tantrum",
+   "winner": "end-game",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "end-game",
+   "b": "tantrum",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "tantrum",
+   "winner": "end-game",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "end-game",
+   "b": "tombstone",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "whiplash",
+   "winner": "end-game",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "witch-doctor",
+   "winner": "end-game",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "end-game",
+   "b": "witch-doctor",
+   "winner": "end-game",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "falcon",
+   "b": "icewave",
+   "winner": "icewave",
+   "season": "BattleBots Cisco Party 2006",
+   "method": "JD"
+  },
+  {
+   "a": "falcon",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "falcon",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "NPC Charity Open 2004",
+   "method": null
+  },
+  {
+   "a": "falcon",
+   "b": "subzero",
+   "winner": "falcon",
+   "season": "NPC Charity Open 2004",
+   "method": null
+  },
+  {
+   "a": "falcon",
+   "b": "subzero",
+   "winner": "falcon",
+   "season": "R3: Rochester Robot Rampage 2005",
+   "method": null
+  },
+  {
+   "a": "falcon",
+   "b": "subzero",
+   "winner": "falcon",
+   "season": "R3: Rochester Robot Rampage 2005",
+   "method": null
+  },
+  {
+   "a": "foxtrot",
+   "b": "free-shipping",
+   "winner": "foxtrot",
+   "season": "World Championship IV",
+   "method": null
+  },
+  {
+   "a": "foxtrot",
+   "b": "mammoth",
+   "winner": "mammoth",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "gigabyte",
+   "winner": "free-shipping",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "gigabyte",
+   "winner": "free-shipping",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "hypershock",
+   "winner": "free-shipping",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "icewave",
+   "winner": "free-shipping",
+   "season": "Champions I",
+   "method": "Split JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "mammoth",
+   "winner": "free-shipping",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "texas-twister",
+   "winner": "free-shipping",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "free-shipping",
+   "b": "war-hawk",
+   "winner": "war-hawk",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "fusion",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "icewave",
+   "winner": "icewave",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "madcatter",
+   "winner": "madcatter",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "fusion",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VII",
+   "method": "Split JD"
+  },
+  {
+   "a": "gemini",
+   "b": "gruff",
+   "winner": "gruff",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "gemini",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "gemini",
+   "b": "mammoth",
+   "winner": "gemini",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "gemini",
+   "b": "sharko",
+   "winner": "sharko",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "gemini",
+   "b": "subzero",
+   "winner": "gemini",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "gemini",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "gemini",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "glitch",
+   "winner": "glitch",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "icewave",
+   "winner": "ghost-raptor",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "jackpot",
+   "winner": "jackpot",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "warrior-clan",
+   "winner": "ghost-raptor",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "ghost-raptor",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "huge",
+   "winner": "huge",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "gigabyte",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "gigabyte",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "jackpot",
+   "winner": "gigabyte",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "malice",
+   "winner": "gigabyte",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "minotaur",
+   "winner": "gigabyte",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "gigabyte",
+   "b": "smee",
+   "winner": "gigabyte",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "son-of-whyachi",
+   "winner": "gigabyte",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "starchild",
+   "winner": "gigabyte",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "gigabyte",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "gigabyte",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "triton",
+   "winner": "gigabyte",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "gigabyte",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "gruff",
+   "winner": "glitch",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "glitch",
+   "b": "hydra",
+   "winner": "glitch",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "kraken",
+   "winner": "glitch",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "retrograde",
+   "winner": "glitch",
+   "season": "Champions I",
+   "method": "Split JD"
+  },
+  {
+   "a": "glitch",
+   "b": "ripperoni",
+   "winner": "ripperoni",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "rotator",
+   "winner": "glitch",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "triton",
+   "winner": "triton",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "glitch",
+   "b": "uppercut",
+   "winner": "glitch",
+   "season": "Champions I",
+   "method": "Double KO, Split JD"
+  },
+  {
+   "a": "glitch",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "glitch",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "hypershock",
+   "winner": "gruff",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "kraken",
+   "winner": "gruff",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "gruff",
+   "b": "malice",
+   "winner": "malice",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "monsoon",
+   "winner": "monsoon",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "quantum",
+   "winner": "quantum",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "ripperoni",
+   "winner": "gruff",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "gruff",
+   "b": "slammo",
+   "winner": "gruff",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "gruff",
+   "b": "switchback",
+   "winner": "gruff",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "gruff",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "gruff",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "kraken",
+   "winner": "hijinx",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "hijinx",
+   "b": "malice",
+   "winner": "malice",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "mammoth",
+   "winner": "mammoth",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "ripperoni",
+   "winner": "ripperoni",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "hijinx",
+   "b": "slammo",
+   "winner": "hijinx",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "subzero",
+   "winner": "hijinx",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "switchback",
+   "winner": "switchback",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "hijinx",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "horizon",
+   "b": "monsoon",
+   "winner": "monsoon",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "horizon",
+   "b": "shatter",
+   "winner": "horizon",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "horizon",
+   "b": "shreddit-bro",
+   "winner": "shreddit-bro",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "horizon",
+   "b": "triton",
+   "winner": "triton",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "hydra",
+   "winner": "hydra",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "hypershock",
+   "winner": "huge",
+   "season": "Pro League",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "hypershock",
+   "winner": "huge",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "icewave",
+   "winner": "icewave",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "kraken",
+   "winner": "huge",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "madcatter",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "malice",
+   "winner": "malice",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "mammoth",
+   "winner": "mammoth",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "retrograde",
+   "winner": "huge",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "shatter",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "skorpios",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "starchild",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "subzero",
+   "winner": "huge",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "switchback",
+   "winner": "huge",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "huge",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship VI",
+   "method": "Double KO, JD"
+  },
+  {
+   "a": "huge",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "huge",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "huge",
+   "b": "witch-doctor",
+   "winner": "huge",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "hydra",
+   "b": "hypershock",
+   "winner": "hydra",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "hypershock",
+   "winner": "hydra",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "hypershock",
+   "winner": "hypershock",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "madcatter",
+   "winner": "hydra",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "petunia",
+   "winner": "hydra",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "ribbot",
+   "winner": "hydra",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "rotator",
+   "winner": "hydra",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "rusty",
+   "winner": "hydra",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "sawblaze",
+   "winner": "hydra",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "hydra",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "Split JD"
+  },
+  {
+   "a": "hydra",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "uppercut",
+   "winner": "hydra",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "hydra",
+   "b": "war-hawk",
+   "winner": "hydra",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "hydra",
+   "b": "whiplash",
+   "winner": "hydra",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hydra",
+   "b": "witch-doctor",
+   "winner": "hydra",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "icewave",
+   "winner": "icewave",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "lock-jaw",
+   "winner": "hypershock",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "lucky",
+   "winner": "hypershock",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "madcatter",
+   "winner": "hypershock",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "magnitude",
+   "winner": "hypershock",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "magnitude",
+   "winner": "hypershock",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "mammoth",
+   "winner": "hypershock",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "mohawk",
+   "winner": "hypershock",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "monsoon",
+   "winner": "hypershock",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "orbitron",
+   "winner": "hypershock",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "p1",
+   "winner": "p1",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "poison-arrow",
+   "winner": "poison-arrow",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "ripperoni",
+   "winner": "ripperoni",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "Double KO, JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "skorpios",
+   "winner": "hypershock",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "slammo",
+   "winner": "hypershock",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "starchild",
+   "winner": "hypershock",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "hypershock",
+   "b": "tombstone",
+   "winner": "hypershock",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "tombstone",
+   "winner": "hypershock",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "valkyrie",
+   "winner": "hypershock",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "valkyrie",
+   "winner": "hypershock",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "warrior-clan",
+   "winner": "hypershock",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "whiplash",
+   "winner": "hypershock",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "hypershock",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "hypothermia",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "hypothermia",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "hypothermia",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "icewave",
+   "b": "nightmare",
+   "winner": "nightmare",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "icewave",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "icewave",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "icewave",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "icewave",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "BattleBots Cisco Party 2006",
+   "method": "KO"
+  },
+  {
+   "a": "icewave",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "JavaOne 2007",
+   "method": null
+  },
+  {
+   "a": "icewave",
+   "b": "subzero",
+   "winner": "icewave",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "icewave",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "icewave",
+   "b": "yeti",
+   "winner": "icewave",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "lock-jaw",
+   "winner": "jackpot",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "lucky",
+   "winner": "jackpot",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "jackpot",
+   "b": "lucky",
+   "winner": "jackpot",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "magnitude",
+   "winner": "magnitude",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "malice",
+   "winner": "jackpot",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "malice",
+   "winner": "jackpot",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "malice",
+   "winner": "malice",
+   "season": "re:MARS 2022",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "orbitron",
+   "winner": "orbitron",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "ribbot",
+   "winner": "jackpot",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "jackpot",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "subzero",
+   "winner": "jackpot",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "tombstone",
+   "winner": "jackpot",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "jackpot",
+   "b": "whiplash",
+   "winner": "jackpot",
+   "season": "Champions II",
+   "method": "Split JD"
+  },
+  {
+   "a": "jackpot",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "killerhurtz",
+   "b": "mauler",
+   "winner": "killerhurtz",
+   "season": "Season 1.0",
+   "method": null
+  },
+  {
+   "a": "killerhurtz",
+   "b": "nightmare",
+   "winner": "killerhurtz",
+   "season": "Long Beach 1999",
+   "method": null
+  },
+  {
+   "a": "killerhurtz",
+   "b": "vlad-the-impaler",
+   "winner": "killerhurtz",
+   "season": "Long Beach 1999",
+   "method": null
+  },
+  {
+   "a": "kraken",
+   "b": "lock-jaw",
+   "winner": "lock-jaw",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "kraken",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "lucky",
+   "winner": "lucky",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "mammoth",
+   "winner": "mammoth",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "red-devil",
+   "winner": "kraken",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "ribbot",
+   "winner": "kraken",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "rusty",
+   "winner": "rusty",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "shatter",
+   "winner": "kraken",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "kraken",
+   "b": "smee",
+   "winner": "kraken",
+   "season": "Bounty Hunters",
+   "method": "Split JD"
+  },
+  {
+   "a": "kraken",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "kraken",
+   "b": "switchback",
+   "winner": "switchback",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "wan-hoo",
+   "winner": "wan-hoo",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "kraken",
+   "b": "witch-doctor",
+   "winner": "kraken",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "lucky",
+   "winner": "lock-jaw",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "madcatter",
+   "winner": "lock-jaw",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "malice",
+   "winner": "lock-jaw",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "overhaul",
+   "winner": "lock-jaw",
+   "season": "World Championship I",
+   "method": "Split JD"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "overhaul",
+   "winner": "overhaul",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "quantum",
+   "winner": "lock-jaw",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "skorpios",
+   "winner": "lock-jaw",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "son-of-whyachi",
+   "winner": "lock-jaw",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "valkyrie",
+   "winner": "lock-jaw",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "re:MARS 2019",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "lock-jaw",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "lucky",
+   "b": "malice",
+   "winner": "malice",
+   "season": "FaceOffs",
+   "method": "Crowd"
+  },
+  {
+   "a": "lucky",
+   "b": "mammoth",
+   "winner": "lucky",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "overhaul",
+   "winner": "lucky",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "lucky",
+   "b": "p1",
+   "winner": "lucky",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "shreddit-bro",
+   "winner": "lucky",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "lucky",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "switchback",
+   "winner": "switchback",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship IV",
+   "method": "Double KO, JD"
+  },
+  {
+   "a": "lucky",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "triton",
+   "winner": "lucky",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "lucky",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "malice",
+   "winner": "madcatter",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "ribbot",
+   "winner": "madcatter",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "madcatter",
+   "b": "riptide",
+   "winner": "riptide",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "rotator",
+   "winner": "rotator",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "FaceOffs",
+   "method": "Crowd"
+  },
+  {
+   "a": "madcatter",
+   "b": "tombstone",
+   "winner": "madcatter",
+   "season": "Pro League",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "whiplash",
+   "winner": "madcatter",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "yeti",
+   "winner": "madcatter",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "magnitude",
+   "b": "orbitron",
+   "winner": "orbitron",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "magnitude",
+   "b": "terrortops",
+   "winner": "magnitude",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "magnitude",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "malice",
+   "b": "minotaur",
+   "winner": "minotaur",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "malice",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "malice",
+   "b": "shatter",
+   "winner": "malice",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "malice",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "malice",
+   "b": "slammo",
+   "winner": "malice",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "malice",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "malice",
+   "b": "switchback",
+   "winner": "malice",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "malice",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "malice",
+   "b": "valkyrie",
+   "winner": "malice",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "malice",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "mammoth",
+   "b": "nightmare",
+   "winner": "mammoth",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "mammoth",
+   "b": "retrograde",
+   "winner": "retrograde",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "mammoth",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "mammoth",
+   "b": "smee",
+   "winner": "smee",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "mammoth",
+   "b": "starchild",
+   "winner": "mammoth",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "mammoth",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "mammoth",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship VI",
+   "method": "Double KO, JD"
+  },
+  {
+   "a": "mammoth",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "mammoth",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "mammoth",
+   "b": "wan-hoo",
+   "winner": "wan-hoo",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "mammoth",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "manta",
+   "b": "rusty",
+   "winner": "manta",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "manta",
+   "b": "skorpios",
+   "winner": "manta",
+   "season": "Pro League",
+   "method": "KO"
+  },
+  {
+   "a": "manta",
+   "b": "triton",
+   "winner": "manta",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "manta",
+   "b": "triton",
+   "winner": "manta",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "KO"
+  },
+  {
+   "a": "mauler",
+   "b": "nightmare",
+   "winner": "mauler",
+   "season": "Season 1.0",
+   "method": null
+  },
+  {
+   "a": "minion",
+   "b": "toro",
+   "winner": "minion",
+   "season": "Season 3.0",
+   "method": null
+  },
+  {
+   "a": "minotaur",
+   "b": "monsoon",
+   "winner": "minotaur",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "minotaur",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "shatter",
+   "winner": "minotaur",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "subzero",
+   "winner": "minotaur",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "tantrum",
+   "winner": "minotaur",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "warhead",
+   "winner": "minotaur",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "minotaur",
+   "b": "witch-doctor",
+   "winner": "minotaur",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "minotaur",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "minotaur",
+   "b": "witch-doctor",
+   "winner": "minotaur",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "mohawk",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "monsoon",
+   "b": "petunia",
+   "winner": "monsoon",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "monsoon",
+   "b": "red-devil",
+   "winner": "monsoon",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "monsoon",
+   "b": "ripperoni",
+   "winner": "ripperoni",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "monsoon",
+   "b": "sawblaze",
+   "winner": "monsoon",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "monsoon",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "monsoon",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "monsoon",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "monsoon",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "nightmare",
+   "b": "son-of-whyachi",
+   "winner": "son-of-whyachi",
+   "season": "Season 3.0",
+   "method": "KO"
+  },
+  {
+   "a": "nightmare",
+   "b": "stinger-the-killer-bee",
+   "winner": "stinger-the-killer-bee",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "nightmare",
+   "b": "warhead",
+   "winner": "warhead",
+   "season": "Season 5.0",
+   "method": null
+  },
+  {
+   "a": "nightmare",
+   "b": "warrior-clan",
+   "winner": "warrior-clan",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "ominous",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "ominous",
+   "b": "shreddit-bro",
+   "winner": "ominous",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "ominous",
+   "b": "switchback",
+   "winner": "switchback",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "ominous",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "orbitron",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "orbitron",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "orbitron",
+   "b": "valkyrie",
+   "winner": "orbitron",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "overdrive",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "overhaul",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "overhaul",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "overhaul",
+   "b": "shreddit-bro",
+   "winner": "shreddit-bro",
+   "season": "World Championship VII",
+   "method": "Split JD"
+  },
+  {
+   "a": "overhaul",
+   "b": "starchild",
+   "winner": "overhaul",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "overhaul",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "overhaul",
+   "b": "war-hawk",
+   "winner": "war-hawk",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "overhaul",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "overkill",
+   "b": "vlad-the-impaler",
+   "winner": "vlad-the-impaler",
+   "season": "Season 1.0",
+   "method": null
+  },
+  {
+   "a": "overkill",
+   "b": "warhead",
+   "winner": "overkill",
+   "season": "Season 5.0",
+   "method": null
+  },
+  {
+   "a": "p1",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "p1",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "p1",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "Bounty Hunters",
+   "method": "JD"
+  },
+  {
+   "a": "p1",
+   "b": "smee",
+   "winner": "p1",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "p1",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "p1",
+   "b": "valkyrie",
+   "winner": "p1",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "pain-train",
+   "b": "shatter",
+   "winner": "shatter",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "pain-train",
+   "b": "slammo",
+   "winner": "slammo",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "pain-train",
+   "b": "smee",
+   "winner": "pain-train",
+   "season": "World Championship V",
+   "method": "Split JD"
+  },
+  {
+   "a": "pain-train",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "pain-train",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "perfect-phoenix",
+   "b": "skorpios",
+   "winner": "skorpios",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "perfect-phoenix",
+   "b": "subzero",
+   "winner": "perfect-phoenix",
+   "season": "Champions I",
+   "method": "JD"
+  },
+  {
+   "a": "petunia",
+   "b": "rotator",
+   "winner": "petunia",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "petunia",
+   "b": "subzero",
+   "winner": "petunia",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "petunia",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "petunia",
+   "b": "war-hawk",
+   "winner": "war-hawk",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "petunia",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "poison-arrow",
+   "b": "son-of-whyachi",
+   "winner": "poison-arrow",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "quantum",
+   "b": "ribbot",
+   "winner": "ribbot",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "quantum",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "quantum",
+   "b": "valkyrie",
+   "winner": "quantum",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "red-devil",
+   "b": "subzero",
+   "winner": "red-devil",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "red-devil",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "red-devil",
+   "b": "witch-doctor",
+   "winner": "red-devil",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "ribbot",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "ribbot",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "JD"
+  },
+  {
+   "a": "ribbot",
+   "b": "sharko",
+   "winner": "ribbot",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "ribbot",
+   "b": "skorpios",
+   "winner": "ribbot",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "ribbot",
+   "b": "uppercut",
+   "winner": "ribbot",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "ribbot",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "ribbot",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "ripperoni",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "riptide",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "riptide",
+   "b": "shatter",
+   "winner": "riptide",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "riptide",
+   "b": "shatter",
+   "winner": "riptide",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "riptide",
+   "b": "uppercut",
+   "winner": "riptide",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "rotator",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "rotator",
+   "b": "skorpios",
+   "winner": "rotator",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "rotator",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "rotator",
+   "b": "terrortops",
+   "winner": "rotator",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "rotator",
+   "b": "tombstone",
+   "winner": "rotator",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "rotator",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "rotator",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "rotator",
+   "b": "warrior-clan",
+   "winner": "rotator",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "rotator",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "rusty",
+   "b": "sawblaze",
+   "winner": "sawblaze",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "rusty",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "shreddit-bro",
+   "winner": "sawblaze",
+   "season": "Champions II",
+   "method": "JD"
+  },
+  {
+   "a": "sawblaze",
+   "b": "skorpios",
+   "winner": "sawblaze",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "son-of-whyachi",
+   "winner": "sawblaze",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "sawblaze",
+   "b": "tantrum",
+   "winner": "sawblaze",
+   "season": "Champions II",
+   "method": "Split JD"
+  },
+  {
+   "a": "sawblaze",
+   "b": "tantrum",
+   "winner": "tantrum",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "sawblaze",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "whiplash",
+   "winner": "sawblaze",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "witch-doctor",
+   "winner": "sawblaze",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "sawblaze",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "sharko",
+   "b": "smee",
+   "winner": "smee",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "sharko",
+   "b": "warhead",
+   "winner": "warhead",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "shatter",
+   "b": "subzero",
+   "winner": "shatter",
+   "season": "World Championship VI",
+   "method": "JD"
+  },
+  {
+   "a": "shatter",
+   "b": "wan-hoo",
+   "winner": "shatter",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "shatter",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "shreddit-bro",
+   "b": "skorpios",
+   "winner": "shreddit-bro",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "shreddit-bro",
+   "b": "switchback",
+   "winner": "shreddit-bro",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "shreddit-bro",
+   "b": "valkyrie",
+   "winner": "shreddit-bro",
+   "season": "Champions II",
+   "method": "KO"
+  },
+  {
+   "a": "skorpios",
+   "b": "slammo",
+   "winner": "skorpios",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "Crowd"
+  },
+  {
+   "a": "skorpios",
+   "b": "slammo",
+   "winner": "skorpios",
+   "season": "Destruct-A-Thon/Proving Ground",
+   "method": "Crowd"
+  },
+  {
+   "a": "skorpios",
+   "b": "tantrum",
+   "winner": "skorpios",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "skorpios",
+   "b": "tantrum",
+   "winner": null,
+   "season": "World Championship V",
+   "method": null
+  },
+  {
+   "a": "skorpios",
+   "b": "tombstone",
+   "winner": "skorpios",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "skorpios",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "skorpios",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship VI",
+   "method": "Split JD"
+  },
+  {
+   "a": "skorpios",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "skorpios",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship VI",
+   "method": "Split JD"
+  },
+  {
+   "a": "slammo",
+   "b": "switchback",
+   "winner": "switchback",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "slammo",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "slammo",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "smee",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "son-of-whyachi",
+   "b": "texas-twister",
+   "winner": "son-of-whyachi",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "son-of-whyachi",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "stinger-the-killer-bee",
+   "b": "subzero",
+   "winner": "subzero",
+   "season": "Pro Championship 2009",
+   "method": "JD"
+  },
+  {
+   "a": "stinger-the-killer-bee",
+   "b": "warhead",
+   "winner": "stinger-the-killer-bee",
+   "season": "World Championship I",
+   "method": "JD"
+  },
+  {
+   "a": "subzero",
+   "b": "valkyrie",
+   "winner": "subzero",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "subzero",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "subzero",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "Bounty Hunters",
+   "method": "KO"
+  },
+  {
+   "a": "switchback",
+   "b": "terrortops",
+   "winner": "terrortops",
+   "season": "FaceOffs",
+   "method": "KO"
+  },
+  {
+   "a": "tantrum",
+   "b": "tombstone",
+   "winner": "tantrum",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "tantrum",
+   "b": "tombstone",
+   "winner": "tombstone",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "tantrum",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "World Championship V",
+   "method": "KO"
+  },
+  {
+   "a": "tantrum",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "tantrum",
+   "b": "witch-doctor",
+   "winner": "tantrum",
+   "season": "World Championship VI",
+   "method": "KO"
+  },
+  {
+   "a": "tantrum",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "texas-twister",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "the-obwalden-overlord",
+   "b": "warhead",
+   "winner": "warhead",
+   "season": "World Championship II",
+   "method": "KO"
+  },
+  {
+   "a": "tombstone",
+   "b": "valkyrie",
+   "winner": "valkyrie",
+   "season": "FaceOffs",
+   "method": "Crowd"
+  },
+  {
+   "a": "tombstone",
+   "b": "whiplash",
+   "winner": "tombstone",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "tombstone",
+   "b": "whiplash",
+   "winner": "tombstone",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "tombstone",
+   "b": "witch-doctor",
+   "winner": "tombstone",
+   "season": "World Championship I",
+   "method": "KO"
+  },
+  {
+   "a": "tombstone",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "re:MARS 2019",
+   "method": "KO"
+  },
+  {
+   "a": "tombstone",
+   "b": "yeti",
+   "winner": "tombstone",
+   "season": "World Championship II",
+   "method": "JD"
+  },
+  {
+   "a": "valkyrie",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "valkyrie",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship V",
+   "method": "JD"
+  },
+  {
+   "a": "wan-hoo",
+   "b": "war-hawk",
+   "winner": "wan-hoo",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "warhead",
+   "b": "warrior-clan",
+   "winner": "warhead",
+   "season": "World Championship III",
+   "method": "Split JD"
+  },
+  {
+   "a": "warhead",
+   "b": "whiplash",
+   "winner": "whiplash",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "whiplash",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "Champions I",
+   "method": "KO"
+  },
+  {
+   "a": "whiplash",
+   "b": "witch-doctor",
+   "winner": "witch-doctor",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "whiplash",
+   "b": "yeti",
+   "winner": "whiplash",
+   "season": "World Championship III",
+   "method": "JD"
+  },
+  {
+   "a": "witch-doctor",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship III",
+   "method": "KO"
+  }
+ ]
+}

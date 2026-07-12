@@ -1,0 +1,2160 @@
+{
+  "collected_at": "2026-07-12",
+  "sources": [
+    "https://battlebots.fandom.com/wiki/BattleBots_Pro_League",
+    "https://battlebots.fandom.com/api.php (MediaWiki API, per-robot 'Bot' infoboxes and per-team 'Team' infoboxes)",
+    "https://battlebots.com/proleague/",
+    "https://battlebots.com/robots/",
+    "https://www.businesswire.com/news/home/20260226772620/en/ (Pro League greenlight announcement, Feb 26 2026)"
+  ],
+  "notes": "Active roster = the 24 competitors in Groups A-F of the 2026 'BattleBots Pro League powered by Bright Data' (premiered July 2, 2026 on YouTube after a delay from the announced June 25 date), as listed on the BattleBots fan wiki Pro League page; battlebots.com/proleague confirms 24 robots but publishes no roster table. Claw Viper, Hydra, Deep-Sea Shark, Whiplash and SawBlaze were invited/announced but withdrew or declined and were replaced by Disarray, Switchback, Ribbot and Bloodsport; Calypso, Banshee and Nemesis are 2026 alternates (active=false). Hometowns, teams, weapons, seasons and captains come from battlebots.fandom.com infoboxes; where a team relocated, the first-listed (original) hometown is used. Season labels: WC I-VII are the 2015-2023 reboot seasons; Comedy Central seasons 1.0-5.0 are 2000-2002; spinoffs (Bounty Hunters, Champions I/II, Proving Ground, FaceOffs) listed where the wiki records them. Historical coverage is a curated ~100-bot subset of well-known competitors, not the complete all-time field.",
+  "teams": [
+    {
+      "bot": "Bloodsport",
+      "team": "Bots 'n' Stuff Robotics",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Horizontal spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Justin Marple"
+    },
+    {
+      "bot": "Cobalt",
+      "team": "Robotic Death Company",
+      "city": "Oceanside",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "John Mladenik"
+    },
+    {
+      "bot": "Copperhead",
+      "team": "Team Copperhead",
+      "city": "Denver",
+      "region": "Colorado",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Kyle Kirkpatrick"
+    },
+    {
+      "bot": "DeathRoll",
+      "team": "Team DeathRoll",
+      "city": "Brisbane",
+      "region": null,
+      "country": "Australia",
+      "weapon": "Vertical spinning disk",
+      "seasons": [
+        "2016 (WC II)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Steven Martin"
+    },
+    {
+      "bot": "Disarray",
+      "team": "Wildcat Robotics",
+      "city": "Tucson",
+      "region": "Arizona",
+      "country": "USA",
+      "weapon": "Vertical drisk spinner",
+      "seasons": [
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Al Hurworth"
+    },
+    {
+      "bot": "End Game",
+      "team": "Team End Game",
+      "city": "Auckland",
+      "region": "Auckland",
+      "country": "New Zealand",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Jack Barker, Nick Mabey"
+    },
+    {
+      "bot": "Golden Fury",
+      "team": "PY Roboticzs",
+      "city": "Chennai",
+      "region": null,
+      "country": "India",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Logeshwaran Balasundaram"
+    },
+    {
+      "bot": "HUGE",
+      "team": "Team HUGE",
+      "city": "South Windsor",
+      "region": "Connecticut",
+      "country": "USA",
+      "weapon": "Vertical bar spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Jonathan Schultz"
+    },
+    {
+      "bot": "HyperShock",
+      "team": "Team HyperShock",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Will Bales"
+    },
+    {
+      "bot": "JackPot",
+      "team": "Vegas Combat Robotics",
+      "city": "Las Vegas",
+      "region": "Nevada",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Jeff Waters"
+    },
+    {
+      "bot": "MadCatter",
+      "team": "Team Bad Kitty",
+      "city": "Pomona",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Martin Mason"
+    },
+    {
+      "bot": "Magnitude",
+      "team": "Team Wazio",
+      "city": "Parker",
+      "region": "Colorado",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Chad New"
+    },
+    {
+      "bot": "Malice",
+      "team": "Team Malice",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal drum spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Adrian \"Bunny\" Liaw"
+    },
+    {
+      "bot": "Manta",
+      "team": "Team Tanto Robotics",
+      "city": "Tempe",
+      "region": "Arizona",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Nick Dobrikov"
+    },
+    {
+      "bot": "Minotaur",
+      "team": "Team RioBotz",
+      "city": "Rio de Janeiro",
+      "region": "Rio de Janeiro",
+      "country": "Brazil",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Marco Meggiolaro"
+    },
+    {
+      "bot": "Orbitron",
+      "team": "Team Orbitron",
+      "city": "Waterloo",
+      "region": "Ontario",
+      "country": "Canada",
+      "weapon": "Twin vertical spinners",
+      "seasons": [
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Steven Szczeszynski"
+    },
+    {
+      "bot": "Ribbot",
+      "team": "Team Ribbot",
+      "city": "Somerville",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Nick Sorensen"
+    },
+    {
+      "bot": "Skorpios",
+      "team": "Bot Bash Party Crew",
+      "city": "Moraga",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Articulating overhead saw",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Zach Lytle, Diana Tarlson"
+    },
+    {
+      "bot": "Switchback",
+      "team": "Team Midnight Invention",
+      "city": "Dallas",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Articulating eggbeater",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": true,
+      "builder": "Greg Needel"
+    },
+    {
+      "bot": "Terrortops",
+      "team": "Team Terrortops",
+      "city": "Long Beach",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Ben Burton, Sophia Musk-Burton"
+    },
+    {
+      "bot": "The Twins",
+      "team": "Seems Reasonable Robotics",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "2x Vertical spinners",
+      "seasons": [
+        "Proving Ground (2023)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Aren Hill"
+    },
+    {
+      "bot": "Tombstone",
+      "team": "Hardcore Robotics",
+      "city": "Folsom",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Ray Billings"
+    },
+    {
+      "bot": "Valkyrie",
+      "team": "Team VALKYRIE",
+      "city": "Berkeley",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Undercutter spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Leanne Cushing"
+    },
+    {
+      "bot": "Witch Doctor",
+      "team": "Team Witch Doctor",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Andrea Gellatly, Mike Gellatly"
+    },
+    {
+      "bot": "ATOM 94",
+      "team": "AutoVoltz Robotics",
+      "city": null,
+      "region": "Gujarat",
+      "country": "India",
+      "weapon": "Vertical drisk spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Yash Deshmukh"
+    },
+    {
+      "bot": "Axe Backwards",
+      "team": "Team Axe Backwards",
+      "city": "Vero Beach",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Full body drum spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Kurt Durjan"
+    },
+    {
+      "bot": "Backlash",
+      "team": "Team Nightmare",
+      "city": "Rohnert Park",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Jim Smentowski"
+    },
+    {
+      "bot": "Bale Spear",
+      "team": "Forge & Farm Combat Robots",
+      "city": "Salem",
+      "region": "New Jersey",
+      "country": "USA",
+      "weapon": "Pneumatic spear",
+      "seasons": [
+        "2018 (WC III)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Earl Pancoast III"
+    },
+    {
+      "bot": "Banshee",
+      "team": "Team Small Robots",
+      "city": "Phoenix",
+      "region": "Arizona",
+      "country": "USA",
+      "weapon": "Pneumatic flipper",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026, alternate)"
+      ],
+      "active": false,
+      "builder": "David Small"
+    },
+    {
+      "bot": "Beta",
+      "team": "Team Hurtz",
+      "city": null,
+      "region": "Oxfordshire",
+      "country": "UK",
+      "weapon": "Hammer",
+      "seasons": [
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "John Reid"
+    },
+    {
+      "bot": "Big Dill",
+      "team": "Team Food Fight",
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "2020 (WC V)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Emmanuel Carrillo"
+    },
+    {
+      "bot": "BioHazard",
+      "team": "Team BioHazard",
+      "city": "Belmont",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Four-bar lifting arm",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Carlo Bertocchini"
+    },
+    {
+      "bot": "Bite Force",
+      "team": "Aptyx Designs",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Grappler",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)"
+      ],
+      "active": false,
+      "builder": "Paul Ventimiglia"
+    },
+    {
+      "bot": "Black Dragon",
+      "team": "Team Uai!rrior",
+      "city": "Itajubá",
+      "region": null,
+      "country": "Brazil",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Julio Cortez"
+    },
+    {
+      "bot": "Blacksmith",
+      "team": "Team Half Fast Astronaut",
+      "city": "Edison",
+      "region": "New Jersey",
+      "country": "USA",
+      "weapon": "Flamethrower hammer",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Al Kindle"
+    },
+    {
+      "bot": "Blade",
+      "team": "Team ORBY",
+      "city": "Seoul",
+      "region": null,
+      "country": "South Korea",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Cheog-Gyu Hwang"
+    },
+    {
+      "bot": "Blip",
+      "team": "Seems Reasonable Robotics",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Flywheel flipper",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Aren Hill"
+    },
+    {
+      "bot": "Bombshell",
+      "team": "Chaos Corps",
+      "city": "Atlanta",
+      "region": "Georgia",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Randy Farmer"
+    },
+    {
+      "bot": "Bronco",
+      "team": "Inertia Labs",
+      "city": "Sausalito",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Flipping arm",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Alexander Rose, Reason Bradley"
+    },
+    {
+      "bot": "Brutus",
+      "team": "Team Brutus",
+      "city": "Somerville",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Adam Bercu"
+    },
+    {
+      "bot": "Calypso",
+      "team": "Team Horizon",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Undercutter spinner",
+      "seasons": [
+        "FaceOffs (2024)",
+        "Pro League (2026, alternate)"
+      ],
+      "active": false,
+      "builder": "Joshua Kong"
+    },
+    {
+      "bot": "Captain Shrederator",
+      "team": "Team LOGICOM",
+      "city": "Ormond Beach",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Shell spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Brian Nave"
+    },
+    {
+      "bot": "Chomp",
+      "team": "The Machine Corps",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Flamethrower",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Zoe Stephenson"
+    },
+    {
+      "bot": "Chronos",
+      "team": "Team Chronos",
+      "city": "Gardena",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Ring spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jerry Serafin"
+    },
+    {
+      "bot": "Claw Viper",
+      "team": "Team Bad Ideas",
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026, withdrew)"
+      ],
+      "active": false,
+      "builder": "Kevin Milczewski"
+    },
+    {
+      "bot": "Complete Control",
+      "team": "Mission Destruction",
+      "city": "San Francisco",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Derek Young"
+    },
+    {
+      "bot": "Deadblow",
+      "team": "Team Deadblow",
+      "city": "Oakland",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Spiked sledgehammer",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Grant Imahara"
+    },
+    {
+      "bot": "Deep Six",
+      "team": "Team Overboard",
+      "city": "Norfolk",
+      "region": "Virginia",
+      "country": "USA",
+      "weapon": "Vertical bar spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Dustin Esswein"
+    },
+    {
+      "bot": "Deep-Sea Shark",
+      "team": "Ice Orange",
+      "city": null,
+      "region": null,
+      "country": "China",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "Pro League (2026, withdrew)"
+      ],
+      "active": false,
+      "builder": null
+    },
+    {
+      "bot": "Defender",
+      "team": "Team Fast Electric Robots",
+      "city": "Thousand Oaks",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter/Grappler",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Jason Vasquez"
+    },
+    {
+      "bot": "Diesector",
+      "team": "Mutant Robots",
+      "city": "San Diego",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Hydraulic lifting",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Donald Hutson"
+    },
+    {
+      "bot": "Double Dutch",
+      "team": "Iron LungFish Robotics",
+      "city": "Wadsworth",
+      "region": "Illinois",
+      "country": "USA",
+      "weapon": "Twin horizontal bar spinners",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Kevin Lung"
+    },
+    {
+      "bot": "Double Jeopardy",
+      "team": "Team Double Trouble",
+      "city": "Irvine",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Cannon",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Evan Woolley, Bryce Woolley"
+    },
+    {
+      "bot": "Dragon Slayer",
+      "team": "Wild Side Robotics",
+      "city": "Denton",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jordan Neal"
+    },
+    {
+      "bot": "DUCK!",
+      "team": "Team Black and Blue",
+      "city": "Palo Alto",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Hal Rucker"
+    },
+    {
+      "bot": "Emulsifier",
+      "team": "Bots FC",
+      "city": "Columbus",
+      "region": "Ohio",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Matt Bores"
+    },
+    {
+      "bot": "Falcon",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Twin drum spinners",
+      "seasons": [
+        "2015 (WC I)",
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Clint Ewert"
+    },
+    {
+      "bot": "Foxtrot",
+      "team": "Team Danby",
+      "city": "Raleigh",
+      "region": "North Carolina",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Craig Danby"
+    },
+    {
+      "bot": "Free Shipping",
+      "team": "Team Special Delivery",
+      "city": "San Leandro",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Gary Gin"
+    },
+    {
+      "bot": "Fusion",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Reese Ewert"
+    },
+    {
+      "bot": "Gemini",
+      "team": "Team Gemini",
+      "city": "Joshua Tree",
+      "region": "California",
+      "country": "USA",
+      "weapon": "2x Horizontal spinners",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Ace Shelander"
+    },
+    {
+      "bot": "Ghost Raptor",
+      "team": "Team Raptor",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Articulated horizontal bar spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Chuck Pitzer"
+    },
+    {
+      "bot": "Gigabyte",
+      "team": "Robotic Death Company",
+      "city": "Oceanside",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Shell spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)"
+      ],
+      "active": false,
+      "builder": "Derek Tran, Camden Wallraff"
+    },
+    {
+      "bot": "Glitch",
+      "team": "Combat Robotics at Berkeley",
+      "city": "Roseville",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Kyle Miller"
+    },
+    {
+      "bot": "Gruff",
+      "team": "Team Gruff",
+      "city": "Palm Harbor",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Sam McAmis"
+    },
+    {
+      "bot": "Hazard",
+      "team": "Team Hazard",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Overhead spinning blade",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Tony Buchignani"
+    },
+    {
+      "bot": "HiJinx",
+      "team": "Offbeat Robotics",
+      "city": "Oakland",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Jen Herchenroeder"
+    },
+    {
+      "bot": "Horizon",
+      "team": "Team Horizon",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Continuous horizontal",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)"
+      ],
+      "active": false,
+      "builder": "Joshua Kong"
+    },
+    {
+      "bot": "Hydra",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Hydraulic flipper",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jake Ewert"
+    },
+    {
+      "bot": "Hypothermia",
+      "team": "Team Toad",
+      "city": "Liberty Hill",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Grabbers",
+      "seasons": [
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Michael \"Fuzzy\" Mauldin"
+    },
+    {
+      "bot": "Icewave",
+      "team": "Team Icewave",
+      "city": "Burlingame",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Marc DeVidts"
+    },
+    {
+      "bot": "KillerHurtz",
+      "team": "Team Hurtz",
+      "city": null,
+      "region": "Oxfordshire",
+      "country": "UK",
+      "weapon": "Pneumatic axe",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)"
+      ],
+      "active": false,
+      "builder": "John Reid"
+    },
+    {
+      "bot": "Kraken",
+      "team": "CE Robots",
+      "city": "Titusville",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Crusher",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Matt Spurk"
+    },
+    {
+      "bot": "Lock-Jaw",
+      "team": "Mutant Robots",
+      "city": "San Diego",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Grabbing jaws",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Donald Hutson"
+    },
+    {
+      "bot": "Lucky",
+      "team": "TKO Robotics",
+      "city": "Ottawa",
+      "region": null,
+      "country": "Canada",
+      "weapon": "Launcher",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Mark Demers"
+    },
+    {
+      "bot": "Lycan",
+      "team": "All Black Robotics",
+      "city": null,
+      "region": "Ontario",
+      "country": "Canada",
+      "weapon": "Lifter",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Ravi Baboolal"
+    },
+    {
+      "bot": "Mammoth",
+      "team": "Team Mammoth",
+      "city": "Baltimore",
+      "region": "Maryland",
+      "country": "USA",
+      "weapon": "Rotary lifting trunk",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Ricky Willems"
+    },
+    {
+      "bot": "Mauler",
+      "team": "South Bay RoboWarriors",
+      "city": "Portola Valley",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Spinning flail and chisels",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Charles Tilford"
+    },
+    {
+      "bot": "Minion",
+      "team": "Team Coolrobots",
+      "city": "Santa Monica",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lexan wedge",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Christian Carlberg"
+    },
+    {
+      "bot": "Mohawk",
+      "team": "Euclid Robotics",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Crusher",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Tom Bales"
+    },
+    {
+      "bot": "Monsoon",
+      "team": "Team Monsoon",
+      "city": "Coventry",
+      "region": null,
+      "country": "UK",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Tom Brewster"
+    },
+    {
+      "bot": "Nemesis",
+      "team": "USC Advanced Robotic Combat",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Hammer saw",
+      "seasons": [
+        "Proving Ground (2023)",
+        "Pro League (2026, alternate)"
+      ],
+      "active": false,
+      "builder": "David Le"
+    },
+    {
+      "bot": "Nightmare",
+      "team": "Team Nightmare",
+      "city": "Bradenton",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Vertical spinning disk",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Jim Smentowski"
+    },
+    {
+      "bot": "Ominous",
+      "team": "Team Ominous",
+      "city": "Tilburg",
+      "region": null,
+      "country": "Netherlands",
+      "weapon": "Drisk spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Tim Bouwens"
+    },
+    {
+      "bot": "OverDrive",
+      "team": "C2 Robotics",
+      "city": "San Luis Obispo",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Four-bar-lifter",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Christian Carlberg"
+    },
+    {
+      "bot": "Overhaul",
+      "team": "Equals Zero Robotics",
+      "city": "Atlanta",
+      "region": "Georgia",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Charles Guan"
+    },
+    {
+      "bot": "OverKill",
+      "team": "Team Coolrobots",
+      "city": "Santa Monica",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Overhead swinging knife",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Christian Carlberg"
+    },
+    {
+      "bot": "P1",
+      "team": "Aberrant Robotics",
+      "city": "Hudson",
+      "region": "New Hampshire",
+      "country": "USA",
+      "weapon": "Front-hinged lifter",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Brandon Zalinsky"
+    },
+    {
+      "bot": "Pain Train",
+      "team": "Team Shreddit",
+      "city": "Staten Island",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Evan Arias"
+    },
+    {
+      "bot": "Perfect Phoenix",
+      "team": "Team Doom Robotics",
+      "city": "Herndon",
+      "region": "Virginia",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Tyler Nguyen"
+    },
+    {
+      "bot": "Petunia",
+      "team": "Team P.C.P.",
+      "city": "Anna Paulowna",
+      "region": null,
+      "country": "Netherlands",
+      "weapon": "Crusher",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Mischa de Graaf"
+    },
+    {
+      "bot": "Poison Arrow",
+      "team": "Caustic Creations",
+      "city": "Houston",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Zach Goff"
+    },
+    {
+      "bot": "Quantum",
+      "team": "Team Robo Challenge",
+      "city": "Birmingham",
+      "region": null,
+      "country": "UK",
+      "weapon": "Crusher",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "James Cooper, Grant Cooper"
+    },
+    {
+      "bot": "Razer",
+      "team": "Team Razer",
+      "city": "Bournemouth",
+      "region": null,
+      "country": "UK",
+      "weapon": "Hydraulic crusher",
+      "seasons": [
+        "1999"
+      ],
+      "active": false,
+      "builder": "Ian Lewis"
+    },
+    {
+      "bot": "Red Devil",
+      "team": "Team Duct Tape",
+      "city": "Spanish Fork",
+      "region": "Utah",
+      "country": "USA",
+      "weapon": "Articulating saw",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2021-22 (WC VI)"
+      ],
+      "active": false,
+      "builder": "Jerome Miles, Ravi Baboolal"
+    },
+    {
+      "bot": "Retrograde",
+      "team": "Bots 'n' Stuff Robotics",
+      "city": "Venice",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Aaron Lucas"
+    },
+    {
+      "bot": "Ripperoni",
+      "team": "Omega Team",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Anna Zolnikov"
+    },
+    {
+      "bot": "Riptide",
+      "team": "Team Break32",
+      "city": "Tarzana",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Eggbeater",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Ethan Kurtz"
+    },
+    {
+      "bot": "Road Rash",
+      "team": "Danger 4",
+      "city": "Boston",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Twin circular saws",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Frederick Moore"
+    },
+    {
+      "bot": "Rotator",
+      "team": "Team Revolution",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Twin horizontal spinners",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Victor Soto"
+    },
+    {
+      "bot": "Rusty",
+      "team": "Team Iron Force",
+      "city": "Antioch",
+      "region": "Illinois",
+      "country": "USA",
+      "weapon": "Jackhammer",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Dave Eaton"
+    },
+    {
+      "bot": "SawBlaze",
+      "team": "Team SawBlaze",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Articulating overhead saw",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Jamison Go"
+    },
+    {
+      "bot": "Sharko",
+      "team": "Aquatic Machine Force",
+      "city": "Jacumba",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Thwacking tail",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Edward Robinson"
+    },
+    {
+      "bot": "Shatter!",
+      "team": "Bots FC",
+      "city": "Brooklyn",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Hammer",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Adam Wrigley"
+    },
+    {
+      "bot": "Shreddit Bro",
+      "team": "Team Shreddit",
+      "city": "Staten Island",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Evan Arias"
+    },
+    {
+      "bot": "Slammo!",
+      "team": "Team Danby",
+      "city": "Raleigh",
+      "region": "North Carolina",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Craig Danby"
+    },
+    {
+      "bot": "SMEE",
+      "team": "Team SMEEEEEEEEEEEEE",
+      "city": "New York",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Grappling body",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Joe Fabiani"
+    },
+    {
+      "bot": "Son of Whyachi",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Horizontal tri-bar spinner",
+      "seasons": [
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Terry Ewert, Luke Ewert"
+    },
+    {
+      "bot": "Starchild",
+      "team": "Omega Team",
+      "city": "Hudson",
+      "region": "New Hampshire",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Brandon Zalinsky"
+    },
+    {
+      "bot": "Stinger: The Killer Bee",
+      "team": "Team PlumbCrazy",
+      "city": "Sacramento",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Interchangeable lifters",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Matt Maxham"
+    },
+    {
+      "bot": "SubZero",
+      "team": "Team Hammertime",
+      "city": "Malvern",
+      "region": "Pennsylvania",
+      "country": "USA",
+      "weapon": "Pneumatic flipper",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Jerry Clarkin, Logan Davis"
+    },
+    {
+      "bot": "Tantrum",
+      "team": "Seems Reasonable Robotics",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Punching vertical spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Ginger Schmidt, Alex Grant"
+    },
+    {
+      "bot": "Texas Twister",
+      "team": "Team Toad",
+      "city": "Liberty Hill",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Horizontal spinner",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Michael \"Fuzzy\" Mauldin"
+    },
+    {
+      "bot": "The Obwalden Overlord",
+      "team": "Team Obwalden Overlord",
+      "city": "Divonne-les-Bains",
+      "region": "Auvergne-Rhone-Alpes",
+      "country": "France",
+      "weapon": "Articulating arms",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Rob Knight"
+    },
+    {
+      "bot": "Toro",
+      "team": "Inertia Labs",
+      "city": "Sausalito",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Pneumatic flipping arm",
+      "seasons": [
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Alexander Rose, Reason Bradley"
+    },
+    {
+      "bot": "Triton",
+      "team": "Team Overboard",
+      "city": "Las Vegas",
+      "region": "Nevada",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)"
+      ],
+      "active": false,
+      "builder": "Bradley Hanstad"
+    },
+    {
+      "bot": "Uppercut",
+      "team": "Team Uppercut",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Alex Hattori"
+    },
+    {
+      "bot": "Vlad the Impaler",
+      "team": "Team Vladmeisters",
+      "city": "Oakland",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Pneumatic lifting forks",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Gage Cauchois"
+    },
+    {
+      "bot": "Wan Hoo",
+      "team": "Team Gladiator",
+      "city": "Shanghai",
+      "region": null,
+      "country": "China",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Weidong Qi"
+    },
+    {
+      "bot": "WAR Hawk",
+      "team": "Western Allied Robotics",
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)"
+      ],
+      "active": false,
+      "builder": "Rob Farrow"
+    },
+    {
+      "bot": "Warhead",
+      "team": "Team Warhead",
+      "city": "Bournemouth",
+      "region": null,
+      "country": "UK",
+      "weapon": "Domed spinning disc",
+      "seasons": [
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Ian Lewis"
+    },
+    {
+      "bot": "Warrior Clan",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Flywheel powered flipper",
+      "seasons": [
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Clint Ewert"
+    },
+    {
+      "bot": "Whiplash",
+      "team": "Team Fast Electric Robots",
+      "city": "Thousand Oaks",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Matt Vasquez"
+    },
+    {
+      "bot": "Whyachi",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Horizontal tri-bar spinner",
+      "seasons": [
+        "Season 3.0 (2001)"
+      ],
+      "active": false,
+      "builder": "Terry Ewert, Jake Ewert"
+    },
+    {
+      "bot": "Yeti",
+      "team": "C2 Robotics",
+      "city": "San Luis Obispo",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2021-22 (WC VI)"
+      ],
+      "active": false,
+      "builder": "Greg Gibson, Christian Carlberg"
+    },
+    {
+      "bot": "Ziggo",
+      "team": "Team Ziggy",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Shell spinner",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Jonathan Ridder"
+    }
+  ]
+}

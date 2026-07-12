@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-07-12T12:43:40+00:00",
+  "source": "youtube-seed-scrape per matchup",
+  "videos": {
+    "atom-94|madcatter": {
+      "id": "MUo0nxhVNm4",
+      "title": "Mad Catter vs Atom 94 Season01 Ep01 Fight01 Bounty Hunters BattleBots",
+      "channel": "Combat Robotics",
+      "views": 2175,
+      "duration": "1:52"
+    },
+    "atom-94|tantrum": {
+      "id": "Uhgyma07vOM",
+      "title": "Battlebots Season 5: Episode 6: TANTRUM Vs ATOM#94",
+      "channel": "TXV800",
+      "views": 69170,
+      "duration": "1:25"
+    },
+    "axe-backwards|deep-six": {
+      "id": "NtqPIme34iw",
+      "title": "| Deep Six vs Axe Backwards | BattleBots 2019 Ep8 Special Exhibition Fight",
+      "channel": "The BattleBots Channel",
+      "views": 27852,
+      "duration": "1:57"
+    },
+    "axe-backwards|malice": {
+      "id": "GCkrZX1r4Rs",
+      "title": "Battlebots Season 5 Episode 1: AXE BACKWARDS VS MALICE",
+      "channel": "TXV800",
+      "views": 11260,
+      "duration": "1:23"
+    }
+  }
+}

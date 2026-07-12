@@ -1,0 +1,2476 @@
+{
+  "collected_at": "2026-07-12",
+  "sources": [
+    "https://battlebots.fandom.com/wiki/BattleBots_Pro_League",
+    "https://battlebots.fandom.com/api.php (MediaWiki API, per-robot 'Bot' infoboxes and per-team 'Team' infoboxes)",
+    "https://battlebots.com/proleague/",
+    "https://battlebots.com/robots/",
+    "https://www.businesswire.com/news/home/20260226772620/en/ (Pro League greenlight announcement, Feb 26 2026)",
+    "https://battlebots.com/world-championship-vii-robots/ (WC VII robot cards: rosters + team photos)",
+    "https://battlebots.com/robot/<slug>-wcvii/ (per-robot detail pages for DOOM, Doomba, Double Tap, Dragon King)",
+    "https://battlebots.com/{2018,2019,2020,2021}-season-robots/ and /season-{1,2}-robots/ (team photos for earlier seasons)",
+    "https://battlebots.fandom.com/api.php pageimages thumbnails (photo fallback for bots without a battlebots.com team photo)"
+  ],
+  "notes": "Active roster = the 24 competitors in Groups A-F of the 2026 'BattleBots Pro League powered by Bright Data' (premiered July 2, 2026 on YouTube after a delay from the announced June 25 date), as listed on the BattleBots fan wiki Pro League page; battlebots.com/proleague confirms 24 robots but publishes no roster table. Claw Viper, Hydra, Deep-Sea Shark, Whiplash and SawBlaze were invited/announced but withdrew or declined and were replaced by Disarray, Switchback, Ribbot and Bloodsport; Calypso, Banshee and Nemesis are 2026 alternates (active=false). Hometowns, teams, weapons, seasons and captains come from battlebots.fandom.com infoboxes; where a team relocated, the first-listed (original) hometown is used. Season labels: WC I-VII are the 2015-2023 reboot seasons; Comedy Central seasons 1.0-5.0 are 2000-2002; spinoffs (Bounty Hunters, Champions I/II, Proving Ground, FaceOffs) listed where the wiki records them. Historical coverage is a curated ~100-bot subset of well-known competitors, not the complete all-time field. Enrichment (2026-07-12): added 4 WC VII competitors missing from the seed (DOOM, Doomba, Double Tap, Dragon King; details from their battlebots.com WCVII robot pages) and added 'photo'/'photo_source' to every entry. photo_source 'battlebots.com' = official team photo from the WC VII or earlier season roster pages (full-size original URLs verified HTTP 200; Bloodsport's WC VII card image is mislabeled on the site, so the correctly named BB2022-bloodsport-team.jpg is used); 'fandom' = wiki pageimages thumbnail (usually a robot photo, not a team photo). Name variants resolved: 'Rusty Jr.' (WC VII card) = seed 'Rusty'; 'SMEEEEEEEEEEEEEEEEEE' = 'SMEE'; 'Obwalden Overlord' = 'The Obwalden Overlord'; 'ATOM#94' = 'ATOM 94'; 'WanHoo' = 'Wan Hoo'; fandom 'Nemesis (2026)' used for the USC bot (plain 'Nemesis' is an unrelated 2001 heavyweight).",
+  "teams": [
+    {
+      "bot": "Bloodsport",
+      "team": "Bots 'n' Stuff Robotics",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Horizontal spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Justin Marple",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-bloodsport-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Cobalt",
+      "team": "Robotic Death Company",
+      "city": "Oceanside",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "John Mladenik",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/12/BBWCVII-cobalt-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Copperhead",
+      "team": "Team Copperhead",
+      "city": "Denver",
+      "region": "Colorado",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Kyle Kirkpatrick",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-copperhead-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "DeathRoll",
+      "team": "Team DeathRoll",
+      "city": "Brisbane",
+      "region": null,
+      "country": "Australia",
+      "weapon": "Vertical spinning disk",
+      "seasons": [
+        "2016 (WC II)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Steven Martin",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/12/BBWCVII-deathroll-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Disarray",
+      "team": "Wildcat Robotics",
+      "city": "Tucson",
+      "region": "Arizona",
+      "country": "USA",
+      "weapon": "Vertical drisk spinner",
+      "seasons": [
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Al Hurworth",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/0/06/Disarray_Pro_League.png/revision/latest/scale-to-width-down/400?cb=20260628124510",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "End Game",
+      "team": "Team End Game",
+      "city": "Auckland",
+      "region": "Auckland",
+      "country": "New Zealand",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Jack Barker, Nick Mabey",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-end-game-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Golden Fury",
+      "team": "PY Roboticzs",
+      "city": "Chennai",
+      "region": null,
+      "country": "India",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Logeshwaran Balasundaram",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/2/2d/Golden_Fury_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260601170732",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "HUGE",
+      "team": "Team HUGE",
+      "city": "South Windsor",
+      "region": "Connecticut",
+      "country": "USA",
+      "weapon": "Vertical bar spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Jonathan Schultz",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-huge-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "HyperShock",
+      "team": "Team HyperShock",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Will Bales",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hypershock-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "JackPot",
+      "team": "Vegas Combat Robotics",
+      "city": "Las Vegas",
+      "region": "Nevada",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Jeff Waters",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-jackpot-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "MadCatter",
+      "team": "Team Bad Kitty",
+      "city": "Pomona",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Martin Mason",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-madCatter-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Magnitude",
+      "team": "Team Wazio",
+      "city": "Parker",
+      "region": "Colorado",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Chad New",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/5/52/Magnitude_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260601200150",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Malice",
+      "team": "Team Malice",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal drum spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Adrian \"Bunny\" Liaw",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-Malice-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Manta",
+      "team": "Team Tanto Robotics",
+      "city": "Tempe",
+      "region": "Arizona",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Nick Dobrikov",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/3/33/Manta_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260601191336",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Minotaur",
+      "team": "Team RioBotz",
+      "city": "Rio de Janeiro",
+      "region": "Rio de Janeiro",
+      "country": "Brazil",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Marco Meggiolaro",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-minataur-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Orbitron",
+      "team": "Team Orbitron",
+      "city": "Waterloo",
+      "region": "Ontario",
+      "country": "Canada",
+      "weapon": "Twin vertical spinners",
+      "seasons": [
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Steven Szczeszynski",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/c/c4/Orbitron_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260601191124",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Ribbot",
+      "team": "Team Ribbot",
+      "city": "Somerville",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Nick Sorensen",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-ribbot-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Skorpios",
+      "team": "Bot Bash Party Crew",
+      "city": "Moraga",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Articulating overhead saw",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Zach Lytle, Diana Tarlson",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-skorpios-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Switchback",
+      "team": "Team Midnight Invention",
+      "city": "Dallas",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Articulating eggbeater",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": true,
+      "builder": "Greg Needel",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-switchback-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Terrortops",
+      "team": "Team Terrortops",
+      "city": "Long Beach",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Ben Burton, Sophia Musk-Burton",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-terratops-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "The Twins",
+      "team": "Seems Reasonable Robotics",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "2x Vertical spinners",
+      "seasons": [
+        "Proving Ground (2023)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Aren Hill",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/7/7d/The_Twins_BB_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260601190427",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Tombstone",
+      "team": "Hardcore Robotics",
+      "city": "Folsom",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Ray Billings",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Tombstone-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Valkyrie",
+      "team": "Team VALKYRIE",
+      "city": "Berkeley",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Undercutter spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Leanne Cushing",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-valkyrie-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Witch Doctor",
+      "team": "Team Witch Doctor",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "FaceOffs (2024)",
+        "Pro League (2026)"
+      ],
+      "active": true,
+      "builder": "Andrea Gellatly, Mike Gellatly",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-witch-doctor-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "ATOM 94",
+      "team": "AutoVoltz Robotics",
+      "city": null,
+      "region": "Gujarat",
+      "country": "India",
+      "weapon": "Vertical drisk spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Yash Deshmukh",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Atom94-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Axe Backwards",
+      "team": "Team Axe Backwards",
+      "city": "Vero Beach",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Full body drum spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Kurt Durjan",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Axe-Backwards-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Backlash",
+      "team": "Team Nightmare",
+      "city": "Rohnert Park",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Jim Smentowski",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/b/b1/Backlash_NPC_Charity_Open_2004.png/revision/latest/scale-to-width-down/400?cb=20240619202941",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Bale Spear",
+      "team": "Forge & Farm Combat Robots",
+      "city": "Salem",
+      "region": "New Jersey",
+      "country": "USA",
+      "weapon": "Pneumatic spear",
+      "seasons": [
+        "2018 (WC III)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Earl Pancoast III",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Bale-Spear-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Banshee",
+      "team": "Team Small Robots",
+      "city": "Phoenix",
+      "region": "Arizona",
+      "country": "USA",
+      "weapon": "Pneumatic flipper",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026, alternate)"
+      ],
+      "active": false,
+      "builder": "David Small",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-banshee-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Beta",
+      "team": "Team Hurtz",
+      "city": null,
+      "region": "Oxfordshire",
+      "country": "UK",
+      "weapon": "Hammer",
+      "seasons": [
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "John Reid",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-beta-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Big Dill",
+      "team": "Team Food Fight",
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "2020 (WC V)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Emmanuel Carrillo",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-big-dill-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "BioHazard",
+      "team": "Team BioHazard",
+      "city": "Belmont",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Four-bar lifting arm",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Carlo Bertocchini",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/a/ae/BioHazard_Season_5.0.jpg/revision/latest/scale-to-width-down/400?cb=20240501195725",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Bite Force",
+      "team": "Aptyx Designs",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Grappler",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)"
+      ],
+      "active": false,
+      "builder": "Paul Ventimiglia",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Bite-Force-Team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Black Dragon",
+      "team": "Team Uai!rrior",
+      "city": "Itajubá",
+      "region": null,
+      "country": "Brazil",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Julio Cortez",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-black-dragon-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Blacksmith",
+      "team": "Team Half Fast Astronaut",
+      "city": "Edison",
+      "region": "New Jersey",
+      "country": "USA",
+      "weapon": "Flamethrower hammer",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Al Kindle",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Blacksmith-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Blade",
+      "team": "Team ORBY",
+      "city": "Seoul",
+      "region": null,
+      "country": "South Korea",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Cheog-Gyu Hwang",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Blade-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Blip",
+      "team": "Seems Reasonable Robotics",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Flywheel flipper",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Aren Hill",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-blip-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Bombshell",
+      "team": "Chaos Corps",
+      "city": "Atlanta",
+      "region": "Georgia",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Randy Farmer",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Bombshell-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Bronco",
+      "team": "Inertia Labs",
+      "city": "Sausalito",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Flipping arm",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Alexander Rose, Reason Bradley",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Bronco-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Brutus",
+      "team": "Team Brutus",
+      "city": "Somerville",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Adam Bercu",
+      "photo": "https://battlebots.com/wp-content/uploads/2018/04/Brutus-Team-S2018.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Calypso",
+      "team": "Team Horizon",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Undercutter spinner",
+      "seasons": [
+        "FaceOffs (2024)",
+        "Pro League (2026, alternate)"
+      ],
+      "active": false,
+      "builder": "Joshua Kong",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/c/cd/Calypso_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260623203925",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Captain Shrederator",
+      "team": "Team LOGICOM",
+      "city": "Ormond Beach",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Shell spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Brian Nave",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-captain-shrederator-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Chomp",
+      "team": "The Machine Corps",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Flamethrower",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Zoe Stephenson",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Chomp-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Chronos",
+      "team": "Team Chronos",
+      "city": "Gardena",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Ring spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jerry Serafin",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Chronos-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Claw Viper",
+      "team": "Team Bad Ideas",
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)",
+        "Pro League (2026, withdrew)"
+      ],
+      "active": false,
+      "builder": "Kevin Milczewski",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-claw-viper-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Complete Control",
+      "team": "Mission Destruction",
+      "city": "San Francisco",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Derek Young",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/completecontrol_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Deadblow",
+      "team": "Team Deadblow",
+      "city": "Oakland",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Spiked sledgehammer",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Grant Imahara",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/5/54/Deadblow_5.0.jpg/revision/latest/scale-to-width-down/400?cb=20250320232237",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Deep Six",
+      "team": "Team Overboard",
+      "city": "Norfolk",
+      "region": "Virginia",
+      "country": "USA",
+      "weapon": "Vertical bar spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Dustin Esswein",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Deep-Six-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Deep-Sea Shark",
+      "team": "Ice Orange",
+      "city": null,
+      "region": null,
+      "country": "China",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "Pro League (2026, withdrew)"
+      ],
+      "active": false,
+      "builder": null,
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/5/50/Deep-Sea_Shark_GOTF_2025.webp/revision/latest/scale-to-width-down/400?cb=20260227200521",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Defender",
+      "team": "Team Fast Electric Robots",
+      "city": "Thousand Oaks",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter/Grappler",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Jason Vasquez",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Defender-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Diesector",
+      "team": "Mutant Robots",
+      "city": "San Diego",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Hydraulic lifting",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Donald Hutson",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/3/34/Diesector_SF02.jpg/revision/latest/scale-to-width-down/400?cb=20150610200924",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Double Dutch",
+      "team": "Iron LungFish Robotics",
+      "city": "Wadsworth",
+      "region": "Illinois",
+      "country": "USA",
+      "weapon": "Twin horizontal bar spinners",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Kevin Lung",
+      "photo": "https://battlebots.com/wp-content/uploads/2018/05/Double-Dutch-Team-S2018.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Double Jeopardy",
+      "team": "Team Double Trouble",
+      "city": "Irvine",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Cannon",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Evan Woolley, Bryce Woolley",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Double-Jeopardy-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Dragon Slayer",
+      "team": "Wild Side Robotics",
+      "city": "Denton",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jordan Neal",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Dragon-Slayer-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "DUCK!",
+      "team": "Team Black and Blue",
+      "city": "Palo Alto",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Hal Rucker",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/DUCK-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Emulsifier",
+      "team": "Bots FC",
+      "city": "Columbus",
+      "region": "Ohio",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Matt Bores",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-emulsifier-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Falcon",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Twin drum spinners",
+      "seasons": [
+        "2015 (WC I)",
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Clint Ewert",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Falcon-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Foxtrot",
+      "team": "Team Danby",
+      "city": "Raleigh",
+      "region": "North Carolina",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Craig Danby",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Foxtrot-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Free Shipping",
+      "team": "Team Special Delivery",
+      "city": "San Leandro",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Gary Gin",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-free-shipping-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Fusion",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Reese Ewert",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-fusion-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Gemini",
+      "team": "Team Gemini",
+      "city": "Joshua Tree",
+      "region": "California",
+      "country": "USA",
+      "weapon": "2x Horizontal spinners",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Ace Shelander",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Gemini-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Ghost Raptor",
+      "team": "Team Raptor",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Articulated horizontal bar spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Chuck Pitzer",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Ghost-Raptor-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Gigabyte",
+      "team": "Robotic Death Company",
+      "city": "Oceanside",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Shell spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)"
+      ],
+      "active": false,
+      "builder": "Derek Tran, Camden Wallraff",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-gigabyte-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Glitch",
+      "team": "Combat Robotics at Berkeley",
+      "city": "Roseville",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Kyle Miller",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-glitch-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Gruff",
+      "team": "Team Gruff",
+      "city": "Palm Harbor",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Sam McAmis",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-gruff-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Hazard",
+      "team": "Team Hazard",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Overhead spinning blade",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Tony Buchignani",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/e/e0/Hazard5.0.jpg/revision/latest/scale-to-width-down/400?cb=20230518222348",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "HiJinx",
+      "team": "Offbeat Robotics",
+      "city": "Oakland",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Jen Herchenroeder",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hijinx-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Horizon",
+      "team": "Team Horizon",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Continuous horizontal",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)"
+      ],
+      "active": false,
+      "builder": "Joshua Kong",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-horizon-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Hydra",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Hydraulic flipper",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jake Ewert",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-hydra-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Hypothermia",
+      "team": "Team Toad",
+      "city": "Liberty Hill",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Grabbers",
+      "seasons": [
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Michael \"Fuzzy\" Mauldin",
+      "photo": "https://battlebots.com/wp-content/uploads/2018/04/Hypothermia-Team-S2018-1.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Icewave",
+      "team": "Team Icewave",
+      "city": "Burlingame",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Marc DeVidts",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Icewave-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "KillerHurtz",
+      "team": "Team Hurtz",
+      "city": null,
+      "region": "Oxfordshire",
+      "country": "UK",
+      "weapon": "Pneumatic axe",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)"
+      ],
+      "active": false,
+      "builder": "John Reid",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/d/d5/Killerhurtz3.0.jpg/revision/latest/scale-to-width-down/400?cb=20121215225651",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Kraken",
+      "team": "CE Robots",
+      "city": "Titusville",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Crusher",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Matt Spurk",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-kraken-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Lock-Jaw",
+      "team": "Mutant Robots",
+      "city": "San Diego",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Grabbing jaws",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Donald Hutson",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-lockjaw-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Lucky",
+      "team": "TKO Robotics",
+      "city": "Ottawa",
+      "region": null,
+      "country": "Canada",
+      "weapon": "Launcher",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Mark Demers",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-lucky-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Lycan",
+      "team": "All Black Robotics",
+      "city": null,
+      "region": "Ontario",
+      "country": "Canada",
+      "weapon": "Lifter",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Ravi Baboolal",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/lycan_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Mammoth",
+      "team": "Team Mammoth",
+      "city": "Baltimore",
+      "region": "Maryland",
+      "country": "USA",
+      "weapon": "Rotary lifting trunk",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Ricky Willems",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-mammoth-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Mauler",
+      "team": "South Bay RoboWarriors",
+      "city": "Portola Valley",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Spinning flail and chisels",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Charles Tilford",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/3/38/Mauler51505.jpg/revision/latest/scale-to-width-down/400?cb=20120829232620",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Minion",
+      "team": "Team Coolrobots",
+      "city": "Santa Monica",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lexan wedge",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Christian Carlberg",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/9/9b/Minionfinal.jpg/revision/latest/scale-to-width-down/400?cb=20120617184432",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Mohawk",
+      "team": "Euclid Robotics",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Crusher",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Tom Bales",
+      "photo": "https://battlebots.com/wp-content/uploads/2018/04/Mohawk-Team-S2018-1.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Monsoon",
+      "team": "Team Monsoon",
+      "city": "Coventry",
+      "region": null,
+      "country": "UK",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Tom Brewster",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-monsoon-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Nemesis",
+      "team": "USC Advanced Robotic Combat",
+      "city": "Los Angeles",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Hammer saw",
+      "seasons": [
+        "Proving Ground (2023)",
+        "Pro League (2026, alternate)"
+      ],
+      "active": false,
+      "builder": "David Le",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/3/33/Nemesis_Pro_League_2026.png/revision/latest/scale-to-width-down/400?cb=20260623195549",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Nightmare",
+      "team": "Team Nightmare",
+      "city": "Bradenton",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Vertical spinning disk",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Jim Smentowski",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Nightmare-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Ominous",
+      "team": "Team Ominous",
+      "city": "Tilburg",
+      "region": null,
+      "country": "Netherlands",
+      "weapon": "Drisk spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Tim Bouwens",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-ominous-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "OverDrive",
+      "team": "C2 Robotics",
+      "city": "San Luis Obispo",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Four-bar-lifter",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Christian Carlberg",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/overdrive_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Overhaul",
+      "team": "Equals Zero Robotics",
+      "city": "Atlanta",
+      "region": "Georgia",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Charles Guan",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-overhaul-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "OverKill",
+      "team": "Team Coolrobots",
+      "city": "Santa Monica",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Overhead swinging knife",
+      "seasons": [
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Christian Carlberg",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/4/4a/217481_1018685481619_2668_n.jpg/revision/latest/scale-to-width-down/400?cb=20130113134515",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "P1",
+      "team": "Aberrant Robotics",
+      "city": "Hudson",
+      "region": "New Hampshire",
+      "country": "USA",
+      "weapon": "Front-hinged lifter",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Brandon Zalinsky",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/P1-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Pain Train",
+      "team": "Team Shreddit",
+      "city": "Staten Island",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Eggbeater drum spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Evan Arias",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Pain-Train-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Perfect Phoenix",
+      "team": "Team Doom Robotics",
+      "city": "Herndon",
+      "region": "Virginia",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2020 (WC V)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Tyler Nguyen",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Perfect-Phoenix-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Petunia",
+      "team": "Team P.C.P.",
+      "city": "Anna Paulowna",
+      "region": null,
+      "country": "Netherlands",
+      "weapon": "Crusher",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Mischa de Graaf",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Petunia-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Poison Arrow",
+      "team": "Caustic Creations",
+      "city": "Houston",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Zach Goff",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/poisonarrow_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Quantum",
+      "team": "Team Robo Challenge",
+      "city": "Birmingham",
+      "region": null,
+      "country": "UK",
+      "weapon": "Crusher",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "James Cooper, Grant Cooper",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-quantum-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Razer",
+      "team": "Team Razer",
+      "city": "Bournemouth",
+      "region": null,
+      "country": "UK",
+      "weapon": "Hydraulic crusher",
+      "seasons": [
+        "1999"
+      ],
+      "active": false,
+      "builder": "Ian Lewis",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/e/e2/Razer_lv99.jpg/revision/latest/scale-to-width-down/400?cb=20121216161517",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Red Devil",
+      "team": "Team Duct Tape",
+      "city": "Spanish Fork",
+      "region": "Utah",
+      "country": "USA",
+      "weapon": "Articulating saw",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2021-22 (WC VI)"
+      ],
+      "active": false,
+      "builder": "Jerome Miles, Ravi Baboolal",
+      "photo": "https://battlebots.com/wp-content/uploads/2018/04/Red-Devil-Team-S2011.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Retrograde",
+      "team": "Bots 'n' Stuff Robotics",
+      "city": "Venice",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifting forks",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Aaron Lucas",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Retrograde-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Ripperoni",
+      "team": "Omega Team",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Anna Zolnikov",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-riperoni-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Riptide",
+      "team": "Team Break32",
+      "city": "Tarzana",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Eggbeater",
+      "seasons": [
+        "2021-22 (WC VI)",
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Ethan Kurtz",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-riptide-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Road Rash",
+      "team": "Danger 4",
+      "city": "Boston",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Twin circular saws",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Frederick Moore",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/road_rash_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Rotator",
+      "team": "Team Revolution",
+      "city": "Miami",
+      "region": "Florida",
+      "country": "USA",
+      "weapon": "Twin horizontal spinners",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Victor Soto",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-rotator-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Rusty",
+      "team": "Team Iron Force",
+      "city": "Antioch",
+      "region": "Illinois",
+      "country": "USA",
+      "weapon": "Jackhammer",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Dave Eaton",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Rusty-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "SawBlaze",
+      "team": "Team SawBlaze",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Articulating overhead saw",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Jamison Go",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-sawblaze-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Sharko",
+      "team": "Aquatic Machine Force",
+      "city": "Jacumba",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Thwacking tail",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Edward Robinson",
+      "photo": "https://battlebots.com/wp-content/uploads/2020/11/Sharko-Team-2020.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Shatter!",
+      "team": "Bots FC",
+      "city": "Brooklyn",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Hammer",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Adam Wrigley",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-shatter-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Shreddit Bro",
+      "team": "Team Shreddit",
+      "city": "Staten Island",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Evan Arias",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-shred-it-bro-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Slammo!",
+      "team": "Team Danby",
+      "city": "Raleigh",
+      "region": "North Carolina",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)",
+        "FaceOffs (2024)"
+      ],
+      "active": false,
+      "builder": "Craig Danby",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-slammo-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "SMEE",
+      "team": "Team SMEEEEEEEEEEEEE",
+      "city": "New York",
+      "region": "New York",
+      "country": "USA",
+      "weapon": "Grappling body",
+      "seasons": [
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Joe Fabiani",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/SMEEEEEEEEEEEE-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Son of Whyachi",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Horizontal tri-bar spinner",
+      "seasons": [
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)",
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "Bounty Hunters (2021)"
+      ],
+      "active": false,
+      "builder": "Terry Ewert, Luke Ewert",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/SOW-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Starchild",
+      "team": "Omega Team",
+      "city": "Hudson",
+      "region": "New Hampshire",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Brandon Zalinsky",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-starchild-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Stinger: The Killer Bee",
+      "team": "Team PlumbCrazy",
+      "city": "Sacramento",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Interchangeable lifters",
+      "seasons": [
+        "2015 (WC I)",
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Matt Maxham",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/stinger_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "SubZero",
+      "team": "Team Hammertime",
+      "city": "Malvern",
+      "region": "Pennsylvania",
+      "country": "USA",
+      "weapon": "Pneumatic flipper",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Bounty Hunters (2021)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Jerry Clarkin, Logan Davis",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/SubZero-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Tantrum",
+      "team": "Seems Reasonable Robotics",
+      "city": "Mountain View",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Punching vertical spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Ginger Schmidt, Alex Grant",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-tantrum-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Texas Twister",
+      "team": "Team Toad",
+      "city": "Liberty Hill",
+      "region": "Texas",
+      "country": "USA",
+      "weapon": "Horizontal spinner",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Michael \"Fuzzy\" Mauldin",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Texas-Twister-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "The Obwalden Overlord",
+      "team": "Team Obwalden Overlord",
+      "city": "Divonne-les-Bains",
+      "region": "Auvergne-Rhone-Alpes",
+      "country": "France",
+      "weapon": "Articulating arms",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Rob Knight",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/obwalden_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Toro",
+      "team": "Inertia Labs",
+      "city": "Sausalito",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Pneumatic flipping arm",
+      "seasons": [
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Alexander Rose, Reason Bradley",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/c/c9/ToroSummer02ms.jpg/revision/latest/scale-to-width-down/400?cb=20230518224140",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Triton",
+      "team": "Team Overboard",
+      "city": "Las Vegas",
+      "region": "Nevada",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2023 (WC VII)",
+        "Champions II (2023)",
+        "Proving Ground (2023)"
+      ],
+      "active": false,
+      "builder": "Bradley Hanstad",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-triton-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Uppercut",
+      "team": "Team Uppercut",
+      "city": "Cambridge",
+      "region": "Massachusetts",
+      "country": "USA",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)"
+      ],
+      "active": false,
+      "builder": "Alex Hattori",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Uppercut-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Vlad the Impaler",
+      "team": "Team Vladmeisters",
+      "city": "Oakland",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Pneumatic lifting forks",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Gage Cauchois",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/5/5c/VladII_sf02.jpg/revision/latest/scale-to-width-down/400?cb=20140517185145",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Wan Hoo",
+      "team": "Team Gladiator",
+      "city": "Shanghai",
+      "region": null,
+      "country": "China",
+      "weapon": "Vertical spinner",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Weidong Qi",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/Wanhoo-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "WAR Hawk",
+      "team": "Western Allied Robotics",
+      "city": "Seattle",
+      "region": "Washington",
+      "country": "USA",
+      "weapon": "Vertical disk spinner",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)"
+      ],
+      "active": false,
+      "builder": "Rob Farrow",
+      "photo": "https://battlebots.com/wp-content/uploads/2019/05/WAR-Hawk-Team-S2019.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Warhead",
+      "team": "Team Warhead",
+      "city": "Bournemouth",
+      "region": null,
+      "country": "UK",
+      "weapon": "Domed spinning disc",
+      "seasons": [
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Ian Lewis",
+      "photo": "https://battlebots.com/wp-content/uploads/2018/05/Warhead-Team-S2018.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Warrior Clan",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Flywheel powered flipper",
+      "seasons": [
+        "Season 5.0 (2002)",
+        "2015 (WC I)",
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Clint Ewert",
+      "photo": "https://battlebots.com/wp-content/uploads/2016/05/warrior_team2016.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Whiplash",
+      "team": "Team Fast Electric Robots",
+      "city": "Thousand Oaks",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Lifter",
+      "seasons": [
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2020 (WC V)",
+        "2021-22 (WC VI)",
+        "Champions I (2022)",
+        "2023 (WC VII)",
+        "Champions II (2023)"
+      ],
+      "active": false,
+      "builder": "Matt Vasquez",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-whiplash-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Whyachi",
+      "team": "Team Whyachi",
+      "city": "Dorchester",
+      "region": "Wisconsin",
+      "country": "USA",
+      "weapon": "Horizontal tri-bar spinner",
+      "seasons": [
+        "Season 3.0 (2001)"
+      ],
+      "active": false,
+      "builder": "Terry Ewert, Jake Ewert",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/2/21/Whyachi_sf01.jpg/revision/latest/scale-to-width-down/400?cb=20121217181535",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "Yeti",
+      "team": "C2 Robotics",
+      "city": "San Luis Obispo",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)",
+        "2019 (WC IV)",
+        "2021-22 (WC VI)"
+      ],
+      "active": false,
+      "builder": "Greg Gibson, Christian Carlberg",
+      "photo": "https://battlebots.com/wp-content/uploads/2021/10/Yeti-Team-2021.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Ziggo",
+      "team": "Team Ziggy",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Shell spinner",
+      "seasons": [
+        "1999",
+        "Season 1.0 (2000)",
+        "Season 2.0 (2000)",
+        "Season 3.0 (2001)",
+        "Season 4.0 (2001)",
+        "Season 5.0 (2002)"
+      ],
+      "active": false,
+      "builder": "Jonathan Ridder",
+      "photo": "https://static.wikia.nocookie.net/battlebots/images/6/6c/Ziggo_Season_5.0.png/revision/latest/scale-to-width-down/313?cb=20240601155459",
+      "photo_source": "fandom"
+    },
+    {
+      "bot": "DOOM",
+      "team": "APT",
+      "city": "Whittier",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Articulated vertical bar spinner",
+      "seasons": [
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Alejandro Pina",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-doom-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Doomba",
+      "team": "Hot Mess",
+      "city": "Baltimore",
+      "region": "Maryland",
+      "country": "USA",
+      "weapon": "Horizontal disc spinner",
+      "seasons": [
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Brice Farrell",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-doomba-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Double Tap",
+      "team": "Ostrich Air",
+      "city": "San Jose",
+      "region": "California",
+      "country": "USA",
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Jonathan Collazo",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-double-tap-team.jpg",
+      "photo_source": "battlebots.com"
+    },
+    {
+      "bot": "Dragon King",
+      "team": "Bot Bash Party Crew",
+      "city": "Birmingham",
+      "region": "Alabama",
+      "country": "USA",
+      "weapon": "Grappler saw",
+      "seasons": [
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Will Prater",
+      "photo": "https://battlebots.com/wp-content/uploads/2022/11/BB2022-dragon-king-team.jpg",
+      "photo_source": "battlebots.com"
+    }
+  ]
+}
