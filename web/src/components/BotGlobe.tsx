@@ -249,8 +249,13 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
   }, [selected, setAutoRotate]);
 
   // Country focus from the header stats: pause rotation and fly there.
+  // Guarded by nonce so re-renders (e.g. a later bot selection changing the
+  // handleInteractionStart identity) can't replay the flight and override
+  // the selection's own camera move.
+  const handledFocusNonce = useRef(0);
   useEffect(() => {
-    if (!focus) return;
+    if (!focus || focus.nonce === handledFocusNonce.current) return;
+    handledFocusNonce.current = focus.nonce;
     handleInteractionStart();
     globeRef.current?.pointOfView(
       { lat: focus.lat, lng: focus.lng, altitude: focus.altitude },
