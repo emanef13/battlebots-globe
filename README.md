@@ -1,10 +1,15 @@
 # BattleBots Globe 🌍🤖
 
-An interactive 3D globe of the entire BattleBots universe: every Pro League 2026
-team and historical competitor, plotted on their hometown, with live stats and
-fan-pulse layers on the way.
+**Live: [battlebotsglobe.com](https://battlebotsglobe.com)**
 
-Built for the **#BattleBotsDev** competition, powered by [Bright Data](https://brightdata.com).
+An interactive 3D globe of the entire BattleBots universe: 130 robots — the
+Pro League 2026 roster and historical competitors — plotted on their
+hometowns, with fight-history arcs between rivals, embedded fight videos per
+matchup, team panels with photos and arena records, country navigation, and
+search across bots, teams, cities and countries.
+
+Built by [Manolis Efthymiou](https://www.linkedin.com/in/manolis-efthymiou-054574157/)
+for the **#BattleBotsDev** competition, powered by [Bright Data](https://brightdata.com).
 
 ## Architecture
 
@@ -24,8 +29,10 @@ serves the generated JSON.
 
 - **Web Unlocker** (`POST https://api.brightdata.com/request`) fetches roster and
   wiki pages as LLM-ready markdown — see `pipeline/brightdata_client.py`.
-- **Web Scraper API** (trigger → poll snapshot → download) will drive the
-  Reddit / YouTube fan-pulse layers next.
+- **Web Scraper API** (trigger → poll snapshot → download) drives YouTube video
+  discovery — per-bot highlights (`collect_videos.py`) and per-matchup fight
+  videos (`collect_match_videos.py`); both ship with a `--seed` dev scraper for
+  working without an API token.
 
 ## Running it
 
@@ -48,6 +55,7 @@ python3 -m venv .venv && .venv/bin/pip install -r pipeline/requirements.txt
 .venv/bin/python pipeline/download_photos.py   # mirror team photos locally
 .venv/bin/python pipeline/robot_cutouts.py     # AI-crop each robot -> globe markers
 .venv/bin/python pipeline/collect_videos.py    # fight videos per bot (--seed for dev scrape)
+.venv/bin/python pipeline/collect_match_videos.py  # one fight video per matchup pair
 .venv/bin/python pipeline/add_links.py         # verified team-page links (wiki API)
 ```
 
@@ -81,13 +89,3 @@ JSON, push.
 
 BattleBots is a trademark of BattleBots Inc. This is an unofficial fan
 project built for the #BattleBotsDev community competition.
-
-## Roadmap
-
-- [x] Interactive globe: zoom-aware cluster pins, hover cards with team photos, click-to-fly, search, side panel
-- [x] Roster cross-verified against battlebots.com (WC VII + Pro League); 130 bots, photos + AI-cropped robot cutouts for all
-- [x] Fight highlights per bot — official YouTube videos, embedded (no re-hosting of footage); discovery via Bright Data YouTube scraper (dev seed scraper included)
-- [ ] Fan Pulse: live Reddit/YouTube chatter per bot (Bright Data Scraper API)
-- [ ] Meta lenses: color the globe by weapon class / win rate / sentiment
-- [ ] Head-to-head compare mode
-- [ ] MCP-powered analyst chat
