@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import BotGlobe from './components/BotGlobe';
 import Header from './components/Header';
 import TeamPanel from './components/TeamPanel';
-import Ticker from './components/Ticker';
 import VideoModal from './components/VideoModal';
 import { resolveMapStyle } from './mapStyles';
 import type { Fight, FightsFile, FightVideo, GlobePoint, MatchVideosFile, Team, TeamsFile, VideosFile } from './types';
@@ -186,7 +185,6 @@ export default function App() {
         />
       )}
       {playing && <VideoModal video={playing} onClose={() => setPlaying(null)} />}
-      <Ticker points={points} onSelect={setSelected} />
 
       {!data && !error && <div className="loading">Loading the arena…</div>}
       {error && <div className="loading error">Failed to load team data: {error}</div>}
