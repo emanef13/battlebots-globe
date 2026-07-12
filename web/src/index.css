@@ -65,6 +65,13 @@ body,
   color: var(--brand);
 }
 
+.brand-globe {
+  width: 0.82em;
+  height: 0.82em;
+  vertical-align: -0.08em;
+  margin: 0 0.02em;
+}
+
 .tagline {
   font-size: 13px;
   color: var(--ink-secondary);
