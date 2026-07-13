@@ -1437,4 +1437,91 @@ body,
   .cluster-popover {
     width: min(280px, calc(100vw - 24px));
   }
+
+  /* ----- fight mode: stacked card layout on small screens ----- */
+
+  .fight-mode {
+    pointer-events: auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 14px 24px;
+    background: rgba(4, 6, 15, 0.78);
+    backdrop-filter: blur(5px);
+  }
+
+  .fight-card,
+  .fight-card.corner-red,
+  .fight-card.corner-amber {
+    position: static;
+    width: 100%;
+    transform: none;
+    animation: card-pop 0.4s ease-out backwards;
+  }
+
+  .fight-card.corner-red {
+    order: 1;
+  }
+
+  .fight-vs {
+    position: static;
+    order: 2;
+    align-self: center;
+    transform: skewX(-8deg);
+    font-size: 56px;
+    margin: -4px 0;
+    animation: card-pop 0.4s ease-out 0.15s backwards;
+  }
+
+  .fight-card.corner-amber {
+    order: 3;
+    animation-delay: 0.25s;
+  }
+
+  .fight-center {
+    position: static;
+    order: 4;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    animation: card-pop 0.4s ease-out 0.4s backwards;
+  }
+
+  @keyframes card-pop {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  .fight-card-sprite {
+    height: 96px;
+  }
+
+  .fight-card-name {
+    font-size: 26px;
+  }
+
+  .fight-history {
+    max-height: 110px;
+  }
+
+  .fight-close {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 31;
+  }
+
+  .challenge-banner {
+    top: auto;
+    bottom: 76px;
+    left: 12px;
+    right: 12px;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 13px;
+  }
 }
