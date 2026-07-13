@@ -18,7 +18,13 @@ export default function HoverCard({ point, x, y }: HoverCardProps) {
 
   return (
     <div className="globe-tip" style={{ left, top }}>
-      {point.photo && <img className="globe-tip-photo" src={point.photo} alt="" />}
+      {point.photo ? (
+        <img className="globe-tip-photo" src={point.photo} alt="" />
+      ) : (
+        point.marker && (
+          <img className="globe-tip-photo globe-tip-photo-robot" src={point.marker} alt="" />
+        )
+      )}
       <div className="globe-tip-text">
         <div className="globe-tip-bot">{point.bot}</div>
         {point.team && <div className="globe-tip-team">{point.team}</div>}

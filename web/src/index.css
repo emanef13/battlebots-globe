@@ -843,8 +843,12 @@ body,
 /* robot-cutout fallback when a team has no team photo */
 .panel-photo-robot {
   object-fit: contain;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  background: #ffffff;
   padding: 18px;
+}
+
+.globe-tip-photo-robot {
+  padding: 12px;
 }
 
 /* ---------- fight mode ---------- */
