@@ -1127,7 +1127,7 @@
       ],
       "active": false,
       "builder": "Grant Imahara",
-      "photo": "/photos/deadblow.webp",
+      "photo": null,
       "marker": "/bots/deadblow.png",
       "url": "https://battlebots.fandom.com/wiki/Deadblow"
     },
@@ -1169,7 +1169,7 @@
       ],
       "active": false,
       "builder": null,
-      "photo": "/photos/deep-sea-shark.webp",
+      "photo": null,
       "marker": "/bots/deep-sea-shark.png",
       "url": "https://battlebots.fandom.com/wiki/Deep-Sea_Shark"
     },
@@ -3054,7 +3054,7 @@
       ],
       "active": false,
       "builder": "Ângelo Shigueki Ragass Inoue",
-      "photo": "/photos/samurai.jpg",
+      "photo": null,
       "marker": "/bots/samurai.png",
       "url": "https://battlebots.fandom.com/wiki/Samurai"
     },

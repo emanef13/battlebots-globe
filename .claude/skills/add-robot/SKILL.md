@@ -77,8 +77,9 @@ alone; the bot-page infobox image (robot only) is the cutout input.
    caption matches the bot's seasons; else the earliest era. Save to
    `web/public/photos/<id>.jpg` re-encoded via PIL
    (`convert('RGB').save(..., quality=85)` — wiki files are often WebP
-   regardless of name). If no team photo exists, use the robot image;
-   the panel also falls back to the marker sprite when `photo` is null.
+   regardless of name). If no team photo exists, set `"photo": null` —
+   never use a raw robot photo with background; the panel then renders
+   the segmented marker sprite on a glow backdrop instead.
 3. Generate the marker sprite (rembg segmentation, prefers the wiki image):
    ```bash
    .venv/bin/python pipeline/robot_cutouts.py --only <id> --force
