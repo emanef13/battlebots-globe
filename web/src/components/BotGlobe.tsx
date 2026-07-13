@@ -146,8 +146,6 @@ export interface PairRecord {
 interface ArcDatum {
   /** the single highlighted arc between the two fight-mode contestants */
   fight?: boolean;
-  /** invisible fat twin rendered over each arc so hover/click is forgiving */
-  hitArea?: boolean;
   pair: PairRecord;
   /** head-to-head outcome from the selected bot's perspective */
   outcome: 'won' | 'lost' | 'even';
@@ -454,13 +452,6 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
       });
   }, [pairRecords, selected, matchVideos, fightPair]);
 
-  // every arc gets an invisible ~3x-wide twin that catches the raycast,
-  // so hovering near a slim arc counts as hovering it
-  const arcsWithHitAreas = useMemo<ArcDatum[]>(
-    () => [...arcs, ...arcs.map((a) => ({ ...a, hitArea: true }))],
-    [arcs],
-  );
-
   // texture styles use a plain material; vector styles tint the bare sphere
   // as the ocean and draw land as crisp polygons on top
   const globeMaterial = useMemo(() => {
@@ -536,25 +527,23 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
         ringMaxRadius={(d: object) => ((d as { __selected: boolean }).__selected ? 4 : 2.4)}
         ringPropagationSpeed={(d: object) => ((d as { __selected: boolean }).__selected ? 2.2 : 1.3)}
         ringRepeatPeriod={(d: object) => ((d as { __selected: boolean }).__selected ? 900 : 1700)}
-        arcsData={arcsWithHitAreas}
+        arcsData={arcs}
         arcStartLat="startLat"
         arcStartLng="startLng"
         arcEndLat="endLat"
         arcEndLng="endLng"
         arcColor={(d: object) => {
           const arc = d as ArcDatum;
-          if (arc.hitArea) return 'rgba(0, 0, 0, 0)';
           if (arc.fight) return ['rgba(237, 161, 0, 0.95)', 'rgba(255, 214, 130, 0.9)'];
           const o = arc.outcome;
           return o === 'won' ? ARC_WON : o === 'lost' ? ARC_LOST : ARC_EVEN;
         }}
         arcStroke={(d: object) => {
           const arc = d as ArcDatum;
-          if (arc.hitArea) return 1.4;
-          return arc.fight ? 0.55 : Math.min(0.38, 0.14 + arc.pair.count * 0.05);
+          return arc.fight ? 0.55 : Math.min(0.45, 0.22 + arc.pair.count * 0.05);
         }}
         arcAltitudeAutoScale={0.35}
-        arcsTransitionDuration={300}
+        arcsTransitionDuration={0}
         onArcHover={(d) => {
           const arc = d as ArcDatum | null;
           setHoveredArc(arc && !arc.fight ? arc : null);
