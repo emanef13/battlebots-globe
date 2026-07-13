@@ -135,6 +135,15 @@ export default function App() {
     setFightPair([a, b]);
   };
 
+  // leaving fight mode returns to the bot the fight started with,
+  // panel open and camera flying back to it
+  const closeFight = () => {
+    setFightPair((pair) => {
+      if (pair) setSelected(pair[0]);
+      return null;
+    });
+  };
+
   const playVideo = (v: FightVideo) => {
     trackEvent('video_play', { video: v.id, title: v.title.slice(0, 80) });
     setPlaying(v);
@@ -143,8 +152,8 @@ export default function App() {
   // While a challenger waits, the next bot picked becomes the opponent.
   const handleSelect = (p: GlobePoint | null) => {
     if (fightPair) {
-      // clicking the globe backs out of fight mode, like closing the panel
-      if (!p) setFightPair(null);
+      // clicking the globe backs out of fight mode, back to the challenger
+      if (!p) closeFight();
       return;
     }
     if (challenger && p && p.id !== challenger.id) {
@@ -160,7 +169,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape' || playing) return;
-      if (fightPair) setFightPair(null);
+      if (fightPair) closeFight();
       else if (challenger) setChallenger(null);
       else setSelected(null);
     };
@@ -252,7 +261,7 @@ export default function App() {
           fights={fights}
           matchVideos={matchVideos}
           onPlayVideo={playVideo}
-          onClose={() => setFightPair(null)}
+          onClose={closeFight}
         />
       )}
       {playing && <VideoModal video={playing} onClose={() => setPlaying(null)} />}
