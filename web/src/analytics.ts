@@ -16,11 +16,10 @@ type AppEvent =
 
 let posthog: PostHog | null = null;
 
-// PostHog client token — write-only and public by design (it ships in the
-// bundle regardless); VITE_POSTHOG_KEY overrides it if ever rotated.
-const KEY =
-  (import.meta.env.VITE_POSTHOG_KEY as string | undefined) ??
-  'phc_veFzouaHTygMF2S3guUwSQnMHCiPnPTqFpPeUr4hTypf';
+// PostHog client token comes from the Vercel env (Settings → Environment
+// Variables → VITE_POSTHOG_KEY). Note it is a write-only public key and is
+// visible in the shipped bundle either way — env keeps it out of the repo.
+const KEY = import.meta.env.VITE_POSTHOG_KEY as string | undefined;
 if (KEY) {
   import('posthog-js').then(({ default: ph }) => {
     ph.init(KEY, {
