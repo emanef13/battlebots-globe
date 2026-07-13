@@ -23,9 +23,12 @@ export interface Marker {
   selected: boolean;
 }
 
-/** Cluster merge distance in degrees, proportional to camera altitude. */
+/** Cluster merge distance in degrees. Affine in altitude: loose at globe
+ * distance so distinct metro areas show immediately, but with a floor-ish
+ * intercept so zooming in keeps neighbors merged until there is actually
+ * screen room for them to separate cleanly. */
 function radiusForAltitude(altitude: number): number {
-  return Math.min(8, Math.max(0.12, altitude * 3.2));
+  return Math.min(3.5, Math.max(0.12, 0.55 + altitude * 1.1));
 }
 
 function clusterPoints(points: GlobePoint[], radius: number, excludeId?: string): Marker[] {
@@ -327,7 +330,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
   const makeMarker = useCallback(
     (m: Marker): THREE.Sprite => {
       const color = m.active ? COLOR_ACTIVE : COLOR_HISTORICAL;
-      const zoomFactor = Math.min(1, Math.max(0.45, 0.35 + altitude * 0.3));
+      const zoomFactor = Math.min(1, Math.max(0.38, 0.3 + altitude * 0.32));
       const label = m.kind === 'cluster' ? String(m.members!.length) : null;
       const material = new THREE.SpriteMaterial({
         map: badgeTexture(color, label, m.selected),
