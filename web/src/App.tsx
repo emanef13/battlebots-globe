@@ -85,6 +85,14 @@ export default function App() {
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
 
+  // deep links from the static SEO pages: /?bot=<id> selects that robot
+  useEffect(() => {
+    if (points.length === 0) return;
+    const id = new URLSearchParams(window.location.search).get('bot');
+    const p = id && points.find((x) => x.id === id);
+    if (p) setSelected(p);
+  }, [points]);
+
   // Legend filter: show only one category on the globe when selected.
   const globePoints = useMemo(
     () =>

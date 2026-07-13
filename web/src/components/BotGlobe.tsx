@@ -497,7 +497,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
         globeImageUrl={mapStyle.url ?? null}
         globeMaterial={globeMaterial}
         bumpImageUrl={mapStyle.vector ? null : '/textures/earth-topology.png'}
-        backgroundImageUrl="/textures/night-sky.png"
+        backgroundImageUrl="/textures/night-sky.webp"
         atmosphereColor={mapStyle.atmosphere}
         atmosphereAltitude={0.28}
         onGlobeReady={handleGlobeReady}

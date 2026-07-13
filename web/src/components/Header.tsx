@@ -108,6 +108,8 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
             >
               by Manolis Efthymiou
             </a>
+            <span aria-hidden="true"> · </span>
+            <a href="/robots/">Robot index</a>
           </p>
         </div>
       </div>
