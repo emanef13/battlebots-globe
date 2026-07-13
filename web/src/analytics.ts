@@ -28,6 +28,10 @@ if (KEY) {
       autocapture: true,
       capture_pageview: true,
       person_profiles: 'identified_only',
+      debug: import.meta.env.DEV,
+      loaded: (p) => {
+        if (import.meta.env.DEV) console.log('[ph] loaded, distinct_id:', p.get_distinct_id());
+      },
     });
     posthog = ph;
   });
