@@ -456,6 +456,13 @@ body,
   border-radius: 15px 15px 0 0;
 }
 
+/* mobile-only controls; the mobile media query reveals them */
+.panel-minimize,
+.panel-expand,
+.panel-grip {
+  display: none;
+}
+
 .panel-close {
   position: absolute;
   top: 10px;
@@ -1436,6 +1443,84 @@ body,
 
   .cluster-popover {
     width: min(280px, calc(100vw - 24px));
+  }
+
+  /* ----- collapsible bottom sheet: keep the globe and arcs usable ----- */
+
+  .team-panel {
+    transition: max-height 0.28s ease, height 0.28s ease, padding 0.28s ease;
+    touch-action: pan-y;
+  }
+
+  .panel-grip {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin: -6px auto 8px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .panel-minimize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 46px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(10, 14, 26, 0.65);
+    border: none;
+    color: var(--ink-secondary);
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .team-panel.is-collapsed {
+    height: 56px;
+    max-height: 56px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .team-panel.is-collapsed > *:not(.panel-expand):not(.panel-close) {
+    display: none;
+  }
+
+  .team-panel.is-collapsed .panel-expand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 56px;
+    padding: 0 48px 0 14px;
+    background: none;
+    border: none;
+    color: var(--ink-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .team-panel.is-collapsed .panel-expand img {
+    height: 34px;
+    max-width: 52px;
+    object-fit: contain;
+  }
+
+  .panel-expand-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .team-panel.is-collapsed .panel-close {
+    top: 14px;
   }
 
   /* ----- fight mode: stacked card layout on small screens ----- */

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { flagEmoji } from '../flags';
 import type { FightVideo, GlobePoint } from '../types';
 
@@ -13,12 +14,49 @@ interface TeamPanelProps {
 export default function TeamPanel({ team, videos, record, onPlay, onClose, onChallenge }: TeamPanelProps) {
   const place = [team.city, team.region, team.country].filter(Boolean).join(', ');
   const flag = flagEmoji(team.country);
+  // Mobile-only: collapse the bottom sheet to a slim bar so the globe and
+  // arcs stay visible; the buttons only render via the mobile stylesheet.
+  const [collapsed, setCollapsed] = useState(false);
+  useEffect(() => setCollapsed(false), [team.id]);
+
+  // Bottom-sheet gesture: pull down (with content scrolled to top) to
+  // minimize, swipe up on the collapsed bar to expand.
+  const touchStart = useRef<{ y: number; atTop: boolean } | null>(null);
+  const onTouchStart = (e: React.TouchEvent<HTMLElement>) => {
+    touchStart.current = { y: e.touches[0].clientY, atTop: e.currentTarget.scrollTop <= 0 };
+  };
+  const onTouchEnd = (e: React.TouchEvent<HTMLElement>) => {
+    if (!touchStart.current) return;
+    const dy = e.changedTouches[0].clientY - touchStart.current.y;
+    if (!collapsed && touchStart.current.atTop && dy > 55) setCollapsed(true);
+    else if (collapsed && dy < -35) setCollapsed(false);
+    touchStart.current = null;
+  };
 
   return (
     <aside
-      className={`team-panel ${team.active ? 'is-active' : 'is-historical'}`}
+      className={`team-panel ${team.active ? 'is-active' : 'is-historical'}${collapsed ? ' is-collapsed' : ''}`}
       aria-label={`Details for ${team.bot}`}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
+      <span className="panel-grip" aria-hidden="true" />
+      <button
+        className="panel-expand"
+        onClick={() => setCollapsed(false)}
+        aria-label={`Expand details for ${team.bot}`}
+      >
+        {team.marker && <img src={team.marker} alt="" />}
+        <span className="panel-expand-name">{team.bot}</span>
+        <span aria-hidden="true">▲</span>
+      </button>
+      <button
+        className="panel-minimize"
+        onClick={() => setCollapsed(true)}
+        aria-label="Minimize panel"
+      >
+        ▼
+      </button>
       <button className="panel-close" onClick={onClose} aria-label="Close panel">
         ×
       </button>
