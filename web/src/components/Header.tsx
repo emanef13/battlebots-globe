@@ -42,8 +42,10 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
     onSelect(p);
   };
 
+  // stopPropagation: on touch devices the parent .stat toggles the popover
+  // on click, so taps inside must not bubble up and re-open it
   const botGrid = (list: GlobePoint[]) => (
-    <div className="stat-pop">
+    <div className="stat-pop" onClick={(e) => e.stopPropagation()}>
       <div className="stat-pop-card stat-pop-grid">
         {list.map((p) => (
           <button key={p.id} title={p.bot} onClick={() => pickFromStat(p)}>
@@ -191,7 +193,7 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
           <span className="stat-value">{stats.countries}</span>
           <span className="stat-label">countries</span>
           {hoverStat === 'countries' && (
-            <div className="stat-pop">
+            <div className="stat-pop" onClick={(e) => e.stopPropagation()}>
               <div className="stat-pop-card">
                 {countryBreakdown.map(([country, count]) => (
                   <button
