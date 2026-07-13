@@ -540,7 +540,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
         }}
         arcStroke={(d: object) => {
           const arc = d as ArcDatum;
-          return arc.fight ? 0.55 : Math.min(0.45, 0.22 + arc.pair.count * 0.05);
+          return arc.fight ? 0.55 : Math.min(0.38, 0.14 + arc.pair.count * 0.05);
         }}
         arcAltitudeAutoScale={0.35}
         arcsTransitionDuration={0}
