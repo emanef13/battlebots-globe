@@ -16,9 +16,11 @@ type AppEvent =
 
 let posthog: PostHog | null = null;
 
-// PostHog activates only when VITE_POSTHOG_KEY is set (Vercel env var);
-// loaded dynamically so visitors without a key configured pay no bundle cost.
-const KEY = import.meta.env.VITE_POSTHOG_KEY as string | undefined;
+// PostHog client token — write-only and public by design (it ships in the
+// bundle regardless); VITE_POSTHOG_KEY overrides it if ever rotated.
+const KEY =
+  (import.meta.env.VITE_POSTHOG_KEY as string | undefined) ??
+  'phc_veFzouaHTygMF2S3guUwSQnMHCiPnPTqFpPeUr4hTypf';
 if (KEY) {
   import('posthog-js').then(({ default: ph }) => {
     ph.init(KEY, {
