@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
+import { trackEvent } from '../analytics';
 import { flagEmoji } from '../flags';
 import type { GlobePoint } from '../types';
 
@@ -74,6 +75,7 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
   }, [query, points]);
 
   const pick = (p: GlobePoint) => {
+    trackEvent('search_select', { query: query.slice(0, 60), bot: p.id });
     onSelect(p);
     setQuery('');
     inputRef.current?.blur();

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { trackEvent } from './analytics';
 import BotGlobe from './components/BotGlobe';
 import FightMode from './components/FightMode';
 import Header from './components/Header';
@@ -92,6 +93,7 @@ export default function App() {
   );
 
   const toggleFilter = (category: 'active' | 'historical') => {
+    trackEvent('filter_toggle', { filter: category });
     setFilter((f) => (f === category ? 'all' : category));
     setSelected((sel) =>
       sel && ((category === 'active' && !sel.active) || (category === 'historical' && sel.active))
@@ -111,16 +113,23 @@ export default function App() {
       0,
     );
     const altitude = Math.min(2.2, Math.max(0.5, spread * 0.055 + 0.35));
+    trackEvent('country_focus', { country });
     setSelected(null);
     setFocus({ lat, lng, altitude, nonce: Date.now() });
   };
 
-  const startFight = (a: GlobePoint, b: GlobePoint) => {
+  const startFight = (a: GlobePoint, b: GlobePoint, via: 'search' | 'arc' | 'challenge') => {
     if (a.id === b.id) return;
+    trackEvent('fight_mode', { a: a.id, b: b.id, via });
     setChallenger(null);
     setSelected(null);
     setFocus(null);
     setFightPair([a, b]);
+  };
+
+  const playVideo = (v: FightVideo) => {
+    trackEvent('video_play', { video: v.id, title: v.title.slice(0, 80) });
+    setPlaying(v);
   };
 
   // While a challenger waits, the next bot picked becomes the opponent.
@@ -131,9 +140,10 @@ export default function App() {
       return;
     }
     if (challenger && p && p.id !== challenger.id) {
-      startFight(challenger, p);
+      startFight(challenger, p, 'challenge');
       return;
     }
+    if (p) trackEvent('bot_selected', { bot: p.id });
     setSelected(p);
   };
 
@@ -159,16 +169,16 @@ export default function App() {
         mapStyle={mapStyle}
         fights={fights}
         matchVideos={matchVideos}
-        onPlayVideo={setPlaying}
+        onPlayVideo={playVideo}
         focus={focus}
         fightPair={fightPair}
-        onFight={startFight}
+        onFight={(a, b) => startFight(a, b, 'arc')}
       />
       <Header
         points={points}
         onSelect={handleSelect}
         onFocusCountry={focusCountry}
-        onVersus={startFight}
+        onVersus={(a, b) => startFight(a, b, 'search')}
       />
 
       {challenger && !fightPair && (
@@ -217,9 +227,10 @@ export default function App() {
           team={selected}
           videos={videos?.videos[selected.id] ?? []}
           record={recordFor(fights, selected.id)}
-          onPlay={setPlaying}
+          onPlay={playVideo}
           onClose={() => setSelected(null)}
           onChallenge={() => {
+            trackEvent('challenge_started', { bot: selected.id });
             setChallenger(selected);
             setSelected(null);
           }}
@@ -232,7 +243,7 @@ export default function App() {
           points={points}
           fights={fights}
           matchVideos={matchVideos}
-          onPlayVideo={setPlaying}
+          onPlayVideo={playVideo}
           onClose={() => setFightPair(null)}
         />
       )}
