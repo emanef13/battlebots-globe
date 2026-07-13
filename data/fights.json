@@ -5896,6 +5896,41 @@
    "winner": "yeti",
    "season": "World Championship III",
    "method": "KO"
+  },
+  {
+   "a": "madcatter",
+   "b": "railgun-max",
+   "winner": "railgun-max",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "railgun-max",
+   "b": "wan-hoo",
+   "winner": "railgun-max",
+   "season": "World Championship IV",
+   "method": "JD"
+  },
+  {
+   "a": "free-shipping",
+   "b": "railgun-max",
+   "winner": "free-shipping",
+   "season": "World Championship IV",
+   "method": "Split JD"
+  },
+  {
+   "a": "railgun-max",
+   "b": "uppercut",
+   "winner": "uppercut",
+   "season": "World Championship IV",
+   "method": "KO"
+  },
+  {
+   "a": "gruff",
+   "b": "railgun-max",
+   "winner": "gruff",
+   "season": "World Championship IV",
+   "method": "KO"
   }
  ]
 }

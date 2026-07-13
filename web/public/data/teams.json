@@ -813,7 +813,7 @@
       "id": "black-dragon",
       "bot": "Black Dragon",
       "team": "Team Uai!rrior",
-      "city": "Itajub\u00e1",
+      "city": "Itajubá",
       "region": null,
       "country": "Brazil",
       "lat": -22.4238234,
@@ -2980,6 +2980,25 @@
       "photo": "/photos/dragon-king.jpg",
       "marker": "/bots/dragon-king.png",
       "url": "https://battlebots.fandom.com/wiki/Dragon_King"
+    },
+    {
+      "id": "railgun-max",
+      "bot": "Railgun MAX",
+      "team": "Team Atom",
+      "city": "Shanghai",
+      "region": null,
+      "country": "China",
+      "lat": 31.2312707,
+      "lng": 121.4700152,
+      "weapon": "Eggbeater spinner",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Elaine Wu",
+      "photo": "/photos/railgun-max.jpg",
+      "marker": "/bots/railgun-max.png",
+      "url": "https://battlebots.fandom.com/wiki/Railgun_MAX"
     }
   ]
 }
