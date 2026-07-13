@@ -2999,6 +2999,83 @@
       "photo": "/photos/railgun-max.jpg",
       "marker": "/bots/railgun-max.png",
       "url": "https://battlebots.fandom.com/wiki/Railgun_MAX"
+    },
+    {
+      "id": "basilisk",
+      "bot": "Basilisk",
+      "team": "MBS Robotics",
+      "city": "Edmonton",
+      "region": null,
+      "country": "Canada",
+      "lat": 53.5462055,
+      "lng": -113.491241,
+      "weapon": "Flipper",
+      "seasons": [
+        "2016 (WC II)",
+        "2018 (WC III)"
+      ],
+      "active": false,
+      "builder": "Lucas Sloan",
+      "photo": "/photos/basilisk.jpg",
+      "marker": "/bots/basilisk.png",
+      "url": "https://battlebots.fandom.com/wiki/Basilisk"
+    },
+    {
+      "id": "bucktooth-burl",
+      "bot": "Bucktooth Burl",
+      "team": "The Eh Team",
+      "city": "Saskatoon",
+      "region": null,
+      "country": "Canada",
+      "lat": 52.131802,
+      "lng": -106.660767,
+      "weapon": "Drum spinner",
+      "seasons": [
+        "2016 (WC II)"
+      ],
+      "active": false,
+      "builder": "Julia Chernushevich",
+      "photo": "/photos/bucktooth-burl.jpg",
+      "marker": "/bots/bucktooth-burl.png",
+      "url": "https://battlebots.fandom.com/wiki/Bucktooth_Burl"
+    },
+    {
+      "id": "samurai",
+      "bot": "Samurai",
+      "team": "Bowltech Robotics",
+      "city": "São Paulo",
+      "region": null,
+      "country": "Brazil",
+      "lat": -23.5506507,
+      "lng": -46.6333824,
+      "weapon": "Undercutter bar",
+      "seasons": [
+        "2023 (WC VII)"
+      ],
+      "active": false,
+      "builder": "Ângelo Shigueki Ragass Inoue",
+      "photo": "/photos/samurai.jpg",
+      "marker": "/bots/samurai.png",
+      "url": "https://battlebots.fandom.com/wiki/Samurai"
+    },
+    {
+      "id": "rainbow",
+      "bot": "Rainbow",
+      "team": "Team Unicorn",
+      "city": "St. Petersburg",
+      "region": null,
+      "country": "Russia",
+      "lat": 59.9606739,
+      "lng": 30.1586551,
+      "weapon": "Horizontal bar spinner",
+      "seasons": [
+        "2019 (WC IV)"
+      ],
+      "active": false,
+      "builder": "Petr Kravchenko",
+      "photo": "/photos/rainbow.jpg",
+      "marker": "/bots/rainbow.png",
+      "url": "https://battlebots.fandom.com/wiki/Rainbow"
     }
   ]
 }

@@ -5919,18 +5919,32 @@
    "method": "Split JD"
   },
   {
-   "a": "railgun-max",
-   "b": "uppercut",
-   "winner": "uppercut",
-   "season": "World Championship IV",
-   "method": "KO"
-  },
-  {
    "a": "gruff",
    "b": "railgun-max",
    "winner": "gruff",
    "season": "World Championship IV",
    "method": "KO"
+  },
+  {
+   "a": "basilisk",
+   "b": "chomp",
+   "winner": "basilisk",
+   "season": "World Championship III",
+   "method": "KO"
+  },
+  {
+   "a": "doom",
+   "b": "samurai",
+   "winner": "samurai",
+   "season": "World Championship VII",
+   "method": "KO"
+  },
+  {
+   "a": "rainbow",
+   "b": "yeti",
+   "winner": "yeti",
+   "season": "World Championship IV",
+   "method": "JD"
   }
  ]
 }
