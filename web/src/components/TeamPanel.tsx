@@ -22,7 +22,13 @@ export default function TeamPanel({ team, videos, record, onPlay, onClose, onCha
       <button className="panel-close" onClick={onClose} aria-label="Close panel">
         ×
       </button>
-      {team.photo && <img className="panel-photo" src={team.photo} alt={`Team photo for ${team.bot}`} />}
+      {team.photo ? (
+        <img className="panel-photo" src={team.photo} alt={`Team photo for ${team.bot}`} />
+      ) : (
+        team.marker && (
+          <img className="panel-photo panel-photo-robot" src={team.marker} alt={team.bot} />
+        )
+      )}
       <div className={`panel-status ${team.active ? 'is-active' : 'is-historical'}`}>
         <span className="status-dot" aria-hidden="true" />
         {team.active ? 'Pro League 2026' : 'Historical'}

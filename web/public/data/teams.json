@@ -121,7 +121,7 @@
       ],
       "active": true,
       "builder": "Al Hurworth",
-      "photo": "/photos/disarray.webp",
+      "photo": "/photos/disarray.jpg",
       "marker": "/bots/disarray.png",
       "url": "https://battlebots.fandom.com/wiki/Disarray"
     },
@@ -167,7 +167,7 @@
       ],
       "active": true,
       "builder": "Logeshwaran Balasundaram",
-      "photo": "/photos/golden-fury.webp",
+      "photo": "/photos/golden-fury.jpg",
       "marker": "/bots/golden-fury.png",
       "url": "https://battlebots.fandom.com/wiki/Golden_Fury"
     },
@@ -298,7 +298,7 @@
       ],
       "active": true,
       "builder": "Chad New",
-      "photo": "/photos/magnitude.webp",
+      "photo": "/photos/magnitude.jpg",
       "marker": "/bots/magnitude.png",
       "url": "https://battlebots.fandom.com/wiki/Magnitude"
     },
@@ -346,7 +346,7 @@
       ],
       "active": true,
       "builder": "Nick Dobrikov",
-      "photo": "/photos/manta.webp",
+      "photo": "/photos/manta.jpg",
       "marker": "/bots/manta.png",
       "url": "https://battlebots.fandom.com/wiki/Manta"
     },
@@ -393,7 +393,7 @@
       ],
       "active": true,
       "builder": "Steven Szczeszynski",
-      "photo": "/photos/orbitron.webp",
+      "photo": "/photos/orbitron.jpg",
       "marker": "/bots/orbitron.png",
       "url": "https://battlebots.fandom.com/wiki/Orbitron"
     },
@@ -512,7 +512,7 @@
       ],
       "active": true,
       "builder": "Aren Hill",
-      "photo": "/photos/the-twins.webp",
+      "photo": "/photos/the-twins.jpg",
       "marker": "/bots/the-twins.png",
       "url": "https://battlebots.fandom.com/wiki/The_Twins"
     },
@@ -664,7 +664,7 @@
       ],
       "active": false,
       "builder": "Jim Smentowski",
-      "photo": "/photos/backlash.webp",
+      "photo": "/photos/backlash.jpg",
       "marker": "/bots/backlash.png",
       "url": "https://battlebots.fandom.com/wiki/Backlash"
     },
@@ -782,7 +782,7 @@
       ],
       "active": false,
       "builder": "Carlo Bertocchini",
-      "photo": "/photos/biohazard.webp",
+      "photo": "/photos/biohazard.jpg",
       "marker": "/bots/biohazard.png",
       "url": "https://battlebots.fandom.com/wiki/BioHazard"
     },
@@ -979,7 +979,7 @@
       ],
       "active": false,
       "builder": "Joshua Kong",
-      "photo": "/photos/calypso.webp",
+      "photo": "/photos/calypso.jpg",
       "marker": "/bots/calypso.png",
       "url": "https://battlebots.fandom.com/wiki/Calypso"
     },
@@ -1212,7 +1212,7 @@
       ],
       "active": false,
       "builder": "Donald Hutson",
-      "photo": "/photos/diesector.webp",
+      "photo": "/photos/diesector.jpg",
       "marker": "/bots/diesector.png",
       "url": "https://battlebots.fandom.com/wiki/Diesector"
     },
@@ -1554,7 +1554,7 @@
       ],
       "active": false,
       "builder": "Tony Buchignani",
-      "photo": "/photos/hazard.webp",
+      "photo": "/photos/hazard.jpg",
       "marker": "/bots/hazard.png",
       "url": "https://battlebots.fandom.com/wiki/Hazard"
     },
@@ -1690,7 +1690,7 @@
       ],
       "active": false,
       "builder": "John Reid",
-      "photo": "/photos/killerhurtz.webp",
+      "photo": "/photos/killerhurtz.jpg",
       "marker": "/bots/killerhurtz.png",
       "url": "https://battlebots.fandom.com/wiki/KillerHurtz"
     },
@@ -1839,7 +1839,7 @@
       ],
       "active": false,
       "builder": "Charles Tilford",
-      "photo": "/photos/mauler.webp",
+      "photo": "/photos/mauler.jpg",
       "marker": "/bots/mauler.png",
       "url": "https://battlebots.fandom.com/wiki/Mauler"
     },
@@ -1863,7 +1863,7 @@
       ],
       "active": false,
       "builder": "Christian Carlberg",
-      "photo": "/photos/minion.webp",
+      "photo": "/photos/minion.jpg",
       "marker": "/bots/minion.png",
       "url": "https://battlebots.fandom.com/wiki/Minion"
     },
@@ -1928,7 +1928,7 @@
       ],
       "active": false,
       "builder": "David Le",
-      "photo": "/photos/nemesis.webp",
+      "photo": "/photos/nemesis.jpg",
       "marker": "/bots/nemesis.png",
       "url": "https://battlebots.fandom.com/wiki/Nemesis_%282026%29"
     },
@@ -2044,7 +2044,7 @@
       ],
       "active": false,
       "builder": "Christian Carlberg",
-      "photo": "/photos/overkill.webp",
+      "photo": "/photos/overkill.jpg",
       "marker": "/bots/overkill.png",
       "url": "https://battlebots.fandom.com/wiki/OverKill"
     },
@@ -2193,7 +2193,7 @@
       ],
       "active": false,
       "builder": "Ian Lewis",
-      "photo": "/photos/razer.webp",
+      "photo": "/photos/razer.jpg",
       "marker": "/bots/razer.png",
       "url": "https://battlebots.fandom.com/wiki/Razer"
     },
@@ -2660,7 +2660,7 @@
       ],
       "active": false,
       "builder": "Alexander Rose, Reason Bradley",
-      "photo": "/photos/toro.webp",
+      "photo": "/photos/toro.jpg",
       "marker": "/bots/toro.png",
       "url": "https://battlebots.fandom.com/wiki/Toro"
     },
@@ -2726,7 +2726,7 @@
       ],
       "active": false,
       "builder": "Gage Cauchois",
-      "photo": "/photos/vlad-the-impaler.webp",
+      "photo": "/photos/vlad-the-impaler.jpg",
       "marker": "/bots/vlad-the-impaler.png",
       "url": "https://battlebots.fandom.com/wiki/Vlad_the_Impaler"
     },
@@ -2855,7 +2855,7 @@
       ],
       "active": false,
       "builder": "Terry Ewert, Jake Ewert",
-      "photo": "/photos/whyachi.webp",
+      "photo": "/photos/whyachi.jpg",
       "marker": "/bots/whyachi.png",
       "url": "https://battlebots.fandom.com/wiki/Whyachi"
     },
@@ -2901,7 +2901,7 @@
       ],
       "active": false,
       "builder": "Jonathan Ridder",
-      "photo": "/photos/ziggo.webp",
+      "photo": "/photos/ziggo.jpg",
       "marker": "/bots/ziggo.png",
       "url": "https://battlebots.fandom.com/wiki/Ziggo"
     },

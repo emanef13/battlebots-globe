@@ -65,12 +65,20 @@ Append one object per fight: `{"a", "b", "winner", "season", "method"}`.
 
 ## 5. Photo and globe marker
 
-1. Resolve the infobox image URL:
-   `api.php?action=query&titles=File:<image>&prop=imageinfo&iiprop=url`
-2. Download (browser User-Agent) to **both**:
-   - `data/raw/robot_imgs/<id>.img` — cutout input (any format is fine)
-   - `web/public/photos/<id>.jpg` — panel photo. Wiki files are often WebP
-     with a .jpg name: re-save via PIL (`convert('RGB').save(..., quality=85)`).
+The panel photo must be the **team photo** (people + robot), not the robot
+alone; the bot-page infobox image (robot only) is the cutout input.
+
+1. Robot image (cutout input): resolve the bot-page infobox `image` via
+   `api.php?action=query&titles=File:<image>&prop=imageinfo&iiprop=url`,
+   download to `data/raw/robot_imgs/<id>.img` (any format is fine).
+2. Team photo (panel): fetch the wiki **Team page** (the `team` infobox
+   field is the page title; use `redirects=1`) and read its `image1`
+   param — often a `<gallery>` with era captions. Pick the entry whose
+   caption matches the bot's seasons; else the earliest era. Save to
+   `web/public/photos/<id>.jpg` re-encoded via PIL
+   (`convert('RGB').save(..., quality=85)` — wiki files are often WebP
+   regardless of name). If no team photo exists, use the robot image;
+   the panel also falls back to the marker sprite when `photo` is null.
 3. Generate the marker sprite (rembg segmentation, prefers the wiki image):
    ```bash
    .venv/bin/python pipeline/robot_cutouts.py --only <id> --force

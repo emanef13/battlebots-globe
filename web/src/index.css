@@ -840,6 +840,13 @@ body,
   color: var(--brand);
 }
 
+/* robot-cutout fallback when a team has no team photo */
+.panel-photo-robot {
+  object-fit: contain;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  padding: 18px;
+}
+
 /* ---------- fight mode ---------- */
 
 .challenge-banner {
