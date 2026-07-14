@@ -1,0 +1,33 @@
+{
+  "note": "Newest first. Each item: date, text, and optionally one of bot (id), vs ([idA, idB]) or url.",
+  "items": [
+    {
+      "date": "2026-07-13",
+      "text": "Head-to-head FIGHT MODE is here — search “tombstone vs minotaur” or hit ⚔ CHALLENGE on any bot",
+      "vs": [
+        "tombstone",
+        "minotaur"
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "text": "Four new bots by community request — including Rainbow from St. Petersburg, our 12th country",
+      "bot": "rainbow"
+    },
+    {
+      "date": "2026-07-13",
+      "text": "BattleBots Globe is now fully mobile — spin the planet from your phone",
+      "url": null
+    },
+    {
+      "date": "2026-07-12",
+      "text": "Railgun MAX (Team Atom, Shanghai) joins the globe — spotted missing by r/battlebots",
+      "bot": "railgun-max"
+    },
+    {
+      "date": "2026-07-12",
+      "text": "135 robots · 849 fights · 470+ matchup videos, all on one globe",
+      "url": "/robots/"
+    }
+  ]
+}

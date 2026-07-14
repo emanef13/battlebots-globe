@@ -5,8 +5,13 @@
   "framework": null,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/chat.mjs": {
+      "maxDuration": 60
+    }
+  }
 }

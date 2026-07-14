@@ -12,7 +12,10 @@ type AppEvent =
   | 'fight_mode'
   | 'challenge_started'
   | 'video_play'
-  | 'filter_toggle';
+  | 'filter_toggle'
+  | 'news_click'
+  | 'chat_open'
+  | 'chat_message';
 
 let posthog: PostHog | null = null;
 

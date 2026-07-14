@@ -1,8 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { trackEvent } from './analytics';
 import BotGlobe from './components/BotGlobe';
+import ChatWidget, { type ChatAction } from './components/ChatWidget';
 import FightMode from './components/FightMode';
 import Header from './components/Header';
+import NewsTicker, { type NewsItem } from './components/NewsTicker';
+
+// Arena News footer is parked for now — flip to re-enable the chyron + feed.
+const NEWS_ENABLED = false;
 import TeamPanel from './components/TeamPanel';
 import VideoModal from './components/VideoModal';
 import { recordFor } from './fightStats';
@@ -45,6 +50,7 @@ export default function App() {
   const [videos, setVideos] = useState<VideosFile | null>(null);
   const [fights, setFights] = useState<Fight[]>([]);
   const [matchVideos, setMatchVideos] = useState<Record<string, FightVideo>>({});
+  const [news, setNews] = useState<NewsItem[]>([]);
   const [playing, setPlaying] = useState<FightVideo | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<GlobePoint | null>(null);
@@ -81,6 +87,28 @@ export default function App() {
       .then((r) => (r.ok ? (r.json() as Promise<MatchVideosFile>) : null))
       .then((m) => m && setMatchVideos(m.videos))
       .catch(() => null);
+    // curated news ships with the app; live scraped news comes from the
+    // CDN-cached /api/news function — merged newest-first, deduped by link
+    Promise.all([
+      fetch('/data/news.json')
+        .then((r) => (r.ok ? (r.json() as Promise<{ items: NewsItem[] }>) : null))
+        .catch(() => null),
+      fetch('/api/news')
+        .then((r) => (r.ok ? (r.json() as Promise<{ items: NewsItem[] }>) : null))
+        .catch(() => null),
+    ]).then(([curated, live]) => {
+      const seen = new Set<string>();
+      const merged = [...(curated?.items ?? []), ...(live?.items ?? [])]
+        .filter((n) => {
+          const key = n.url ?? n.text;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .slice(0, 60); // chyron rotates the top 8; the Gazette archives all
+      setNews(merged);
+    });
   }, []);
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
@@ -147,6 +175,49 @@ export default function App() {
   const playVideo = (v: FightVideo) => {
     trackEvent('video_play', { video: v.id, title: v.title.slice(0, 80) });
     setPlaying(v);
+  };
+
+  const openNews = (item: NewsItem) => {
+    trackEvent('news_click', { text: item.text.slice(0, 80) });
+    if (item.vs) {
+      const a = points.find((p) => p.id === item.vs![0]);
+      const b = points.find((p) => p.id === item.vs![1]);
+      if (a && b) startFight(a, b, 'search');
+      return;
+    }
+    if (item.bot) {
+      const p = points.find((x) => x.id === item.bot);
+      if (p) {
+        setChallenger(null);
+        setFightPair(null);
+        setSelected(p);
+      }
+      return;
+    }
+    if (item.url) {
+      window.open(item.url, item.url.startsWith('http') ? '_blank' : '_self', 'noopener');
+    }
+  };
+
+  // Pit Boss drives the globe through the same paths the UI uses
+  const chatAction = (action: ChatAction) => {
+    if (action.type === 'bot') {
+      const p = points.find((x) => x.id === action.id);
+      if (p) {
+        setChallenger(null);
+        setFightPair(null);
+        setSelected(p);
+      }
+    } else if (action.type === 'vs') {
+      const a = points.find((x) => x.id === action.a);
+      const b = points.find((x) => x.id === action.b);
+      if (a && b) startFight(a, b, 'search');
+    } else if (action.type === 'country') {
+      const match = points.find(
+        (x) => (x.country ?? '').toLowerCase() === action.name.toLowerCase(),
+      );
+      if (match?.country) focusCountry(match.country);
+    }
   };
 
   // While a challenger waits, the next bot picked becomes the opponent.
@@ -265,6 +336,11 @@ export default function App() {
         />
       )}
       {playing && <VideoModal video={playing} onClose={() => setPlaying(null)} />}
+      {NEWS_ENABLED && !fightPair && <NewsTicker items={news} onOpen={openNews} />}
+      <ChatWidget
+        hidden={Boolean(selected) || Boolean(fightPair) || Boolean(playing)}
+        onAction={chatAction}
+      />
 
       {!data && !error && <div className="loading">Loading the arena…</div>}
       {error && <div className="loading error">Failed to load team data: {error}</div>}

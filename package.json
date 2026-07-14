@@ -1,0 +1,9 @@
+{
+  "name": "battlebots-globe",
+  "private": true,
+  "description": "Root dependencies for the Vercel serverless functions in /api",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.111.0",
+    "@vercel/blob": "^1.1.1"
+  }
+}
