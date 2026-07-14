@@ -8,6 +8,7 @@ import NewsTicker, { type NewsItem } from './components/NewsTicker';
 
 // Arena News footer is parked for now — flip to re-enable the chyron + feed.
 const NEWS_ENABLED = false;
+const CHAT_ENABLED = false;
 import TeamPanel from './components/TeamPanel';
 import VideoModal from './components/VideoModal';
 import { recordFor } from './fightStats';
@@ -337,10 +338,12 @@ export default function App() {
       )}
       {playing && <VideoModal video={playing} onClose={() => setPlaying(null)} />}
       {NEWS_ENABLED && !fightPair && <NewsTicker items={news} onOpen={openNews} />}
-      <ChatWidget
-        hidden={Boolean(selected) || Boolean(fightPair) || Boolean(playing)}
-        onAction={chatAction}
-      />
+      {CHAT_ENABLED && (
+        <ChatWidget
+          hidden={Boolean(selected) || Boolean(fightPair) || Boolean(playing)}
+          onAction={chatAction}
+        />
+      )}
 
       {!data && !error && <div className="loading">Loading the arena…</div>}
       {error && <div className="loading error">Failed to load team data: {error}</div>}
