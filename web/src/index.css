@@ -2116,10 +2116,18 @@ body,
     margin-top: 1px;
   }
 
+  /* stats leave the right corner: their own row, left-aligned under the title */
   .header-stats {
     order: 2;
-    gap: 14px;
+    gap: 18px;
     margin-top: 0;
+    margin-left: 0;
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+
+  .stat {
+    align-items: flex-start;
   }
 
   .stat-value {
