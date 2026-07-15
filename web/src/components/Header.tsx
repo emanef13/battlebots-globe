@@ -97,6 +97,15 @@ export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, 
     return a && b && a.id !== b.id ? ([a, b] as const) : null;
   }, [query, points]);
 
+  // a query that matches a team name surfaces the TEAM as one row (leading
+  // into team view) instead of listing its robots; bots still match on
+  // their own name and location
+  const teamResults = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2) return [];
+    return teamBreakdown.filter(([team]) => team.toLowerCase().includes(q));
+  }, [query, teamBreakdown]);
+
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
@@ -104,7 +113,6 @@ export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, 
       .filter(
         (p) =>
           p.bot.toLowerCase().includes(q) ||
-          (p.team ?? '').toLowerCase().includes(q) ||
           (p.city ?? '').toLowerCase().includes(q) ||
           (p.region ?? '').toLowerCase().includes(q) ||
           (p.country ?? '').toLowerCase().includes(q),
@@ -114,6 +122,13 @@ export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, 
   const pick = (p: GlobePoint) => {
     trackEvent('search_select', { query: query.slice(0, 60), bot: p.id });
     onSelect(p);
+    setQuery('');
+    inputRef.current?.blur();
+  };
+
+  const pickTeam = (team: string) => {
+    trackEvent('search_select', { query: query.slice(0, 60), team });
+    onFocusTeam(team);
     setQuery('');
     inputRef.current?.blur();
   };
@@ -160,13 +175,14 @@ export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, 
                 onVersus(versus[0], versus[1]);
                 setQuery('');
                 inputRef.current?.blur();
-              } else if (results.length > 0) pick(results[0]);
+              } else if (teamResults.length > 0) pickTeam(teamResults[0][0]);
+              else if (results.length > 0) pick(results[0]);
             }
             if (e.key === 'Escape') setQuery('');
           }}
           aria-label="Search bots, teams or cities"
         />
-        {(results.length > 0 || versus) && (
+        {(teamResults.length > 0 || results.length > 0 || versus) && (
           <ul className="search-results">
             {versus && (
               <li>
@@ -185,6 +201,17 @@ export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, 
                 </button>
               </li>
             )}
+            {teamResults.map(([team, members]) => (
+              <li key={`t:${team}`}>
+                <button className="search-team-row" onClick={() => pickTeam(team)}>
+                  <span className="result-bot">{team}</span>
+                  <span className="result-place">
+                    {flagEmoji(members[0].country)} Team · {members.length} robot
+                    {members.length > 1 ? 's' : ''}
+                  </span>
+                </button>
+              </li>
+            ))}
             {results.map((p) => (
               <li key={p.id}>
                 <button onClick={() => pick(p)}>

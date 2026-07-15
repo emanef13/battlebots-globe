@@ -385,6 +385,16 @@ body,
 
 .is-active .status-dot,
 .legend-dot.is-active,
+/* team rows: a quiet cool tint — distinct from every robot status color */
+.search-team-row {
+  background: rgba(130, 175, 255, 0.06);
+  box-shadow: inset 3px 0 0 #4fd8c7;
+}
+
+.search-team-row:hover {
+  background: rgba(130, 175, 255, 0.13);
+}
+
 .result-dot.is-active {
   background: var(--active);
 }
