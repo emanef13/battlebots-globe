@@ -9,9 +9,11 @@ interface TeamPanelProps {
   onPlay: (video: FightVideo) => void;
   onClose: () => void;
   onChallenge: () => void;
+  /** jump to team view: filter the globe to this bot's team */
+  onFocusTeam: (team: string) => void;
 }
 
-export default function TeamPanel({ team, videos, record, onPlay, onClose, onChallenge }: TeamPanelProps) {
+export default function TeamPanel({ team, videos, record, onPlay, onClose, onChallenge, onFocusTeam }: TeamPanelProps) {
   const place = [team.city, team.region, team.country].filter(Boolean).join(', ');
   const flag = flagEmoji(team.country);
   // Mobile-only: collapse the bottom sheet to a slim bar so the globe and
@@ -72,7 +74,15 @@ export default function TeamPanel({ team, videos, record, onPlay, onClose, onCha
         {team.active ? 'Pro League 2026' : 'Historical'}
       </div>
       <h2 className="panel-bot">{team.bot}</h2>
-      {team.team && <div className="panel-team">{team.team}</div>}
+      {team.team && (
+        <button
+          className="panel-team panel-team-link"
+          onClick={() => onFocusTeam(team.team!)}
+          title={`See all of ${team.team}'s robots on the globe`}
+        >
+          {team.team}
+        </button>
+      )}
 
       <dl className="panel-facts">
         {place && (

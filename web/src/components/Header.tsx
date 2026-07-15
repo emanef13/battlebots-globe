@@ -3,18 +3,23 @@ import { trackEvent } from '../analytics';
 import { flagEmoji } from '../flags';
 import type { GlobePoint } from '../types';
 
+const isLocalhost = /^(localhost|127\.)/.test(window.location.hostname);
+
 interface HeaderProps {
   points: GlobePoint[];
   onSelect: (point: GlobePoint) => void;
   onFocusCountry: (country: string) => void;
+  onFocusTeam: (team: string) => void;
   onVersus: (a: GlobePoint, b: GlobePoint) => void;
 }
 
-export default function Header({ points, onSelect, onFocusCountry, onVersus }: HeaderProps) {
+type StatKey = 'bots' | 'league' | 'teams' | 'countries';
+
+export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, onVersus }: HeaderProps) {
   const [query, setQuery] = useState('');
-  const [hoverStat, setHoverStat] = useState<null | 'bots' | 'league' | 'countries'>(null);
+  const [hoverStat, setHoverStat] = useState<null | StatKey>(null);
   const canHover = window.matchMedia('(hover: hover)').matches;
-  const statHandlers = (key: 'bots' | 'league' | 'countries') =>
+  const statHandlers = (key: StatKey) =>
     canHover
       ? { onMouseEnter: () => setHoverStat(key), onMouseLeave: () => setHoverStat(null) }
       : { onClick: () => setHoverStat((h) => (h === key ? null : key)) };
@@ -22,11 +27,25 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
 
   const stats = useMemo(() => {
     const countries = new Set(points.map((p) => p.country).filter(Boolean));
+    const teams = new Set(points.map((p) => p.team).filter(Boolean));
     return {
       bots: points.length,
       active: points.filter((p) => p.active).length,
+      teams: teams.size,
       countries: countries.size,
     };
+  }, [points]);
+
+  // teams with the most robots first, alphabetical within a count
+  const teamBreakdown = useMemo(() => {
+    const byTeam = new Map<string, GlobePoint[]>();
+    for (const p of points) {
+      if (!p.team) continue;
+      byTeam.set(p.team, [...(byTeam.get(p.team) ?? []), p]);
+    }
+    return [...byTeam.entries()].sort(
+      (a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]),
+    );
   }, [points]);
 
   const countryBreakdown = useMemo(() => {
@@ -96,6 +115,8 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
             BattleBots <span className="brand-accent">Globe</span>
           </h1>
           <p className="tagline">The BattleBots world, live on one globe</p>
+          {/* hidden on localhost for clean video recordings; always shown in prod */}
+          {!isLocalhost && (
           <p className="brand-links">
             <a href="https://github.com/emanef13/battlebots-globe" target="_blank" rel="noopener noreferrer">
               GitHub
@@ -111,6 +132,7 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
             <span aria-hidden="true"> · </span>
             <a href="/robots/">Robot index</a>
           </p>
+          )}
         </div>
       </div>
 
@@ -187,6 +209,33 @@ export default function Header({ points, onSelect, onFocusCountry, onVersus }: H
           <span className="stat-value stat-amber">{stats.active}</span>
           <span className="stat-label">in Pro League</span>
           {hoverStat === 'league' && botGrid(points.filter((p) => p.active))}
+        </div>
+        <div
+          className="stat"
+          {...statHandlers('teams')}
+        >
+          <span className="stat-value">{stats.teams}</span>
+          <span className="stat-label">teams</span>
+          {hoverStat === 'teams' && (
+            <div className="stat-pop" onClick={(e) => e.stopPropagation()}>
+              <div className="stat-pop-card">
+                {teamBreakdown.map(([team, members]) => (
+                  <button
+                    className="stat-pop-row"
+                    key={team}
+                    onClick={() => {
+                      setHoverStat(null);
+                      onFocusTeam(team);
+                    }}
+                  >
+                    <span className="stat-pop-flag">{flagEmoji(members[0].country)}</span>
+                    <span>{team}</span>
+                    <span className="stat-pop-count">{members.length}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         <div
           className="stat"

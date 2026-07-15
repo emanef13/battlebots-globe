@@ -21,6 +21,10 @@ export interface Marker {
   members?: GlobePoint[];
   active: boolean;
   selected: boolean;
+  /** filtered-out opponent shown dimmed as an arc endpoint */
+  ghost?: boolean;
+  /** faded while a selection highlights its rivals — never fought the selected bot */
+  dim?: boolean;
 }
 
 /** Cluster merge distance in degrees. Affine in altitude: loose at globe
@@ -76,8 +80,13 @@ const textureCache = new Map<string, THREE.CanvasTexture>();
 
 /** Circle badge for every marker — count label for clusters, dot for singles.
  * Dark contour under a white ring keeps it readable on any map style. */
-function badgeTexture(color: string, label: string | null, selected: boolean): THREE.CanvasTexture {
-  const key = `badge|${color}|${label ?? ''}|${selected}`;
+function badgeTexture(
+  color: string,
+  label: string | null,
+  selected: boolean,
+  ghost = false,
+): THREE.CanvasTexture {
+  const key = `badge|${color}|${label ?? ''}|${selected}|${ghost}`;
   const cached = textureCache.get(key);
   if (cached) return cached;
 
@@ -85,6 +94,7 @@ function badgeTexture(color: string, label: string | null, selected: boolean): T
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = S;
   const ctx = canvas.getContext('2d')!;
+  if (ghost) ctx.globalAlpha = 0.45;
   const cx = S / 2;
   const r = S * 0.33;
 
@@ -126,6 +136,9 @@ function badgeTexture(color: string, label: string | null, selected: boolean): T
 
 interface BotGlobeProps {
   points: GlobePoint[];
+  /** the full unfiltered roster — rivalry arcs are computed from this so a
+   * selected bot's fight history survives team/category filters */
+  allPoints: GlobePoint[];
   selected: GlobePoint | null;
   onSelect: (point: GlobePoint | null) => void;
   mapStyle: MapStyle;
@@ -177,7 +190,7 @@ function loadCities(): Promise<[number, number][]> {
   return cityCache;
 }
 
-export default function BotGlobe({ points, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
+export default function BotGlobe({ points, allPoints, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -299,7 +312,29 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
     globeRef.current?.pointOfView({ lat, lng, altitude }, 1100);
   }, [fightPair, setAutoRotate]);
 
-  const markers = useMemo(() => {
+  // head-to-head aggregation: one record per pair of rostered bots — over the
+  // FULL roster, so filters never erase a selected bot's fight history
+  const pairRecords = useMemo(() => {
+    const byId = new Map(allPoints.map((p) => [p.id, p]));
+    const map = new Map<string, PairRecord>();
+    for (const f of fights) {
+      const a = byId.get(f.a);
+      const b = byId.get(f.b);
+      if (!a || !b) continue;
+      const key = `${f.a}|${f.b}`;
+      let rec = map.get(key);
+      if (!rec) {
+        rec = { a, b, count: 0, aWins: 0, bWins: 0 };
+        map.set(key, rec);
+      }
+      rec.count += 1;
+      if (f.winner === f.a) rec.aWins += 1;
+      else if (f.winner === f.b) rec.bWins += 1;
+    }
+    return [...map.values()];
+  }, [fights, allPoints]);
+
+  const markers = useMemo<Marker[]>(() => {
     if (fightPair) {
       // only the two fighters stay on the map, both at hero size
       return fightPair.map((p) => ({
@@ -314,6 +349,20 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
     }
     const list = clusterPoints(points, radiusForAltitude(altitude), selected?.id);
     if (selected) {
+      // spotlight the selection: bots that never fought it fade back, its
+      // opponents (and clusters containing one) keep full presence
+      const connected = new Set<string>([selected.id]);
+      for (const r of pairRecords) {
+        if (r.a.id === selected.id) connected.add(r.b.id);
+        else if (r.b.id === selected.id) connected.add(r.a.id);
+      }
+      for (const m of list) {
+        const hasRival =
+          m.kind === 'single'
+            ? connected.has(m.point!.id)
+            : m.members!.some((p) => connected.has(p.id));
+        if (!hasRival) m.dim = true;
+      }
       list.push({
         key: `sel:${selected.id}`,
         kind: 'single',
@@ -323,9 +372,28 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
         active: selected.active,
         selected: true,
       });
+      // opponents hidden by an active filter come back as faint ghosts so
+      // every rivalry arc lands on a visible, hoverable marker
+      const visible = new Set(points.map((p) => p.id));
+      for (const r of pairRecords) {
+        const opp =
+          r.a.id === selected.id ? r.b : r.b.id === selected.id ? r.a : null;
+        if (!opp || visible.has(opp.id)) continue;
+        visible.add(opp.id);
+        list.push({
+          key: `g:${opp.id}`,
+          kind: 'single',
+          lat: opp.glat,
+          lng: opp.glng,
+          point: opp,
+          active: opp.active,
+          selected: false,
+          ghost: true,
+        });
+      }
     }
     return list;
-  }, [points, altitude, selected, fightPair]);
+  }, [points, altitude, selected, fightPair, pairRecords]);
 
   const makeMarker = useCallback(
     (m: Marker): THREE.Sprite => {
@@ -333,7 +401,7 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
       const zoomFactor = Math.min(1, Math.max(0.38, 0.3 + altitude * 0.32));
       const label = m.kind === 'cluster' ? String(m.members!.length) : null;
       const material = new THREE.SpriteMaterial({
-        map: badgeTexture(color, label, m.selected),
+        map: badgeTexture(color, label, m.selected, m.ghost || m.dim),
         depthWrite: false,
       });
       const sprite = new THREE.Sprite(material);
@@ -342,11 +410,13 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
           ? 4.0 + Math.min(1.4, m.members!.length * 0.12)
           : m.selected
             ? 4.6
-            : m.active
-              ? 2.7
-              : 2.2) * zoomFactor;
+            : m.ghost
+              ? 1.9
+              : m.active
+                ? 2.7
+                : 2.2) * zoomFactor;
       sprite.scale.set(s, s, 1);
-      sprite.renderOrder = m.selected ? 3 : m.kind === 'cluster' ? 2 : 1;
+      sprite.renderOrder = m.selected ? 3 : m.kind === 'cluster' ? 2 : m.ghost ? 0 : 1;
       return sprite;
     },
     [altitude],
@@ -380,33 +450,12 @@ export default function BotGlobe({ points, selected, onSelect, mapStyle, fights,
       return fightPair.map((p) => ({ lat: p.glat, lng: p.glng, __selected: true }));
     }
     const base = markers
-      .filter((m) => m.active && !m.selected)
+      .filter((m) => m.active && !m.selected && !m.ghost && !m.dim)
       .map((m) => ({ lat: m.lat, lng: m.lng, __selected: false }));
     return selected
       ? [...base, { lat: selected.glat, lng: selected.glng, __selected: true }]
       : base;
   }, [markers, selected, fightPair]);
-
-  // head-to-head aggregation: one record per pair of mapped bots
-  const pairRecords = useMemo(() => {
-    const byId = new Map(points.map((p) => [p.id, p]));
-    const map = new Map<string, PairRecord>();
-    for (const f of fights) {
-      const a = byId.get(f.a);
-      const b = byId.get(f.b);
-      if (!a || !b) continue;
-      const key = `${f.a}|${f.b}`;
-      let rec = map.get(key);
-      if (!rec) {
-        rec = { a, b, count: 0, aWins: 0, bWins: 0 };
-        map.set(key, rec);
-      }
-      rec.count += 1;
-      if (f.winner === f.a) rec.aWins += 1;
-      else if (f.winner === f.b) rec.bWins += 1;
-    }
-    return [...map.values()];
-  }, [fights, points]);
 
   // Arcs appear only for the selected bot: one slim line per past opponent,
   // fanning out from it, colored by the head-to-head outcome (green = leads,

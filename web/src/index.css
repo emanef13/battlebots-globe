@@ -336,6 +336,7 @@ body,
   opacity: 0.35;
 }
 
+
 .legend-dot,
 .result-dot,
 .status-dot {
@@ -513,6 +514,24 @@ body,
   font-size: 14px;
   color: var(--ink-secondary);
   margin-top: 4px;
+}
+
+/* the team name doubles as a link into team view */
+.panel-team-link {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline dotted rgba(255, 255, 255, 0.35);
+  text-underline-offset: 3px;
+}
+
+.panel-team-link:hover {
+  color: #ffb424;
+  text-decoration-color: rgba(255, 180, 36, 0.6);
 }
 
 .panel-facts {

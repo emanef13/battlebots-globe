@@ -9,6 +9,7 @@ type AppEvent =
   | 'bot_selected'
   | 'search_select'
   | 'country_focus'
+  | 'team_focus'
   | 'fight_mode'
   | 'challenge_started'
   | 'video_play'

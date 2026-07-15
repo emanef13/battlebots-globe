@@ -60,6 +60,7 @@ export default function App() {
   const [fightPair, setFightPair] = useState<[GlobePoint, GlobePoint] | null>(null);
   const [focus, setFocus] = useState<{ lat: number; lng: number; altitude: number; nonce: number } | null>(null);
   const [filter, setFilter] = useState<'all' | 'active' | 'historical'>('all');
+  const [teamFilter, setTeamFilter] = useState<string | null>(null);
   // Always Night — Classic; ?map= still works for demos.
   const mapStyle = useMemo(
     () =>
@@ -123,11 +124,12 @@ export default function App() {
   }, [points]);
 
   // Legend filter: show only one category on the globe when selected.
-  const globePoints = useMemo(
-    () =>
-      filter === 'all' ? points : points.filter((p) => (filter === 'active' ? p.active : !p.active)),
-    [points, filter],
-  );
+  // A team filter (from the header stat) narrows further to that team's bots.
+  const globePoints = useMemo(() => {
+    const byCategory =
+      filter === 'all' ? points : points.filter((p) => (filter === 'active' ? p.active : !p.active));
+    return teamFilter ? byCategory.filter((p) => p.team === teamFilter) : byCategory;
+  }, [points, filter, teamFilter]);
 
   const toggleFilter = (category: 'active' | 'historical') => {
     trackEvent('filter_toggle', { filter: category });
@@ -152,6 +154,20 @@ export default function App() {
     const altitude = Math.min(2.2, Math.max(0.5, spread * 0.055 + 0.35));
     trackEvent('country_focus', { country });
     setSelected(null);
+    setFocus({ lat, lng, altitude, nonce: Date.now() });
+  };
+
+  // Filter the globe down to one team's robots and fly the camera to them.
+  const focusTeam = (team: string) => {
+    const members = points.filter((p) => p.team === team);
+    if (members.length === 0) return;
+    const lat = members.reduce((s, p) => s + p.lat, 0) / members.length;
+    const lng = members.reduce((s, p) => s + p.lng, 0) / members.length;
+    const spread = Math.max(...members.map((p) => Math.hypot(p.lat - lat, p.lng - lng)), 0);
+    const altitude = Math.min(2.2, Math.max(0.5, spread * 0.055 + 0.35));
+    trackEvent('team_focus', { team });
+    setSelected(null);
+    setTeamFilter(team);
     setFocus({ lat, lng, altitude, nonce: Date.now() });
   };
 
@@ -233,26 +249,32 @@ export default function App() {
       return;
     }
     if (p) trackEvent('bot_selected', { bot: p.id });
+    // picking a bot outside the current team filter (via search/chips)
+    // releases the filter so its marker isn't invisible on the globe
+    if (p && teamFilter && p.team !== teamFilter) setTeamFilter(null);
     setSelected(p);
   };
 
   // Escape backs out one layer: video modal handles its own Escape first,
-  // then fight mode, then opponent-select, then the team panel.
+  // then fight mode, then opponent-select, then the team panel, then the
+  // team filter.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape' || playing) return;
       if (fightPair) closeFight();
       else if (challenger) setChallenger(null);
-      else setSelected(null);
+      else if (selected) setSelected(null);
+      else if (teamFilter) setTeamFilter(null);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [playing, fightPair, challenger]);
+  }, [playing, fightPair, challenger, selected, teamFilter]);
 
   return (
     <div className="app">
       <BotGlobe
         points={globePoints}
+        allPoints={points}
         selected={selected}
         onSelect={handleSelect}
         mapStyle={mapStyle}
@@ -267,6 +289,7 @@ export default function App() {
         points={points}
         onSelect={handleSelect}
         onFocusCountry={focusCountry}
+        onFocusTeam={focusTeam}
         onVersus={(a, b) => startFight(a, b, 'search')}
       />
 
@@ -276,6 +299,16 @@ export default function App() {
             ⚔ Choose an opponent for <b>{challenger.bot}</b> — click any robot
           </span>
           <button onClick={() => setChallenger(null)}>Cancel</button>
+        </div>
+      )}
+
+      {teamFilter && !fightPair && !challenger && (
+        <div className="challenge-banner team-banner" role="status">
+          <span className="challenge-banner-text">
+            Showing <b>{teamFilter}</b> —{' '}
+            {points.filter((p) => p.team === teamFilter).length} robots
+          </span>
+          <button onClick={() => setTeamFilter(null)}>✕ Show all robots</button>
         </div>
       )}
 
@@ -318,6 +351,7 @@ export default function App() {
           record={recordFor(fights, selected.id)}
           onPlay={playVideo}
           onClose={() => setSelected(null)}
+          onFocusTeam={focusTeam}
           onChallenge={() => {
             trackEvent('challenge_started', { bot: selected.id });
             setChallenger(selected);
