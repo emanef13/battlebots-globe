@@ -1658,6 +1658,26 @@ body,
   }
 }
 
+/* the team banner is draggable: --drag-x/y are written by pointer handlers */
+.team-banner {
+  transform: translate(calc(-50% + var(--drag-x, 0px)), var(--drag-y, 0px));
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.team-banner:active {
+  cursor: grabbing;
+}
+
+.team-banner-grip {
+  color: var(--ink-secondary);
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
 .challenge-banner b {
   color: var(--brand);
 }
@@ -2429,5 +2449,9 @@ body,
     flex-wrap: wrap;
     justify-content: center;
     font-size: 13px;
+  }
+
+  .team-banner {
+    transform: translate(var(--drag-x, 0px), var(--drag-y, 0px));
   }
 }

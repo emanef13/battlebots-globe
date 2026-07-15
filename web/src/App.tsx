@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { trackEvent } from './analytics';
 import BotGlobe from './components/BotGlobe';
 import ChatWidget, { type ChatAction } from './components/ChatWidget';
@@ -171,6 +171,53 @@ export default function App() {
     setFocus({ lat, lng, altitude, nonce: Date.now() });
   };
 
+  // The team banner is draggable (mouse/touch) so it never blocks what the
+  // user wants to see — especially on mobile. The offset lives in refs and is
+  // written straight to CSS vars during the drag: no re-renders mid-gesture,
+  // and the spot is remembered while the app is open.
+  const bannerPos = useRef({ x: 0, y: 0 });
+  const bannerDrag = useRef<{ id: number; sx: number; sy: number; bx: number; by: number } | null>(null);
+  const bannerDragged = useRef(false); // suppresses the button click that follows a drag
+  const applyBannerOffset = (el: HTMLDivElement | null) => {
+    el?.style.setProperty('--drag-x', `${bannerPos.current.x}px`);
+    el?.style.setProperty('--drag-y', `${bannerPos.current.y}px`);
+  };
+  const onBannerPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    bannerDrag.current = {
+      id: e.pointerId,
+      sx: e.clientX,
+      sy: e.clientY,
+      bx: bannerPos.current.x,
+      by: bannerPos.current.y,
+    };
+    // capture is taken lazily in pointermove: capturing here would retarget
+    // the tap's click event to this div and the ✕ button would never fire
+  };
+  const onBannerPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const d = bannerDrag.current;
+    if (!d || e.pointerId !== d.id) return;
+    let nx = d.bx + e.clientX - d.sx;
+    let ny = d.by + e.clientY - d.sy;
+    if (!bannerDragged.current && Math.hypot(nx - d.bx, ny - d.by) <= 5) return;
+    if (!bannerDragged.current) e.currentTarget.setPointerCapture(e.pointerId);
+    bannerDragged.current = true;
+    // clamp the prospective position so the banner can't leave the viewport
+    const r = e.currentTarget.getBoundingClientRect();
+    const left = r.left + (nx - bannerPos.current.x);
+    const top = r.top + (ny - bannerPos.current.y);
+    nx += Math.min(Math.max(left, 8), window.innerWidth - r.width - 8) - left;
+    ny += Math.min(Math.max(top, 8), window.innerHeight - r.height - 8) - top;
+    bannerPos.current = { x: nx, y: ny };
+    applyBannerOffset(e.currentTarget);
+  };
+  const onBannerPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (bannerDrag.current?.id !== e.pointerId) return;
+    bannerDrag.current = null;
+    // the click event fires synchronously after pointerup: let it see the
+    // dragged flag (and be suppressed), then clear it for future clicks
+    if (bannerDragged.current) setTimeout(() => (bannerDragged.current = false), 0);
+  };
+
   const startFight = (a: GlobePoint, b: GlobePoint, via: 'search' | 'arc' | 'challenge') => {
     if (a.id === b.id) return;
     trackEvent('fight_mode', { a: a.id, b: b.id, via });
@@ -303,12 +350,23 @@ export default function App() {
       )}
 
       {teamFilter && !fightPair && !challenger && (
-        <div className="challenge-banner team-banner" role="status">
+        <div
+          className="challenge-banner team-banner"
+          role="status"
+          ref={applyBannerOffset}
+          onPointerDown={onBannerPointerDown}
+          onPointerMove={onBannerPointerMove}
+          onPointerUp={onBannerPointerUp}
+          onPointerCancel={onBannerPointerUp}
+        >
+          <span className="team-banner-grip" aria-hidden="true">⠿</span>
           <span className="challenge-banner-text">
             Showing <b>{teamFilter}</b> —{' '}
             {points.filter((p) => p.team === teamFilter).length} robots
           </span>
-          <button onClick={() => setTeamFilter(null)}>✕ Show all robots</button>
+          <button onClick={() => !bannerDragged.current && setTeamFilter(null)}>
+            ✕ Show all robots
+          </button>
         </div>
       )}
 
