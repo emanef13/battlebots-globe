@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { trackEvent } from '../analytics';
 import { flagEmoji } from '../flags';
 import type { GlobePoint } from '../types';
@@ -24,6 +24,17 @@ export default function Header({ points, onSelect, onFocusCountry, onFocusTeam, 
       ? { onMouseEnter: () => setHoverStat(key), onMouseLeave: () => setHoverStat(null) }
       : { onClick: () => setHoverStat((h) => (h === key ? null : key)) };
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Touch devices toggle the popovers by tap and get no mouseleave, so a tap
+  // anywhere outside the stats (globe, stars, panels) closes the open list.
+  useEffect(() => {
+    if (!hoverStat) return;
+    const closeOutside = (e: PointerEvent) => {
+      if (!(e.target as Element | null)?.closest('.stat')) setHoverStat(null);
+    };
+    document.addEventListener('pointerdown', closeOutside, true);
+    return () => document.removeEventListener('pointerdown', closeOutside, true);
+  }, [hoverStat]);
 
   const stats = useMemo(() => {
     const countries = new Set(points.map((p) => p.country).filter(Boolean));

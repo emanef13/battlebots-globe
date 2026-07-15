@@ -172,6 +172,10 @@ interface ArcDatum {
   endLng: number;
 }
 
+// touch devices get no hover tooltips — a tap would flash the tip on top of
+// the panel it opens; hover state itself stays (it guards country clicks)
+const CAN_HOVER = window.matchMedia('(hover: hover)').matches;
+
 const ARC_WON = ['rgba(72, 205, 115, 0.85)', 'rgba(72, 205, 115, 0.3)'];
 const ARC_LOST = ['rgba(230, 103, 103, 0.85)', 'rgba(230, 103, 103, 0.3)'];
 const ARC_EVEN = ['rgba(237, 161, 0, 0.8)', 'rgba(237, 161, 0, 0.3)'];
@@ -609,10 +613,10 @@ export default function BotGlobe({ points, allPoints, selected, onSelect, mapSty
           }
         }}
       />
-      {hovered?.kind === 'single' && hovered.point && (
+      {CAN_HOVER && hovered?.kind === 'single' && hovered.point && (
         <HoverCard point={hovered.point} x={cursor.x} y={cursor.y} />
       )}
-      {hovered?.kind === 'cluster' && (
+      {CAN_HOVER && hovered?.kind === 'cluster' && (
         <div className="globe-tip cluster-tip" style={{ left: cursor.x + 14, top: cursor.y + 14 }}>
           <div className="globe-tip-text">
             <div className="globe-tip-bot">{hovered.members!.length} robots</div>
@@ -620,7 +624,7 @@ export default function BotGlobe({ points, allPoints, selected, onSelect, mapSty
           </div>
         </div>
       )}
-      {hoveredArc && (
+      {CAN_HOVER && hoveredArc && (
         <div className="globe-tip arc-tip" style={{ left: cursor.x + 14, top: cursor.y + 14 }}>
           {hoveredArc.video && (
             <span className="arc-tip-thumb">
