@@ -25,6 +25,21 @@ const SOURCE_META: Record<string, { label: string; handle: string; color: string
 };
 const sourceOf = (n: NewsItem) => (n.source && SOURCE_META[n.source] ? n.source : null);
 
+/* the filter tabs work by PLATFORM (what the user sees), not by internal
+ * source: a team's Instagram post belongs under the Instagram tab */
+const PLATFORM_TABS = [
+  { key: 'facebook', icon: '/icons/facebook.png', label: 'Facebook' },
+  { key: 'instagram', icon: '/icons/instagram.png', label: 'Instagram' },
+  { key: 'google', icon: '/icons/google.png', label: 'Google News' },
+  { key: 'youtube', icon: '/icons/youtube.png', label: 'YouTube' },
+];
+const platformOf = (n: NewsItem): string | null =>
+  n.platform ??
+  ({ official: 'facebook', instagram: 'instagram', news: 'google' } as Record<string, string>)[
+    n.source ?? ''
+  ] ??
+  null;
+
 interface NewsTickerProps {
   items: NewsItem[];
   /** id -> globe marker sprite, for team-post avatars */
@@ -113,26 +128,23 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
 
       {open && (
         <div className="news-panel" role="region" aria-label="Community news feed">
-          <nav className="news-tabs" aria-label="Filter by source">
-            {Object.keys(SOURCE_META)
-              .filter((k) => items.some((n) => sourceOf(n) === k))
-              .map((k) => (
-                <button
-                  key={k}
-                  className={`news-tab${feedFilter === k ? ' is-on' : ''}`}
-                  style={{ '--tab': SOURCE_META[k].color } as React.CSSProperties}
-                  onClick={() => setFeedFilter((f) => (f === k ? 'all' : k))}
-                  aria-pressed={feedFilter === k}
-                  title={feedFilter === k ? 'Show all sources' : `Only ${SOURCE_META[k].label}`}
-                >
-                  <img src={SOURCE_META[k].icon} alt={SOURCE_META[k].label} />
-                </button>
-              ))}
+          <nav className="news-tabs" aria-label="Filter by platform">
+            {PLATFORM_TABS.filter((t) => items.some((n) => platformOf(n) === t.key)).map((t) => (
+              <button
+                key={t.key}
+                className={`news-tab${feedFilter === t.key ? ' is-on' : ''}`}
+                onClick={() => setFeedFilter((f) => (f === t.key ? 'all' : t.key))}
+                aria-pressed={feedFilter === t.key}
+                title={feedFilter === t.key ? 'Show all platforms' : `Only ${t.label}`}
+              >
+                <img src={t.icon} alt={t.label} />
+              </button>
+            ))}
           </nav>
           <div className="news-list" ref={listRef}>
             {items
               .filter((n) => sourceOf(n) !== null)
-              .filter((n) => feedFilter === 'all' || sourceOf(n) === feedFilter)
+              .filter((n) => feedFilter === 'all' || platformOf(n) === feedFilter)
               .map((n, i) => {
                 const key = sourceOf(n)!;
                 const meta = SOURCE_META[key];
