@@ -36,17 +36,22 @@ function similar(a, b) {
 async function get(url) {
   const token = process.env.BRIGHTDATA_API_TOKEN;
   if (token) {
-    const r = await fetch('https://api.brightdata.com/request', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        zone: process.env.BRIGHTDATA_UNLOCKER_ZONE ?? 'web_unlocker1',
-        url,
-        format: 'raw',
-      }),
-    });
-    if (!r.ok) throw new Error(`brightdata ${r.status}`);
-    return r.text();
+    // Unlocker first (Reddit blocks datacenter IPs), but a bad zone name or
+    // account hiccup must not silence sources that are plainly fetchable
+    try {
+      const r = await fetch('https://api.brightdata.com/request', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          zone: process.env.BRIGHTDATA_UNLOCKER_ZONE ?? 'web_unlocker1',
+          url,
+          format: 'raw',
+        }),
+      });
+      if (r.ok) return r.text();
+    } catch {
+      // fall through to direct fetch
+    }
   }
   const r = await fetch(url, { headers: { 'User-Agent': UA } });
   if (!r.ok) throw new Error(`${r.status}`);
