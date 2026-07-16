@@ -61,8 +61,6 @@ export default function App() {
   const [focus, setFocus] = useState<{ lat: number; lng: number; altitude: number; nonce: number } | null>(null);
   const [filter, setFilter] = useState<'all' | 'active' | 'historical'>('all');
   const [teamFilter, setTeamFilter] = useState<string | null>(null);
-  // set when a fresh-post icon on the globe is clicked
-  const [newsFocus, setNewsFocus] = useState<{ teamId: string; nonce: number } | null>(null);
   // Always Night — Classic; ?map= still works for demos.
   const mapStyle = useMemo(
     () =>
@@ -104,18 +102,6 @@ export default function App() {
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
 
-  // teams with a post in the last 7 days get their platform's icon above
-  // their globe pin — the globe itself shows who's active this week
-  const freshPosts = useMemo(() => {
-    const cutoff = new Date(Date.now() - 7 * 86400e3).toISOString().slice(0, 10);
-    const map: Record<string, string> = {};
-    for (const n of news) {
-      if (n.source === 'team' && n.team_id && n.platform && n.date >= cutoff && !map[n.team_id]) {
-        map[n.team_id] = n.platform;
-      }
-    }
-    return map;
-  }, [news]);
 
   // deep links from the static SEO pages: /?bot=<id> selects that robot
   useEffect(() => {
@@ -324,7 +310,6 @@ export default function App() {
       <BotGlobe
         points={globePoints}
         allPoints={points}
-        freshPosts={freshPosts}
         selected={selected}
         onSelect={handleSelect}
         mapStyle={mapStyle}
@@ -334,10 +319,6 @@ export default function App() {
         focus={focus}
         fightPair={fightPair}
         onFight={(a, b) => startFight(a, b, 'arc')}
-        onOpenNews={(teamId) => {
-          trackEvent('news_click', { team: teamId, via: 'globe_icon' });
-          setNewsFocus({ teamId, nonce: Date.now() });
-        }}
       />
       <Header
         points={points}
@@ -441,7 +422,6 @@ export default function App() {
         <NewsTicker
           items={news}
           markers={Object.fromEntries(points.map((p) => [p.id, p.marker]))}
-          openRequest={newsFocus}
           onOpen={openNews}
         />
       )}

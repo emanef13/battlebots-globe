@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface NewsItem {
   date: string;
@@ -44,8 +44,6 @@ interface NewsTickerProps {
   items: NewsItem[];
   /** id -> globe marker sprite, for team-post avatars */
   markers: Record<string, string | null | undefined>;
-  /** a fresh-post icon on the globe was clicked: open at this team's story */
-  openRequest: { teamId: string; nonce: number } | null;
   onOpen: (item: NewsItem) => void;
 }
 
@@ -54,7 +52,7 @@ const SEEN_KEY = 'bb-news-seen';
 /** Floating "Global News" pill under the site title. Hover (or tap) opens a
  * simple branded dropdown with the community feed: official posts,
  * r/battlebots, and the teams' own channels. */
-export default function NewsTicker({ items, markers, openRequest, onOpen }: NewsTickerProps) {
+export default function NewsTicker({ items, markers, onOpen }: NewsTickerProps) {
   const [open, setOpen] = useState(false);
   const [feedFilter, setFeedFilter] = useState('all');
   const canHover = window.matchMedia('(hover: hover)').matches;
@@ -68,24 +66,6 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
     localStorage.setItem(SEEN_KEY, today);
     setLastSeen(today);
   };
-
-  // a globe news-icon click opens the feed scrolled to that team's story
-  const listRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!openRequest) return;
-    setFeedFilter('all');
-    openFeed();
-    const t = setTimeout(() => {
-      const el = listRef.current?.querySelector(`[data-team="${openRequest.teamId}"]`);
-      if (el) {
-        el.scrollIntoView({ block: 'center' });
-        el.classList.add('is-flash');
-        setTimeout(() => el.classList.remove('is-flash'), 1800);
-      }
-    }, 60);
-    return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [openRequest?.nonce]);
 
   // Esc closes before the app-level handler; outside tap closes on touch
   useEffect(() => {
@@ -141,7 +121,7 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
               </button>
             ))}
           </nav>
-          <div className="news-list" ref={listRef}>
+          <div className="news-list">
             {items
               .filter((n) => sourceOf(n) !== null)
               .filter((n) => feedFilter === 'all' || platformOf(n) === feedFilter)
@@ -159,7 +139,6 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
                   <button
                     key={`${n.url ?? n.text}-${i}`}
                     className="news-post"
-                    data-team={isTeam ? n.team_id : undefined}
                     disabled={!canOpen}
                     onClick={() => {
                       if (!canOpen) return;

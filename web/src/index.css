@@ -2351,21 +2351,6 @@ body,
   }
 }
 
-/* a globe news-icon click lands here: brief amber flash on the story */
-.news-post.is-flash {
-  animation: news-flash 1.8s ease-out;
-}
-
-@keyframes news-flash {
-  0%,
-  35% {
-    background: rgba(237, 161, 0, 0.22);
-  }
-  100% {
-    background: none;
-  }
-}
-
 /* ---------- /admin analytics dashboard ---------- */
 
 .adm,

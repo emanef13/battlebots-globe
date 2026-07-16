@@ -14,7 +14,7 @@ const DARK_CONTOUR = 'rgba(8, 11, 22, 0.85)';
 /** One rendered marker: either a single team or a zoom-level cluster. */
 export interface Marker {
   key: string;
-  kind: 'single' | 'cluster' | 'news';
+  kind: 'single' | 'cluster';
   lat: number;
   lng: number;
   point?: GlobePoint;
@@ -23,10 +23,6 @@ export interface Marker {
   selected: boolean;
   /** filtered-out opponent shown dimmed as an arc endpoint */
   ghost?: boolean;
-  /** fresh-post icon floating above a pin — kind 'news' */
-  platform?: string;
-  /** raw pin size of the marker this icon floats above */
-  pinSize?: number;
   /** faded while a selection highlights its rivals — never fought the selected bot */
   dim?: boolean;
 }
@@ -81,18 +77,6 @@ function clusterPoints(points: GlobePoint[], radius: number, excludeId?: string)
 /* ---------- marker textures (canvas-drawn, cached) ---------- */
 
 const textureCache = new Map<string, THREE.CanvasTexture>();
-
-// platform favicons as sprite textures for the fresh-post pin icons
-const platformTextureCache = new Map<string, THREE.Texture>();
-function platformTexture(platform: string): THREE.Texture {
-  let tex = platformTextureCache.get(platform);
-  if (!tex) {
-    tex = new THREE.TextureLoader().load(`/icons/${platform}.png`);
-    tex.colorSpace = THREE.SRGBColorSpace;
-    platformTextureCache.set(platform, tex);
-  }
-  return tex;
-}
 
 /** Circle badge for every marker — count label for clusters, dot for singles.
  * Dark contour under a white ring keeps it readable on any map style. */
@@ -152,8 +136,6 @@ function badgeTexture(
 
 interface BotGlobeProps {
   points: GlobePoint[];
-  /** bot id -> platform that posted in the last 7 days (news pin icons) */
-  freshPosts: Record<string, string>;
   /** the full unfiltered roster — rivalry arcs are computed from this so a
    * selected bot's fight history survives team/category filters */
   allPoints: GlobePoint[];
@@ -166,8 +148,6 @@ interface BotGlobeProps {
   focus: { lat: number; lng: number; altitude: number; nonce: number } | null;
   fightPair: [GlobePoint, GlobePoint] | null;
   onFight: (a: GlobePoint, b: GlobePoint) => void;
-  /** clicked a fresh-post icon — open the news feed at this team's story */
-  onOpenNews: (teamId: string) => void;
 }
 
 /** Aggregated head-to-head record between two mapped bots. */
@@ -214,7 +194,7 @@ function loadCities(): Promise<[number, number][]> {
   return cityCache;
 }
 
-export default function BotGlobe({ points, allPoints, freshPosts, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight, onOpenNews }: BotGlobeProps) {
+export default function BotGlobe({ points, allPoints, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -416,53 +396,13 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
         });
       }
     }
-    // fresh-post icons ride above their pins as their OWN objects so they
-    // are individually clickable (a child sprite can't receive clicks)
-    for (const m of [...list]) {
-      if (m.ghost || m.dim || m.kind === 'news') continue;
-      const freshId =
-        m.kind === 'single'
-          ? (freshPosts[m.point!.id] ? m.point!.id : undefined)
-          : m.members!.map((p) => p.id).find((id) => freshPosts[id]);
-      if (!freshId) continue;
-      const owner = m.kind === 'single' ? m.point! : m.members!.find((p) => p.id === freshId)!;
-      list.push({
-        key: `n:${m.key}`,
-        kind: 'news',
-        lat: m.lat,
-        lng: m.lng,
-        point: owner,
-        active: m.active,
-        selected: false,
-        platform: freshPosts[freshId],
-        pinSize:
-          m.kind === 'cluster'
-            ? 4.0 + Math.min(1.4, m.members!.length * 0.12)
-            : m.selected
-              ? 4.6
-              : m.active
-                ? 2.7
-                : 2.2,
-      });
-    }
     return list;
-  }, [points, altitude, selected, fightPair, pairRecords, freshPosts]);
+  }, [points, altitude, selected, fightPair, pairRecords]);
 
   const makeMarker = useCallback(
     (m: Marker): THREE.Object3D => {
       const color = m.active ? COLOR_ACTIVE : COLOR_HISTORICAL;
       const zoomFactor = Math.min(1, Math.max(0.38, 0.3 + altitude * 0.32));
-      if (m.kind === 'news') {
-        const icon = new THREE.Sprite(
-          new THREE.SpriteMaterial({ map: platformTexture(m.platform!), depthWrite: false }),
-        );
-        const is = 1.9 * zoomFactor;
-        icon.scale.set(is, is, 1);
-        // sprite.center below 0 lifts the icon above the pin it belongs to
-        icon.center.set(0.5, 0.5 - (m.pinSize! * zoomFactor * 0.72 + is * 0.7) / is);
-        icon.renderOrder = 4;
-        return icon;
-      }
       const label = m.kind === 'cluster' ? String(m.members!.length) : null;
       const material = new THREE.SpriteMaterial({
         map: badgeTexture(color, label, m.selected, m.ghost || m.dim),
@@ -489,10 +429,6 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
   const handleMarkerClick = useCallback(
     (m: Marker) => {
       setPopover(null);
-      if (m.kind === 'news') {
-        onOpenNews(m.point!.id);
-        return;
-      }
       if (m.kind === 'single') {
         onSelect(m.point!);
         return;
@@ -510,7 +446,7 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
         setPopover({ members: m.members!, x: cursor.x, y: cursor.y });
       }
     },
-    [onSelect, onOpenNews, altitude, cursor],
+    [onSelect, altitude, cursor],
   );
 
   const rings = useMemo(() => {
@@ -679,14 +615,6 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
       />
       {CAN_HOVER && hovered?.kind === 'single' && hovered.point && (
         <HoverCard point={hovered.point} x={cursor.x} y={cursor.y} />
-      )}
-      {CAN_HOVER && hovered?.kind === 'news' && (
-        <div className="globe-tip" style={{ left: cursor.x + 14, top: cursor.y + 14 }}>
-          <div className="globe-tip-text">
-            <div className="globe-tip-bot">Fresh from {hovered.point!.team ?? hovered.point!.bot}</div>
-            <div className="globe-tip-place">click to read the news</div>
-          </div>
-        </div>
       )}
       {CAN_HOVER && hovered?.kind === 'cluster' && (
         <div className="globe-tip cluster-tip" style={{ left: cursor.x + 14, top: cursor.y + 14 }}>
