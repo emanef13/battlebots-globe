@@ -708,7 +708,7 @@
       "team": "Team HUGE",
       "official": false,
       "handle": "battlebotshuge",
-      "url": "https://m.facebook.com/BattleBotsHuge"
+      "url": "https://www.facebook.com/BattleBotsHuge"
     },
     {
       "id": "hypershock",
@@ -908,7 +908,7 @@
       "team": "Inertia Labs",
       "official": false,
       "handle": "inertiabots",
-      "url": "https://m.facebook.com/inertiabots"
+      "url": "https://www.facebook.com/inertiabots"
     },
     {
       "id": "brutus",
@@ -1239,14 +1239,6 @@
       "url": "https://www.facebook.com/danger4season2/"
     },
     {
-      "id": "rotator",
-      "bot": "Rotator",
-      "team": "Team Revolution",
-      "official": false,
-      "handle": "profile.php?id=100063616960932",
-      "url": "https://www.facebook.com/profile.php?id=100063616960932"
-    },
-    {
       "id": "rusty",
       "bot": "Rusty",
       "team": "Team Iron Force",
@@ -1317,14 +1309,6 @@
       "official": false,
       "handle": "uppercutbattlebot",
       "url": "https://www.facebook.com/UppercutBattlebot/"
-    },
-    {
-      "id": "wan-hoo",
-      "bot": "Wan Hoo",
-      "team": "Team Gladiator",
-      "official": false,
-      "handle": "profile.php?id=100079214600431",
-      "url": "https://www.facebook.com/profile.php?id=100079214600431"
     },
     {
       "id": "war-hawk",

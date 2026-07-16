@@ -95,7 +95,14 @@ def main() -> int:
         t = teams[bot_id]
         for platform, out in (("instagram", instagram), ("facebook", facebook)):
             url = entry.get("team", {}).get(platform)
-            if not url or url in seen_urls[platform]:
+            if not url:
+                continue
+            # the FB dataset validates urls strictly: canonical www host only,
+            # and profile.php ids are rejected outright
+            url = url.replace("://m.facebook.com", "://www.facebook.com")
+            if platform == "facebook" and "profile.php" in url:
+                continue
+            if url in seen_urls[platform]:
                 continue  # same-team bots share accounts — scrape once
             seen_urls[platform].add(url)
             out.append({
