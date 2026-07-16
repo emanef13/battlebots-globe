@@ -244,6 +244,16 @@ async function socialStep(key, state = {}) {
       if (res.snapshot_id) {
         return { items: [], state: { ...state, snapshot_id: res.snapshot_id }, changed: true };
       }
+      // a 200 without a snapshot id is still a failure — remember its shape
+      return {
+        items: [],
+        state: {
+          ...state,
+          last_error: `trigger response: ${JSON.stringify(res).slice(0, 250)}`,
+          last_error_at: new Date().toISOString(),
+        },
+        changed: true,
+      };
     }
   } catch (e) {
     // remember the failure so the archive state shows what went wrong
@@ -396,6 +406,7 @@ export default async function handler(req, res) {
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
     res.status(200).json({
       generated_at: new Date().toISOString(),
+      v: 3,
       added,
       // diagnosability: false = archive is NOT persisting (check the
       // BLOB_READ_WRITE_TOKEN env var / store-project connection)
