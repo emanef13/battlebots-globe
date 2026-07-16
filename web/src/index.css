@@ -2160,14 +2160,19 @@ body,
     touch-action: pan-y;
   }
 
+  /* mobile: the pill sits in the empty top-right corner opposite the
+   * title, off the globe; its dropdown anchors right and stays on screen */
   .news-float {
-    top: 188px;
-    left: 14px;
+    top: 12px;
+    right: 12px;
+    left: auto;
   }
 
   .news-panel {
-    width: calc(100vw - 28px);
-    max-height: min(480px, calc(100vh - 260px));
+    left: auto;
+    right: 0;
+    width: calc(100vw - 24px);
+    max-height: min(480px, calc(100vh - 140px));
   }
 
   .panel-grip {
