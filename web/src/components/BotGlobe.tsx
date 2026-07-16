@@ -78,6 +78,18 @@ function clusterPoints(points: GlobePoint[], radius: number, excludeId?: string)
 
 const textureCache = new Map<string, THREE.CanvasTexture>();
 
+// platform favicons as sprite textures for the fresh-post pin icons
+const platformTextureCache = new Map<string, THREE.Texture>();
+function platformTexture(platform: string): THREE.Texture {
+  let tex = platformTextureCache.get(platform);
+  if (!tex) {
+    tex = new THREE.TextureLoader().load(`/icons/${platform}.png`);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    platformTextureCache.set(platform, tex);
+  }
+  return tex;
+}
+
 /** Circle badge for every marker — count label for clusters, dot for singles.
  * Dark contour under a white ring keeps it readable on any map style. */
 function badgeTexture(
@@ -136,6 +148,8 @@ function badgeTexture(
 
 interface BotGlobeProps {
   points: GlobePoint[];
+  /** bot id -> platform that posted in the last 7 days (news pin icons) */
+  freshPosts: Record<string, string>;
   /** the full unfiltered roster — rivalry arcs are computed from this so a
    * selected bot's fight history survives team/category filters */
   allPoints: GlobePoint[];
@@ -194,7 +208,7 @@ function loadCities(): Promise<[number, number][]> {
   return cityCache;
 }
 
-export default function BotGlobe({ points, allPoints, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
+export default function BotGlobe({ points, allPoints, freshPosts, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -400,7 +414,7 @@ export default function BotGlobe({ points, allPoints, selected, onSelect, mapSty
   }, [points, altitude, selected, fightPair, pairRecords]);
 
   const makeMarker = useCallback(
-    (m: Marker): THREE.Sprite => {
+    (m: Marker): THREE.Object3D => {
       const color = m.active ? COLOR_ACTIVE : COLOR_HISTORICAL;
       const zoomFactor = Math.min(1, Math.max(0.38, 0.3 + altitude * 0.32));
       const label = m.kind === 'cluster' ? String(m.members!.length) : null;
@@ -421,9 +435,29 @@ export default function BotGlobe({ points, allPoints, selected, onSelect, mapSty
                 : 2.2) * zoomFactor;
       sprite.scale.set(s, s, 1);
       sprite.renderOrder = m.selected ? 3 : m.kind === 'cluster' ? 2 : m.ghost ? 0 : 1;
-      return sprite;
+      // teams that posted this week wear their platform's icon above the
+      // pin; a cluster shows it when any member posted, so the signal
+      // survives the zoomed-out view
+      const platform =
+        m.ghost || m.dim
+          ? undefined
+          : m.kind === 'single'
+            ? freshPosts[m.point!.id]
+            : m.members!.map((p) => freshPosts[p.id]).find(Boolean);
+      if (!platform) return sprite;
+      const group = new THREE.Group();
+      group.add(sprite);
+      const icon = new THREE.Sprite(
+        new THREE.SpriteMaterial({ map: platformTexture(platform), depthWrite: false }),
+      );
+      const is = 1.9 * zoomFactor;
+      icon.scale.set(is, is, 1);
+      icon.position.set(0, s * 0.72 + is * 0.7, 0);
+      icon.renderOrder = 4;
+      group.add(icon);
+      return group;
     },
-    [altitude],
+    [altitude, freshPosts],
   );
 
   const handleMarkerClick = useCallback(

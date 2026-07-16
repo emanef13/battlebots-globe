@@ -93,31 +93,27 @@ export default function App() {
       .then((r) => (r.ok ? (r.json() as Promise<{ contacts: Record<string, ContactGroups> }>) : null))
       .then((c) => c && setContacts(c.contacts))
       .catch(() => null);
-    // curated news ships with the app; live scraped news comes from the
-    // CDN-cached /api/news function — merged newest-first, deduped by link
-    Promise.all([
-      fetch('/data/news.json')
-        .then((r) => (r.ok ? (r.json() as Promise<{ items: NewsItem[] }>) : null))
-        .catch(() => null),
-      fetch('/api/news')
-        .then((r) => (r.ok ? (r.json() as Promise<{ items: NewsItem[] }>) : null))
-        .catch(() => null),
-    ]).then(([curated, live]) => {
-      const seen = new Set<string>();
-      const merged = [...(curated?.items ?? []), ...(live?.items ?? [])]
-        .filter((n) => {
-          const key = n.url ?? n.text;
-          if (seen.has(key)) return false;
-          seen.add(key);
-          return true;
-        })
-        .sort((a, b) => b.date.localeCompare(a.date))
-        .slice(0, 60); // chyron rotates the top 8; the Gazette archives all
-      setNews(merged);
-    });
+    // community news only, from the CDN-cached /api/news function
+    fetch('/api/news')
+      .then((r) => (r.ok ? (r.json() as Promise<{ items: NewsItem[] }>) : null))
+      .then((live) => live && setNews(live.items.slice(0, 80)))
+      .catch(() => null);
   }, []);
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
+
+  // teams with a post in the last 7 days get their platform's icon above
+  // their globe pin — the globe itself shows who's active this week
+  const freshPosts = useMemo(() => {
+    const cutoff = new Date(Date.now() - 7 * 86400e3).toISOString().slice(0, 10);
+    const map: Record<string, string> = {};
+    for (const n of news) {
+      if (n.source === 'team' && n.team_id && n.platform && n.date >= cutoff && !map[n.team_id]) {
+        map[n.team_id] = n.platform;
+      }
+    }
+    return map;
+  }, [news]);
 
   // deep links from the static SEO pages: /?bot=<id> selects that robot
   useEffect(() => {
@@ -326,6 +322,7 @@ export default function App() {
       <BotGlobe
         points={globePoints}
         allPoints={points}
+        freshPosts={freshPosts}
         selected={selected}
         onSelect={handleSelect}
         mapStyle={mapStyle}

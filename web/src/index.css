@@ -383,8 +383,6 @@ body,
   }
 }
 
-.is-active .status-dot,
-.legend-dot.is-active,
 /* team rows: a quiet cool tint — distinct from every robot status color */
 .search-team-row {
   background: rgba(130, 175, 255, 0.06);
@@ -395,6 +393,8 @@ body,
   background: rgba(130, 175, 255, 0.13);
 }
 
+.is-active .status-dot,
+.legend-dot.is-active,
 .result-dot.is-active {
   background: var(--active);
 }
@@ -1134,13 +1134,15 @@ body,
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  color: #fff;
   flex: none;
 }
 
-.news-avatar img {
-  width: 15px;
-  height: 15px;
+/* community sources: the platform's own favicon, unadorned */
+.news-avatar-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex: none;
 }
 
 /* team posts: the robot's globe marker is the avatar */
