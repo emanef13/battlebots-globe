@@ -8,7 +8,7 @@ import { list, put } from '@vercel/blob';
 import teamFeedsFile from '../data/team_feeds.json' with { type: 'json' };
 
 const ARCHIVE_PATH = 'news-archive.json';
-const ARCHIVE_CAP = 200;
+const ARCHIVE_CAP = 300;
 
 const UA =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
@@ -129,13 +129,70 @@ async function bd(path, opts = {}) {
   return r.json();
 }
 
-async function instagramStep(state = {}) {
+// One dataset batch per platform per day. Each step is a state machine
+// across cached invocations: trigger a snapshot, poll it later, ingest when
+// ready. Per-platform state lives in the blob archive.
+const SOCIAL_PLATFORMS = {
+  ig: {
+    platform: 'instagram',
+    dataset: (name) => /instagram/i.test(name) && /post/i.test(name),
+    targets: () => teamFeedsFile.instagram,
+  },
+  fb: {
+    platform: 'facebook',
+    dataset: (name) => /facebook/i.test(name) && /post/i.test(name),
+    targets: () => teamFeedsFile.facebook,
+  },
+};
+
+// dataset row schemas differ per platform — read every known field name
+function mapSocialRow(r, cfg) {
+  const caption = String(
+    r.caption ?? r.description ?? r.content ?? r.post_text ?? r.message ?? '',
+  ).replace(/\s+/g, ' ').trim();
+  const url = r.url ?? r.post_url ?? r.permalink ?? r.post_link;
+  const posted = r.date_posted ?? r.timestamp ?? r.created_time ?? r.date;
+  if (!caption || !url || !posted || !fresh(posted)) return null;
+  // map the row back to its account: any handle appearing in the row's
+  // user/page/url fields (longest handles first so substrings can't steal)
+  const hay = norm(
+    [r.user_posted, r.user_username, r.profile_username, r.page_name, r.user_url,
+     r.page_url, r.profile_url, r.use_url, r.input?.url, url].filter(Boolean).join(' '),
+  );
+  const targets = [...cfg.targets()].sort((a, b) => b.handle.length - a.handle.length);
+  const acct = targets.find((a) => hay.includes(norm(a.handle)));
+  if (!acct) return null;
+  if (acct.official) {
+    return {
+      date: iso(posted),
+      text: `Instagram: ${caption}`.slice(0, 140),
+      url,
+      auto: true,
+      source: 'instagram',
+    };
+  }
+  return {
+    date: iso(posted),
+    text: `${acct.team ?? acct.bot}: ${caption}`.slice(0, 140),
+    url,
+    auto: true,
+    source: 'team',
+    platform: cfg.platform,
+    team_id: acct.id,
+    team: acct.team ?? acct.bot,
+  };
+}
+
+const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+
+async function socialStep(key, state = {}) {
+  const cfg = SOCIAL_PLATFORMS[key];
   if (!process.env.BRIGHTDATA_API_TOKEN) return { items: [], state, changed: false };
   try {
-    // resolve the "instagram posts" dataset id once, then remember it
+    // resolve the "<platform> posts" dataset id once, then remember it
     if (!state.dataset_id) {
       const sets = await bd('/datasets/list');
-      const ds = sets.find((d) => /instagram/i.test(d.name) && /post/i.test(d.name));
+      const ds = sets.find((d) => cfg.dataset(d.name));
       if (!ds) return { items: [], state, changed: false };
       state = { ...state, dataset_id: ds.id };
     }
@@ -144,37 +201,10 @@ async function instagramStep(state = {}) {
       const prog = await bd(`/datasets/v3/snapshot/${state.snapshot_id}/progress`);
       if (prog.status === 'ready') {
         const rows = await bd(`/datasets/v3/snapshot/${state.snapshot_id}/data?format=json`);
-        const byHandle = new Map(teamFeedsFile.instagram.map((a) => [a.handle, a]));
         const items = (Array.isArray(rows) ? rows : [])
-          .map((r) => {
-            const caption = String(r.caption ?? r.description ?? '').replace(/\s+/g, ' ').trim();
-            const url = r.url ?? r.post_url;
-            const posted = r.date_posted ?? r.timestamp;
-            const handle = String(r.user_posted ?? r.user_username ?? r.profile_username ?? '')
-              .toLowerCase();
-            const acct = byHandle.get(handle);
-            if (!caption || !url || !posted || !acct || !fresh(posted)) return null;
-            return acct.official
-              ? {
-                  date: iso(posted),
-                  text: `Instagram: ${caption}`.slice(0, 140),
-                  url,
-                  auto: true,
-                  source: 'instagram',
-                }
-              : {
-                  date: iso(posted),
-                  text: `${acct.team ?? acct.bot}: ${caption}`.slice(0, 140),
-                  url,
-                  auto: true,
-                  source: 'team',
-                  platform: 'instagram',
-                  team_id: acct.id,
-                  team: acct.team ?? acct.bot,
-                };
-          })
+          .map((r) => mapSocialRow(r, cfg))
           .filter(Boolean)
-          .slice(0, 40);
+          .slice(0, 80);
         return { items, state: { ...state, snapshot_id: null, last_done: Date.now() }, changed: true };
       }
       if (prog.status === 'failed') {
@@ -182,9 +212,9 @@ async function instagramStep(state = {}) {
       }
       return { items: [], state, changed: false }; // still running
     }
-    // trigger one batched snapshot a day: official + every pro-league team
+    // trigger one batched snapshot a day covering every account
     if (!state.last_done || Date.now() - state.last_done > IG_EVERY_MS) {
-      const targets = teamFeedsFile.instagram.map((a) => ({
+      const targets = cfg.targets().map((a) => ({
         url: a.url,
         num_of_posts: a.official ? 3 : 2,
       }));
@@ -329,10 +359,17 @@ export function mergeIntoArchive(archive, scraped) {
 export default async function handler(req, res) {
   try {
     const [scraped, archive] = await Promise.all([collect(), readArchive()]);
-    const ig = await instagramStep(archive.state.ig);
-    const { merged, added } = mergeIntoArchive(archive.items, [...scraped, ...ig.items]);
-    if (added > 0 || ig.changed) {
-      await writeArchive(merged, { ...archive.state, ig: ig.state });
+    const [ig, fb] = await Promise.all([
+      socialStep('ig', archive.state.ig),
+      socialStep('fb', archive.state.fb),
+    ]);
+    const { merged, added } = mergeIntoArchive(archive.items, [
+      ...scraped,
+      ...ig.items,
+      ...fb.items,
+    ]);
+    if (added > 0 || ig.changed || fb.changed) {
+      await writeArchive(merged, { ...archive.state, ig: ig.state, fb: fb.state });
     }
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
     res.status(200).json({ generated_at: new Date().toISOString(), added, items: merged });
