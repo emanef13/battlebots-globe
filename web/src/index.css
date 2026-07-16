@@ -1180,16 +1180,24 @@ body,
   flex: none;
 }
 
-.news-globe-btn {
+/* the robot cutout itself, next to the team name — click for its panel */
+.news-bot-btn {
   flex: none;
-  font-size: 13px;
-  padding: 1px 4px;
-  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: transform 0.12s;
 }
 
-.news-globe-btn:hover {
-  background: rgba(237, 161, 0, 0.2);
+.news-bot-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.news-bot-btn:hover {
+  transform: scale(1.25);
 }
 
 .news-post-text {

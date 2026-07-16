@@ -156,24 +156,19 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
                     }}
                   >
                     <span className="news-post-head">
-                      {marker ? (
-                        <span className="news-avatar is-bot">
-                          <img src={marker} alt="" loading="lazy" />
-                        </span>
-                      ) : (
-                        <img className="news-avatar-icon" src={meta.icon} alt="" loading="lazy" />
-                      )}
-                      <span className="news-handle">{isTeam ? n.team : meta.handle}</span>
-                      {isTeam && n.platform && (
-                        <img className="news-platform" src={`/icons/${n.platform}.png`} alt={n.platform} />
-                      )}
-                      <span className="news-item-date">{date}</span>
+                      <img
+                        className="news-avatar-icon"
+                        src={n.platform ? `/icons/${n.platform}.png` : meta.icon}
+                        alt=""
+                        loading="lazy"
+                      />
+                      <span className="news-handle">{n.team ?? meta.handle}</span>
                       {isTeam && (
                         <span
                           role="button"
                           tabIndex={0}
-                          className="news-globe-btn"
-                          title={`Find ${n.team} on the globe`}
+                          className="news-bot-btn"
+                          title={`Open ${n.team} on the globe`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setOpen(false);
@@ -181,12 +176,13 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
                           }}
                           onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.click()}
                         >
-                          📍
+                          {marker ? <img src={marker} alt="" loading="lazy" /> : '📍'}
                         </span>
                       )}
+                      <span className="news-item-date">{date}</span>
                     </span>
                     <span className="news-post-text">
-                      {isTeam && n.team && n.text.startsWith(`${n.team}: `)
+                      {n.team && n.text.startsWith(`${n.team}: `)
                         ? n.text.slice(n.team.length + 2)
                         : n.text}
                     </span>

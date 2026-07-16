@@ -72,6 +72,15 @@ def main() -> int:
         print(f"  {t['bot']:22s} {cid}")
     feeds.sort(key=lambda f: (not f["active"], f["bot"]))
 
+    # the official BattleBots channel: its videos run as official news, never
+    # attributed to a team (it was once wrongly linked as Team Monsoon's)
+    official_yt = channel_id("https://www.youtube.com/@BattleBots")
+    if official_yt:
+        feeds.insert(0, {
+            "id": None, "bot": None, "team": "BattleBots", "active": True,
+            "official": True, "channel_id": official_yt,
+        })
+
     # instagram: official + pro-league team accounts (one daily batch scrape)
     handle = lambda u: u.rstrip("/").rsplit("/", 1)[-1].lower()  # noqa: E731
     instagram = [{

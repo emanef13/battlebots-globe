@@ -234,10 +234,12 @@ async function teamYouTube() {
           auto: true,
           source: 'team',
           platform: 'youtube',
-          team_id: ch.id,
+          // the official channel is news, not a team: no team_id means the
+          // feed shows no robot link and the globe wears no icon for it
+          ...(ch.official ? {} : { team_id: ch.id }),
           team: ch.team ?? ch.bot,
         });
-        if (items.length >= 2) break; // per-channel cap keeps the feed varied
+        if (items.length >= (ch.official ? 3 : 2)) break; // per-channel cap
       }
       return items;
     }),
@@ -289,7 +291,10 @@ async function readArchive() {
     const r = await fetch(`${blob.url}?ts=${Date.now()}`);
     if (!r.ok) return { items: [], state: {} };
     const doc = await r.json();
-    return { items: doc.items ?? [], state: doc.state ?? {} };
+    const items = (doc.items ?? []).filter(
+      (i) => !(i.team_id === 'monsoon' && i.platform === 'youtube'),
+    );
+    return { items, state: doc.state ?? {} };
   } catch {
     return { items: [], state: {} };
   }
