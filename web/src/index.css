@@ -2573,3 +2573,29 @@ body,
   color: var(--ink-muted);
   font-size: 13px;
 }
+
+/* the pill mounts instantly; a small spinner runs until stories arrive */
+.news-pill.is-loading {
+  cursor: default;
+  color: var(--ink-secondary);
+}
+
+.news-pill.is-loading .news-live-dot {
+  background: var(--ink-muted);
+  box-shadow: none;
+}
+
+.news-spinner {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--brand);
+  animation: news-spin 0.9s linear infinite;
+}
+
+@keyframes news-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -42,6 +42,8 @@ const platformOf = (n: NewsItem): string | null =>
 
 interface NewsTickerProps {
   items: NewsItem[];
+  /** the /api/news fetch hasn't settled yet — show the pill as loading */
+  loading: boolean;
   /** id -> globe marker sprite, for team-post avatars */
   markers: Record<string, string | null | undefined>;
   onOpen: (item: NewsItem) => void;
@@ -52,7 +54,7 @@ const SEEN_KEY = 'bb-news-seen';
 /** Floating "Global News" pill under the site title. Hover (or tap) opens a
  * simple branded dropdown with the community feed: official posts,
  * r/battlebots, and the teams' own channels. */
-export default function NewsTicker({ items, markers, onOpen }: NewsTickerProps) {
+export default function NewsTicker({ items, markers, loading, onOpen }: NewsTickerProps) {
   const [open, setOpen] = useState(false);
   const [feedFilter, setFeedFilter] = useState('all');
   const canHover = window.matchMedia('(hover: hover)').matches;
@@ -87,23 +89,29 @@ export default function NewsTicker({ items, markers, onOpen }: NewsTickerProps) 
     };
   }, [open]);
 
-  if (items.length === 0) return null;
+  // nothing to show only when the fetch settled empty (offline/API down)
+  if (items.length === 0 && !loading) return null;
+  const ready = items.length > 0;
 
   return (
     <div
       className="news-float"
-      onMouseEnter={canHover ? openFeed : undefined}
-      onMouseLeave={canHover ? () => setOpen(false) : undefined}
+      onMouseEnter={ready && canHover ? openFeed : undefined}
+      onMouseLeave={ready && canHover ? () => setOpen(false) : undefined}
     >
       <button
-        className="news-pill"
-        onClick={() => (open ? setOpen(false) : openFeed())}
+        className={`news-pill${ready ? '' : ' is-loading'}`}
+        onClick={() => ready && (open ? setOpen(false) : openFeed())}
         aria-expanded={open}
+        aria-busy={!ready}
         aria-label="Global news"
       >
         <span className="news-live-dot" aria-hidden="true" />
         Global News
-        {newCount > 0 && <span className="news-new-count">{newCount > 9 ? '9+' : newCount}</span>}
+        {!ready && <span className="news-spinner" aria-hidden="true" />}
+        {ready && newCount > 0 && (
+          <span className="news-new-count">{newCount > 9 ? '9+' : newCount}</span>
+        )}
       </button>
 
       {open && (

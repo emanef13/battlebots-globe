@@ -52,6 +52,7 @@ export default function App() {
   const [matchVideos, setMatchVideos] = useState<Record<string, FightVideo>>({});
   const [contacts, setContacts] = useState<Record<string, ContactGroups>>({});
   const [news, setNews] = useState<NewsItem[]>([]);
+  const [newsLoading, setNewsLoading] = useState(true);
   const [playing, setPlaying] = useState<FightVideo | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<GlobePoint | null>(null);
@@ -97,7 +98,8 @@ export default function App() {
     fetch('/api/news')
       .then((r) => (r.ok ? (r.json() as Promise<{ items: NewsItem[] }>) : null))
       .then((live) => live && setNews(live.items.slice(0, 80)))
-      .catch(() => null);
+      .catch(() => null)
+      .finally(() => setNewsLoading(false));
   }, []);
 
   const points = useMemo(() => (data ? toGlobePoints(data.teams) : []), [data]);
@@ -421,6 +423,7 @@ export default function App() {
       {NEWS_ENABLED && !fightPair && (
         <NewsTicker
           items={news}
+          loading={newsLoading}
           markers={Object.fromEntries(points.map((p) => [p.id, p.marker]))}
           onOpen={openNews}
         />
