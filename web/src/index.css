@@ -1093,6 +1093,8 @@ body,
 .news-list {
   overflow-y: auto;
   padding: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
 }
 
 .news-post {
