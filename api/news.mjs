@@ -145,6 +145,7 @@ async function bd(path, opts = {}) {
 const SOCIAL_PLATFORMS = {
   ig: {
     platform: 'instagram',
+    discover: true,
     // "Instagram - Posts - discover by url" (id from the control panel)
     datasetId: 'gd_lk5ns7kz21pck8jpis',
     dataset: (name) => /instagram/i.test(name) && /post/i.test(name),
@@ -152,6 +153,8 @@ const SOCIAL_PLATFORMS = {
   },
   fb: {
     platform: 'facebook',
+    // the FB posts dataset collects directly from page urls (no discovery)
+    discover: false,
     dataset: (name) => /facebook/i.test(name) && /post/i.test(name),
     targets: () => teamFeedsFile.facebook,
   },
@@ -217,9 +220,9 @@ async function socialStep(key, state = {}) {
     }
     // download a finished snapshot and map rows back to their accounts
     if (state.snapshot_id) {
-      const prog = await bd(`/datasets/v3/snapshot/${state.snapshot_id}/progress`);
+      const prog = await bd(`/datasets/v3/progress/${state.snapshot_id}`);
       if (prog.status === 'ready') {
-        const rows = await bd(`/datasets/v3/snapshot/${state.snapshot_id}/data?format=json`);
+        const rows = await bd(`/datasets/v3/snapshot/${state.snapshot_id}?format=json`);
         const items = (Array.isArray(rows) ? rows : [])
           .map((r) => mapSocialRow(r, cfg))
           .filter(Boolean)
@@ -237,8 +240,9 @@ async function socialStep(key, state = {}) {
         url: a.url,
         num_of_posts: a.official ? 3 : 2,
       }));
+      const discovery = cfg.discover ? '&type=discover_new&discover_by=url' : '';
       const res = await bd(
-        `/datasets/v3/trigger?dataset_id=${state.dataset_id}&type=discover_new&discover_by=url&include_errors=true`,
+        `/datasets/v3/trigger?dataset_id=${state.dataset_id}${discovery}&include_errors=true`,
         { method: 'POST', body: JSON.stringify(targets) },
       );
       if (res.snapshot_id) {
