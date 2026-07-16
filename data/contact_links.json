@@ -1,0 +1,853 @@
+{
+  "note": "SINGLE SOURCE OF TRUTH for team/owner links shown on the panel. Hand-edit this file, then run pipeline/build_contact_links.py to validate and publish to web/public/data/contacts.json. team = team/robot accounts (under the team name); owner = builder/owner accounts (next to the builder).",
+  "links": {
+    "bloodsport": {
+      "team": {
+        "website": "https://www.bloodsportbattlebot.com/",
+        "facebook": "https://www.facebook.com/bnsrobotics",
+        "instagram": "https://www.instagram.com/bloodsport_battlebot",
+        "twitter": "https://twitter.com/bloodsportbb"
+      }
+    },
+    "cobalt": {
+      "team": {
+        "website": "http://roboticdeathcompany.com/",
+        "facebook": "https://www.facebook.com/RoboticDeathCompany",
+        "twitter": "https://twitter.com/TeamCarbide"
+      }
+    },
+    "copperhead": {
+      "team": {
+        "facebook": "https://www.facebook.com/CausticCreations/",
+        "instagram": "https://www.instagram.com/copperheadbattlebot/"
+      },
+      "owner": {
+        "youtube": "https://www.youtube.com/c/RobertCowanDIY"
+      }
+    },
+    "deathroll": {
+      "team": {
+        "facebook": "https://www.facebook.com/TeamDeathRoll",
+        "instagram": "https://www.instagram.com/team_deathroll19",
+        "twitter": "https://twitter.com/dbattlebot"
+      }
+    },
+    "disarray": {
+      "team": {
+        "instagram": "https://www.instagram.com/arizonarobotics"
+      }
+    },
+    "end-game": {
+      "team": {
+        "website": "https://endgamebattlebot.com/",
+        "facebook": "https://www.facebook.com/endgamebattlebot",
+        "instagram": "https://www.instagram.com/endgame_battlebot"
+      },
+      "owner": {
+        "website": "https://store.robotrampage.co.nz/"
+      }
+    },
+    "golden-fury": {
+      "team": {
+        "instagram": "https://www.instagram.com/py_roboticsz"
+      }
+    },
+    "huge": {
+      "team": {
+        "facebook": "https://m.facebook.com/BattleBotsHuge",
+        "instagram": "https://www.instagram.com/battlebotshuge",
+        "twitter": "https://twitter.com/BattlebotsHuge"
+      }
+    },
+    "hypershock": {
+      "team": {
+        "website": "https://hypershock.tv/",
+        "facebook": "https://www.facebook.com/HyperShockTV",
+        "instagram": "https://www.instagram.com/hypershocktv",
+        "twitter": "https://twitter.com/HyperShockTV",
+        "youtube": "https://www.youtube.com/channel/UCUP8mCbI4frGTQcfuK0FCfg",
+        "tiktok": "https://tiktok.com/@HyperShockTV"
+      }
+    },
+    "jackpot": {
+      "team": {
+        "website": "http://vegascombatrobotics.com/",
+        "facebook": "https://www.facebook.com/JackPotBattleBots",
+        "instagram": "https://www.instagram.com/vegas_combat_robotics"
+      }
+    },
+    "madcatter": {
+      "team": {
+        "facebook": "https://www.facebook.com/badkittyrobots"
+      }
+    },
+    "magnitude": {
+      "team": {
+        "facebook": "https://www.facebook.com/magnitudeBB/",
+        "instagram": "https://www.instagram.com/magnitude_battlebots/",
+        "youtube": "https://www.youtube.com/@Magnitude-BattleBots"
+      }
+    },
+    "malice": {
+      "team": {
+        "website": "https://teammalice.com/",
+        "facebook": "https://www.facebook.com/malicebattlebot",
+        "instagram": "https://www.instagram.com/malicebattlebot"
+      }
+    },
+    "manta": {
+      "team": {
+        "website": "https://mantabattlebot.com/",
+        "facebook": "https://www.facebook.com/Dragobattlebot",
+        "instagram": "https://www.instagram.com/teamtantorobotics",
+        "youtube": "https://www.youtube.com/@nickdobrikov"
+      }
+    },
+    "minotaur": {
+      "team": {
+        "website": "https://www.riobotz.com/",
+        "instagram": "https://www.instagram.com/riobotz/"
+      }
+    },
+    "orbitron": {
+      "team": {
+        "website": "https://uwbattlebots.notion.site/"
+      }
+    },
+    "ribbot": {
+      "team": {
+        "facebook": "https://www.facebook.com/teamribbot"
+      }
+    },
+    "skorpios": {
+      "team": {
+        "website": "https://botbashparty.com/",
+        "facebook": "https://www.facebook.com/SkorpiosBattleBot",
+        "instagram": "https://www.instagram.com/skorpios_battlebots",
+        "youtube": "https://www.youtube.com/c/SkorpiosBattlebot"
+      }
+    },
+    "switchback": {
+      "team": {
+        "website": "http://robot.midnightinvention.com/",
+        "facebook": "https://facebook.com/switchbackontv",
+        "instagram": "https://www.instagram.com/switchbackontv",
+        "twitter": "https://twitter.com/switchbackontv"
+      }
+    },
+    "terrortops": {
+      "team": {
+        "website": "https://www.terrortops.com/",
+        "facebook": "https://www.facebook.com/terrortops_battlebot",
+        "instagram": "https://www.instagram.com/terrortops_battlebot"
+      }
+    },
+    "the-twins": {
+      "team": {
+        "website": "https://seemsreasonable.shop/",
+        "facebook": "https://www.facebook.com/tantrum.battlebot",
+        "instagram": "https://www.instagram.com/seems.reasonable",
+        "youtube": "https://www.youtube.com/c/SeemsReasonableRobotics"
+      }
+    },
+    "tombstone": {
+      "team": {
+        "twitter": "https://twitter.com/RealTombstoneBB"
+      },
+      "owner": {
+        "facebook": "https://www.facebook.com/ray.billings",
+        "instagram": "https://www.instagram.com/tombstowner"
+      }
+    },
+    "valkyrie": {
+      "team": {
+        "facebook": "https://www.facebook.com/valkyriebattlebot",
+        "instagram": "https://www.instagram.com/valkyriebattlebot"
+      }
+    },
+    "witch-doctor": {
+      "team": {
+        "website": "https://www.teamwitchdoctor.com/",
+        "facebook": "https://www.facebook.com/witchdrshaman",
+        "instagram": "https://www.instagram.com/witchdoctorbattlebots",
+        "youtube": "https://www.youtube.com/user/BustedNutRobotics"
+      }
+    },
+    "atom-94": {
+      "team": {
+        "website": "https://www.autovoltz.com/",
+        "facebook": "https://www.facebook.com/teamAVRobotics",
+        "instagram": "https://www.instagram.com/autovoltz_robotics"
+      }
+    },
+    "axe-backwards": {
+      "team": {
+        "website": "https://www.kurtrox.com/",
+        "facebook": "https://www.facebook.com/axebackwards",
+        "instagram": "https://www.instagram.com/axe_backwards/",
+        "youtube": "https://www.youtube.com/c/KurTrox"
+      }
+    },
+    "backlash": {
+      "owner": {
+        "website": "https://robotcombatarchive.com/"
+      }
+    },
+    "bale-spear": {
+      "team": {
+        "facebook": "https://www.facebook.com/Bale-Spear-Battlebots-290080538189843/"
+      }
+    },
+    "banshee": {
+      "team": {
+        "facebook": "https://www.facebook.com/teamsmallrobots",
+        "instagram": "https://www.instagram.com/bansheebattlebot",
+        "youtube": "https://www.youtube.com/channel/UCWl0ImumLwToF9lbqewbGHw"
+      }
+    },
+    "beta": {
+      "team": {
+        "website": "http://www.killerhurtz.co.uk/",
+        "facebook": "https://www.facebook.com/Betarobot"
+      }
+    },
+    "big-dill": {
+      "team": {
+        "facebook": "https://www.facebook.com/teamfoodfight",
+        "instagram": "https://www.instagram.com/teamfoodfight"
+      },
+      "owner": {
+        "website": "http://www.emmanuelcarrillo.com/"
+      }
+    },
+    "biohazard": {
+      "owner": {
+        "website": "http://battlekits.com/"
+      }
+    },
+    "bite-force": {
+      "team": {
+        "facebook": "https://www.facebook.com/AptyxDesigns"
+      }
+    },
+    "black-dragon": {
+      "team": {
+        "website": "https://uairrior.com.br/",
+        "facebook": "https://www.facebook.com/duckbolado",
+        "instagram": "https://www.instagram.com/uairrior",
+        "twitter": "https://x.com/uairrior",
+        "youtube": "https://www.youtube.com/user/uairrior"
+      }
+    },
+    "blacksmith": {
+      "team": {
+        "facebook": "https://www.facebook.com/Teamhfa",
+        "instagram": "https://www.instagram.com/blacksmithbattlebot",
+        "twitter": "https://twitter.com/blacksmithbot"
+      }
+    },
+    "blade": {
+      "team": {
+        "website": "https://www.teamorby.com/",
+        "facebook": "https://www.facebook.com/TeamORBY",
+        "instagram": "https://www.instagram.com/teamorby",
+        "youtube": "https://www.youtube.com/channel/UCbDydTsXClCWBMAKIdmmgaA"
+      }
+    },
+    "blip": {
+      "team": {
+        "website": "https://seemsreasonable.shop/",
+        "facebook": "https://www.facebook.com/tantrum.battlebot",
+        "instagram": "https://www.instagram.com/seems.reasonable",
+        "youtube": "https://www.youtube.com/c/SeemsReasonableRobotics"
+      }
+    },
+    "bombshell": {
+      "team": {
+        "website": "https://www.chaoscorps.org/",
+        "facebook": "https://www.facebook.com/ChaosCorps",
+        "twitter": "https://twitter.com/TheChaosCorps"
+      }
+    },
+    "bronco": {
+      "team": {
+        "facebook": "https://m.facebook.com/inertiabots",
+        "twitter": "https://twitter.com/inertiabots"
+      }
+    },
+    "brutus": {
+      "team": {
+        "facebook": "https://www.facebook.com/BrutusBattleBot"
+      }
+    },
+    "calypso": {
+      "team": {
+        "website": "https://horizon250.com/",
+        "facebook": "https://www.facebook.com/Horizon250",
+        "instagram": "https://www.instagram.com/horizon_250",
+        "youtube": "https://www.youtube.com/@Horizon_250"
+      }
+    },
+    "captain-shrederator": {
+      "team": {
+        "facebook": "https://www.facebook.com/spinwinning"
+      },
+      "owner": {
+        "website": "https://battle-beach.square.site/"
+      }
+    },
+    "chomp": {
+      "team": {
+        "facebook": "https://www.facebook.com/ChompTheBattleBot",
+        "instagram": "https://www.instagram.com/chompthebattlebot",
+        "twitter": "https://twitter.com/AlwaysBChomping"
+      }
+    },
+    "chronos": {
+      "team": {
+        "facebook": "https://www.facebook.com/ChronosRobot/"
+      }
+    },
+    "claw-viper": {
+      "team": {
+        "facebook": "https://www.facebook.com/clawviperbb"
+      }
+    },
+    "complete-control": {
+      "owner": {
+        "website": "http://www.derekbruceyoung.com/"
+      }
+    },
+    "deep-six": {
+      "team": {
+        "website": "https://www.teamoverboard.com/",
+        "facebook": "https://www.facebook.com/Tritonbattlebot",
+        "instagram": "https://www.instagram.com/triton_deepsix_battlebots",
+        "twitter": "https://twitter.com/TeePublic",
+        "tiktok": "https://www.tiktok.com/@teepublic"
+      }
+    },
+    "defender": {
+      "team": {
+        "facebook": "https://www.facebook.com/Defender-BattleBot-101629572206510",
+        "instagram": "https://www.instagram.com/defender_battlebot"
+      }
+    },
+    "diesector": {
+      "team": {
+        "website": "http://mutantrobots.com/",
+        "facebook": "https://www.facebook.com/TeamMutantRobots"
+      }
+    },
+    "double-dutch": {
+      "team": {
+        "facebook": "https://www.facebook.com/IronLungFishRobotics"
+      }
+    },
+    "double-jeopardy": {
+      "team": {
+        "facebook": "https://www.facebook.com/teamdoubletroubledoublejeopardy"
+      }
+    },
+    "dragon-slayer": {
+      "team": {
+        "facebook": "https://www.facebook.com/DragonslayerBattlebots",
+        "instagram": "https://www.instagram.com/dragonslayerbattlebot"
+      }
+    },
+    "duck": {
+      "team": {
+        "facebook": "https://www.facebook.com/BlackandBlueRobotics"
+      }
+    },
+    "emulsifier": {
+      "team": {
+        "website": "https://www.botsfc.com/",
+        "facebook": "https://www.facebook.com/BotsFC"
+      }
+    },
+    "falcon": {
+      "team": {
+        "website": "http://www.teamwhyachi.com/",
+        "facebook": "https://www.facebook.com/Whyachi",
+        "youtube": "https://www.youtube.com/channel/UCi3W9k46K1gsriacPTJwQHg"
+      }
+    },
+    "foxtrot": {
+      "team": {
+        "website": "https://www.teamdanby.com/",
+        "facebook": "https://www.facebook.com/teamdanby",
+        "instagram": "https://www.instagram.com/teamdanby",
+        "twitter": "https://twitter.com/TeamDanby"
+      },
+      "owner": {
+        "youtube": "https://www.youtube.com/channel/UCmbh4u9i4LaeBCPtYXULxuQ"
+      }
+    },
+    "free-shipping": {
+      "team": {
+        "facebook": "https://www.facebook.com/freeshippingbot",
+        "twitter": "https://twitter.com/freeshippingbot"
+      }
+    },
+    "fusion": {
+      "team": {
+        "website": "https://teamwhyachi.com/",
+        "facebook": "https://www.facebook.com/Whyachi",
+        "youtube": "https://www.youtube.com/channel/UCi3W9k46K1gsriacPTJwQHg"
+      }
+    },
+    "gemini": {
+      "team": {
+        "youtube": "https://www.youtube.com/c/TeamPanicRobotics"
+      }
+    },
+    "ghost-raptor": {
+      "team": {
+        "facebook": "https://www.facebook.com/realghostraptor",
+        "instagram": "https://www.instagram.com/realghostraptor",
+        "twitter": "https://twitter.com/ghostraptorbb"
+      }
+    },
+    "gigabyte": {
+      "team": {
+        "website": "http://roboticdeathcompany.com/",
+        "facebook": "https://www.facebook.com/RoboticDeathCompany"
+      }
+    },
+    "glitch": {
+      "team": {
+        "website": "https://www.crberkeley.org/",
+        "facebook": "https://www.facebook.com/glitch.battlebots",
+        "instagram": "https://www.instagram.com/glitch_battlebot"
+      }
+    },
+    "gruff": {
+      "team": {
+        "facebook": "https://www.facebook.com/gruffrobot/",
+        "instagram": "https://www.instagram.com/team_gruff/"
+      }
+    },
+    "hazard": {
+      "team": {
+        "website": "http://www.teamdelta.com/"
+      }
+    },
+    "hijinx": {
+      "team": {
+        "website": "https://www.offbeatrobotics.com/",
+        "facebook": "https://www.facebook.com/HiJinx.BattleBot",
+        "instagram": "https://www.instagram.com/hijinx_battlebots",
+        "twitter": "https://x.com/HiJinxBattleBot"
+      }
+    },
+    "horizon": {
+      "team": {
+        "website": "https://horizon250.com/",
+        "facebook": "https://www.facebook.com/Horizon250",
+        "instagram": "https://www.instagram.com/horizon_250",
+        "youtube": "https://www.youtube.com/@Horizon_250"
+      }
+    },
+    "hydra": {
+      "team": {
+        "website": "http://www.teamwhyachi.com/",
+        "facebook": "https://www.facebook.com/Whyachi",
+        "youtube": "https://www.youtube.com/channel/UCi3W9k46K1gsriacPTJwQHg"
+      }
+    },
+    "hypothermia": {
+      "team": {
+        "website": "http://lazytoad.com/",
+        "facebook": "https://www.facebook.com/fuzzymauldin"
+      }
+    },
+    "icewave": {
+      "team": {
+        "website": "https://teamicewave.com/",
+        "facebook": "https://www.facebook.com/TeamIcewave"
+      }
+    },
+    "killerhurtz": {
+      "team": {
+        "website": "https://news.killerhurtz.co.uk/"
+      }
+    },
+    "kraken": {
+      "team": {
+        "website": "https://cerobots.com/",
+        "facebook": "https://www.facebook.com/CERobots",
+        "instagram": "https://www.instagram.com/cerobots"
+      }
+    },
+    "lock-jaw": {
+      "team": {
+        "website": "http://www.mutantrobots.com/",
+        "facebook": "https://www.facebook.com/TeamMutantRobots"
+      }
+    },
+    "lucky": {
+      "team": {
+        "facebook": "https://www.facebook.com/tkorobotics/",
+        "instagram": "https://www.instagram.com/tkorobotics/"
+      }
+    },
+    "lycan": {
+      "team": {
+        "facebook": "https://www.facebook.com/AllBlackRobotics"
+      },
+      "owner": {
+        "website": "https://www.botbrawl.ca/",
+        "instagram": "https://www.instagram.com/BotBrawlCanada",
+        "youtube": "https://www.youtube.com/@BotBrawlCanada",
+        "discord": "https://discord.gg/cKhFtKurZK"
+      }
+    },
+    "mammoth": {
+      "team": {
+        "facebook": "https://www.facebook.com/MammothBattlebot",
+        "instagram": "https://www.instagram.com/mammothbattlebot"
+      }
+    },
+    "minion": {
+      "owner": {
+        "website": "https://www.c2robotics.com/"
+      }
+    },
+    "mohawk": {
+      "team": {
+        "facebook": "https://www.facebook.com/MohawkRobot"
+      }
+    },
+    "monsoon": {
+      "team": {
+        "website": "http://teammonsoon.co.uk/",
+        "facebook": "https://www.facebook.com/MonsoonRobot",
+        "instagram": "https://www.instagram.com/monsoonrobot",
+        "twitter": "https://twitter.com/monsoonrobot",
+        "youtube": "https://www.youtube.com/c/battlebots"
+      }
+    },
+    "nemesis": {
+      "team": {
+        "website": "https://www.usc-arc.com/",
+        "instagram": "https://www.instagram.com/usc.arc",
+        "youtube": "https://www.youtube.com/@USCARC"
+      }
+    },
+    "nightmare": {
+      "team": {
+        "website": "http://www.robotcombat.com/",
+        "facebook": "https://www.facebook.com/nightmarebots/"
+      }
+    },
+    "ominous": {
+      "team": {
+        "facebook": "https://www.facebook.com/OminousBattleBots"
+      }
+    },
+    "overdrive": {
+      "team": {
+        "website": "https://www.c2robotics.com/"
+      }
+    },
+    "overhaul": {
+      "team": {
+        "facebook": "https://www.facebook.com/EqualsZeroRobotics"
+      },
+      "owner": {
+        "website": "https://www.etotheipiplusone.net/",
+        "youtube": "http://www.youtube.com/user/teamtestbot"
+      }
+    },
+    "overkill": {
+      "owner": {
+        "website": "https://www.c2robotics.com/"
+      }
+    },
+    "p1": {
+      "team": {
+        "website": "https://www.aberrantrobotics.com/",
+        "instagram": "https://www.instagram.com/aberrantrobotics"
+      }
+    },
+    "pain-train": {
+      "team": {
+        "facebook": "https://www.facebook.com/TeamShreddit",
+        "instagram": "https://www.instagram.com/team_shreddit"
+      }
+    },
+    "perfect-phoenix": {
+      "team": {
+        "facebook": "https://www.facebook.com/TylerNguyen09/"
+      }
+    },
+    "petunia": {
+      "team": {
+        "website": "http://www.teampcp.nl/",
+        "facebook": "https://www.facebook.com/TeamPCPnl"
+      }
+    },
+    "poison-arrow": {
+      "team": {
+        "facebook": "https://www.facebook.com/CausticCreations"
+      }
+    },
+    "quantum": {
+      "team": {
+        "facebook": "https://www.facebook.com/spectrerobot"
+      }
+    },
+    "razer": {
+      "team": {
+        "website": "http://www.razer.co.uk/",
+        "facebook": "https://www.facebook.com/RazerRobot/"
+      }
+    },
+    "red-devil": {
+      "owner": {
+        "facebook": "https://www.facebook.com/DTRobotics"
+      }
+    },
+    "retrograde": {
+      "team": {
+        "website": "https://www.bloodsportbattlebot.com/",
+        "facebook": "https://www.facebook.com/tr"
+      }
+    },
+    "ripperoni": {
+      "team": {
+        "instagram": "https://www.instagram.com/ripperoni_battlebot"
+      }
+    },
+    "riptide": {
+      "team": {
+        "facebook": "https://www.facebook.com/riptidebattlebot",
+        "instagram": "https://www.instagram.com/riptidebattlebot"
+      }
+    },
+    "road-rash": {
+      "team": {
+        "facebook": "https://www.facebook.com/danger4season2/"
+      }
+    },
+    "rotator": {
+      "team": {
+        "facebook": "https://www.facebook.com/profile.php?id=100063616960932"
+      },
+      "owner": {
+        "instagram": "https://www.instagram.com/victorrsotoc/"
+      }
+    },
+    "rusty": {
+      "team": {
+        "facebook": "https://www.facebook.com/teamironforce",
+        "instagram": "https://www.instagram.com/teamironforce"
+      }
+    },
+    "sawblaze": {
+      "team": {
+        "facebook": "https://www.facebook.com/SawBlazeBattlebots"
+      }
+    },
+    "sharko": {
+      "team": {
+        "website": "https://teamamf.itch.io/",
+        "facebook": "https://www.facebook.com/Sharkoprion/"
+      }
+    },
+    "shatter": {
+      "team": {
+        "website": "https://www.botsfc.com/"
+      }
+    },
+    "shreddit-bro": {
+      "team": {
+        "facebook": "https://www.facebook.com/ShredditBroBB",
+        "instagram": "https://www.instagram.com/team_shreddit"
+      }
+    },
+    "slammo": {
+      "team": {
+        "website": "https://www.craigdanby.com/",
+        "facebook": "https://www.facebook.com/teamdanby",
+        "instagram": "https://www.instagram.com/teamdanby",
+        "twitter": "https://twitter.com/TeamDanby"
+      },
+      "owner": {
+        "youtube": "https://www.youtube.com/channel/UCmbh4u9i4LaeBCPtYXULxuQ"
+      }
+    },
+    "smee": {
+      "team": {
+        "facebook": "https://www.facebook.com/SMEEEEEEEEEEEEEEEEEEEEEE"
+      }
+    },
+    "son-of-whyachi": {
+      "team": {
+        "website": "http://www.teamwhyachi.com/",
+        "facebook": "https://www.facebook.com/Whyachi",
+        "youtube": "https://www.youtube.com/channel/UCi3W9k46K1gsriacPTJwQHg"
+      }
+    },
+    "starchild": {
+      "team": {
+        "instagram": "https://www.instagram.com/ripperoni_battlebot"
+      }
+    },
+    "stinger-the-killer-bee": {
+      "team": {
+        "website": "https://tpcbots.com/",
+        "facebook": "https://www.facebook.com/StingerTKB",
+        "twitter": "https://twitter.com/StingerTKB"
+      }
+    },
+    "subzero": {
+      "team": {
+        "facebook": "https://www.facebook.com/SubZeroBattleBot/",
+        "instagram": "https://www.instagram.com/subzerobattlebot/",
+        "youtube": "https://www.youtube.com/channel/UCIK8Ps0Xbldf3vGeZcFOjfQ"
+      }
+    },
+    "tantrum": {
+      "team": {
+        "website": "https://seemsreasonable.shop/",
+        "facebook": "https://www.facebook.com/tantrum.battlebot",
+        "instagram": "https://www.instagram.com/seems.reasonable",
+        "youtube": "https://www.youtube.com/c/SeemsReasonableRobotics"
+      }
+    },
+    "texas-twister": {
+      "team": {
+        "website": "http://lazytoad.com/",
+        "facebook": "https://www.facebook.com/texastwisterbb"
+      }
+    },
+    "the-obwalden-overlord": {
+      "owner": {
+        "website": "https://www.therobotstudio.com/",
+        "facebook": "https://www.facebook.com/therobotstudio",
+        "twitter": "https://twitter.com/therobotstudio",
+        "youtube": "https://www.youtube.com/user/therobotstudio"
+      }
+    },
+    "toro": {
+      "team": {
+        "twitter": "https://twitter.com/inertiabots"
+      }
+    },
+    "triton": {
+      "team": {
+        "website": "https://www.teamoverboard.com/",
+        "facebook": "https://www.facebook.com/Tritonbattlebot",
+        "instagram": "https://www.instagram.com/triton_deepsix_battlebots",
+        "twitter": "https://twitter.com/TeePublic",
+        "tiktok": "https://www.tiktok.com/@teepublic"
+      }
+    },
+    "uppercut": {
+      "team": {
+        "facebook": "https://www.facebook.com/UppercutBattlebot/",
+        "instagram": "https://www.instagram.com/uppercutbattlebot/"
+      }
+    },
+    "wan-hoo": {
+      "team": {
+        "facebook": "https://www.facebook.com/profile.php?id=100079214600431"
+      }
+    },
+    "war-hawk": {
+      "team": {
+        "website": "http://www.westernalliedrobotics.com/",
+        "facebook": "https://www.facebook.com/WarHawkBB/"
+      }
+    },
+    "warhead": {
+      "team": {
+        "twitter": "https://twitter.com/warhead_uk"
+      }
+    },
+    "warrior-clan": {
+      "team": {
+        "website": "http://www.teamwhyachi.com/",
+        "facebook": "https://www.facebook.com/Whyachi",
+        "youtube": "https://www.youtube.com/channel/UCi3W9k46K1gsriacPTJwQHg"
+      }
+    },
+    "whiplash": {
+      "team": {
+        "facebook": "https://www.facebook.com/FastElectricRobots/",
+        "instagram": "https://www.instagram.com/whiplash_battlebot/"
+      }
+    },
+    "whyachi": {
+      "team": {
+        "website": "http://www.teamwhyachi.com/",
+        "facebook": "https://www.facebook.com/Whyachi",
+        "youtube": "https://www.youtube.com/channel/UCi3W9k46K1gsriacPTJwQHg"
+      }
+    },
+    "yeti": {
+      "team": {
+        "website": "https://www.c2robotics.com/"
+      }
+    },
+    "doom": {
+      "owner": {
+        "website": "https://alejandro-pina.com/"
+      }
+    },
+    "doomba": {
+      "team": {
+        "facebook": "https://www.facebook.com/DoombaBattleBot"
+      }
+    },
+    "double-tap": {
+      "team": {
+        "website": "https://www.ostrichair.com/",
+        "facebook": "https://www.facebook.com/BattlebotOA",
+        "instagram": "https://www.instagram.com/ostrich_air",
+        "youtube": "https://www.youtube.com/channel/UCti4j7W18G2AFn7Sboma8Ig"
+      }
+    },
+    "dragon-king": {
+      "team": {
+        "website": "https://botbashparty.com/",
+        "facebook": "https://www.facebook.com/SkorpiosBattleBot",
+        "instagram": "https://www.instagram.com/skorpios_battlebots",
+        "youtube": "https://www.youtube.com/c/SkorpiosBattlebot"
+      }
+    },
+    "railgun-max": {
+      "team": {
+        "facebook": "https://www.facebook.com/LeagueLBT/"
+      },
+      "owner": {
+        "instagram": "https://www.instagram.com/elaine_carrot_wu/"
+      }
+    },
+    "basilisk": {
+      "team": {
+        "facebook": "https://www.facebook.com/MBSrobotics",
+        "instagram": "https://www.instagram.com/mbsrobotics"
+      }
+    },
+    "bucktooth-burl": {
+      "team": {
+        "facebook": "https://www.facebook.com/BucktoothBurl",
+        "twitter": "https://twitter.com/BucktoothBurl"
+      }
+    },
+    "samurai": {
+      "team": {
+        "instagram": "https://www.instagram.com/samurai_battlebot"
+      }
+    },
+    "rainbow": {
+      "team": {
+        "facebook": "https://www.facebook.com/unicorn.battlebots",
+        "instagram": "https://www.instagram.com/energy.robo"
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ import NewsTicker, { type NewsItem } from './components/NewsTicker';
 // Arena News footer is parked for now — flip to re-enable the chyron + feed.
 const NEWS_ENABLED = false;
 const CHAT_ENABLED = false;
-import TeamPanel from './components/TeamPanel';
+import TeamPanel, { type ContactGroups } from './components/TeamPanel';
 import VideoModal from './components/VideoModal';
 import { recordFor } from './fightStats';
 import { resolveMapStyle } from './mapStyles';
@@ -51,6 +51,7 @@ export default function App() {
   const [videos, setVideos] = useState<VideosFile | null>(null);
   const [fights, setFights] = useState<Fight[]>([]);
   const [matchVideos, setMatchVideos] = useState<Record<string, FightVideo>>({});
+  const [contacts, setContacts] = useState<Record<string, ContactGroups>>({});
   const [news, setNews] = useState<NewsItem[]>([]);
   const [playing, setPlaying] = useState<FightVideo | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -88,6 +89,10 @@ export default function App() {
     fetch('/data/match_videos.json')
       .then((r) => (r.ok ? (r.json() as Promise<MatchVideosFile>) : null))
       .then((m) => m && setMatchVideos(m.videos))
+      .catch(() => null);
+    fetch('/data/contacts.json')
+      .then((r) => (r.ok ? (r.json() as Promise<{ contacts: Record<string, ContactGroups> }>) : null))
+      .then((c) => c && setContacts(c.contacts))
       .catch(() => null);
     // curated news ships with the app; live scraped news comes from the
     // CDN-cached /api/news function — merged newest-first, deduped by link
@@ -407,6 +412,7 @@ export default function App() {
           team={selected}
           videos={videos?.videos[selected.id] ?? []}
           record={recordFor(fights, selected.id)}
+          contacts={contacts[selected.id]}
           onPlay={playVideo}
           onClose={() => setSelected(null)}
           onFocusTeam={focusTeam}

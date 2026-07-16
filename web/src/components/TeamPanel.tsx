@@ -2,10 +2,31 @@ import { useEffect, useRef, useState } from 'react';
 import { flagEmoji } from '../flags';
 import type { FightVideo, GlobePoint } from '../types';
 
+/** real platform favicons bundled in web/public/icons/ — actual brand colors */
+const CONTACT_LABELS: Record<string, string> = {
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  twitter: 'X (Twitter)',
+  youtube: 'YouTube',
+  tiktok: 'TikTok',
+  twitch: 'Twitch',
+  discord: 'Discord',
+  linktree: 'Linktree',
+  patreon: 'Patreon',
+};
+
+export interface ContactGroups {
+  /** team/robot accounts — shown under the team name */
+  team?: Record<string, string>;
+  /** builder/owner accounts — shown next to the builder */
+  owner?: Record<string, string>;
+}
+
 interface TeamPanelProps {
   team: GlobePoint;
   videos: FightVideo[];
   record: { wins: number; losses: number } | null;
+  contacts: ContactGroups | undefined;
   onPlay: (video: FightVideo) => void;
   onClose: () => void;
   onChallenge: () => void;
@@ -13,7 +34,46 @@ interface TeamPanelProps {
   onFocusTeam: (team: string) => void;
 }
 
-export default function TeamPanel({ team, videos, record, onPlay, onClose, onChallenge, onFocusTeam }: TeamPanelProps) {
+/** hand-drawn globe glyph for the team website (simple-icons is brands-only) */
+function WebsiteIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <ellipse cx="12" cy="12" rx="4" ry="9" />
+      <path d="M3.6 9h16.8M3.6 15h16.8" />
+    </svg>
+  );
+}
+
+/** a row of round platform-favicon link buttons */
+function ContactRow({ links, who, small }: { links: Record<string, string>; who: string; small?: boolean }) {
+  return (
+    <span className={`panel-contacts-row${small ? ' is-small' : ''}`}>
+      {Object.entries(links).map(([platform, url]) => {
+        const label = CONTACT_LABELS[platform] ?? 'Website';
+        return (
+          <a
+            key={platform}
+            className="contact-btn"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={label}
+            aria-label={`${who} on ${label}`}
+          >
+            {platform in CONTACT_LABELS ? (
+              <img src={`/icons/${platform}.png`} alt="" loading="lazy" />
+            ) : (
+              <WebsiteIcon />
+            )}
+          </a>
+        );
+      })}
+    </span>
+  );
+}
+
+export default function TeamPanel({ team, videos, record, contacts, onPlay, onClose, onChallenge, onFocusTeam }: TeamPanelProps) {
   const place = [team.city, team.region, team.country].filter(Boolean).join(', ');
   const flag = flagEmoji(team.country);
   // Mobile-only: collapse the bottom sheet to a slim bar so the globe and
@@ -83,6 +143,11 @@ export default function TeamPanel({ team, videos, record, onPlay, onClose, onCha
           {team.team}
         </button>
       )}
+      {contacts?.team && (
+        <div className="panel-team-contacts">
+          <ContactRow links={contacts.team} who={team.team ?? team.bot} />
+        </div>
+      )}
 
       <dl className="panel-facts">
         {place && (
@@ -100,10 +165,15 @@ export default function TeamPanel({ team, videos, record, onPlay, onClose, onCha
             <dd>{team.weapon}</dd>
           </div>
         )}
-        {team.builder && (
+        {(team.builder || contacts?.owner) && (
           <div className="fact">
             <dt>Builder</dt>
-            <dd>{team.builder}</dd>
+            <dd className="builder-line">
+              {team.builder}
+              {contacts?.owner && (
+                <ContactRow links={contacts.owner} who={team.builder ?? team.team ?? team.bot} small />
+              )}
+            </dd>
           </div>
         )}
         {record && (

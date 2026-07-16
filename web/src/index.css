@@ -608,6 +608,70 @@ body,
   background: rgba(237, 161, 0, 0.12);
 }
 
+/* team/robot links sit right under the team name; owner links inline by
+ * the builder. Icons are the platforms' real favicons. */
+.panel-team-contacts {
+  margin-top: 8px;
+}
+
+.panel-contacts-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  vertical-align: middle;
+}
+
+.builder-line .panel-contacts-row {
+  margin-left: 10px;
+}
+
+.panel-contacts-row.is-small .contact-btn {
+  width: 24px;
+  height: 24px;
+}
+
+.panel-contacts-row.is-small .contact-btn img {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+}
+
+.panel-contacts-row.is-small .contact-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--ink-secondary); /* the website globe glyph */
+  background: rgba(255, 255, 255, 0.05);
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+/* real platform favicons — actual brand artwork, slightly rounded */
+.contact-btn img {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.contact-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-btn:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
 .panel-videos {
   margin-top: 20px;
   padding-top: 14px;
