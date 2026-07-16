@@ -61,6 +61,8 @@ export default function App() {
   const [focus, setFocus] = useState<{ lat: number; lng: number; altitude: number; nonce: number } | null>(null);
   const [filter, setFilter] = useState<'all' | 'active' | 'historical'>('all');
   const [teamFilter, setTeamFilter] = useState<string | null>(null);
+  // set when a fresh-post icon on the globe is clicked
+  const [newsFocus, setNewsFocus] = useState<{ teamId: string; nonce: number } | null>(null);
   // Always Night — Classic; ?map= still works for demos.
   const mapStyle = useMemo(
     () =>
@@ -332,6 +334,10 @@ export default function App() {
         focus={focus}
         fightPair={fightPair}
         onFight={(a, b) => startFight(a, b, 'arc')}
+        onOpenNews={(teamId) => {
+          trackEvent('news_click', { team: teamId, via: 'globe_icon' });
+          setNewsFocus({ teamId, nonce: Date.now() });
+        }}
       />
       <Header
         points={points}
@@ -435,6 +441,7 @@ export default function App() {
         <NewsTicker
           items={news}
           markers={Object.fromEntries(points.map((p) => [p.id, p.marker]))}
+          openRequest={newsFocus}
           onOpen={openNews}
         />
       )}

@@ -14,7 +14,7 @@ const DARK_CONTOUR = 'rgba(8, 11, 22, 0.85)';
 /** One rendered marker: either a single team or a zoom-level cluster. */
 export interface Marker {
   key: string;
-  kind: 'single' | 'cluster';
+  kind: 'single' | 'cluster' | 'news';
   lat: number;
   lng: number;
   point?: GlobePoint;
@@ -23,6 +23,10 @@ export interface Marker {
   selected: boolean;
   /** filtered-out opponent shown dimmed as an arc endpoint */
   ghost?: boolean;
+  /** fresh-post icon floating above a pin — kind 'news' */
+  platform?: string;
+  /** raw pin size of the marker this icon floats above */
+  pinSize?: number;
   /** faded while a selection highlights its rivals — never fought the selected bot */
   dim?: boolean;
 }
@@ -162,6 +166,8 @@ interface BotGlobeProps {
   focus: { lat: number; lng: number; altitude: number; nonce: number } | null;
   fightPair: [GlobePoint, GlobePoint] | null;
   onFight: (a: GlobePoint, b: GlobePoint) => void;
+  /** clicked a fresh-post icon — open the news feed at this team's story */
+  onOpenNews: (teamId: string) => void;
 }
 
 /** Aggregated head-to-head record between two mapped bots. */
@@ -208,7 +214,7 @@ function loadCities(): Promise<[number, number][]> {
   return cityCache;
 }
 
-export default function BotGlobe({ points, allPoints, freshPosts, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight }: BotGlobeProps) {
+export default function BotGlobe({ points, allPoints, freshPosts, selected, onSelect, mapStyle, fights, matchVideos, onPlayVideo, focus, fightPair, onFight, onOpenNews }: BotGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -410,13 +416,53 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
         });
       }
     }
+    // fresh-post icons ride above their pins as their OWN objects so they
+    // are individually clickable (a child sprite can't receive clicks)
+    for (const m of [...list]) {
+      if (m.ghost || m.dim || m.kind === 'news') continue;
+      const freshId =
+        m.kind === 'single'
+          ? (freshPosts[m.point!.id] ? m.point!.id : undefined)
+          : m.members!.map((p) => p.id).find((id) => freshPosts[id]);
+      if (!freshId) continue;
+      const owner = m.kind === 'single' ? m.point! : m.members!.find((p) => p.id === freshId)!;
+      list.push({
+        key: `n:${m.key}`,
+        kind: 'news',
+        lat: m.lat,
+        lng: m.lng,
+        point: owner,
+        active: m.active,
+        selected: false,
+        platform: freshPosts[freshId],
+        pinSize:
+          m.kind === 'cluster'
+            ? 4.0 + Math.min(1.4, m.members!.length * 0.12)
+            : m.selected
+              ? 4.6
+              : m.active
+                ? 2.7
+                : 2.2,
+      });
+    }
     return list;
-  }, [points, altitude, selected, fightPair, pairRecords]);
+  }, [points, altitude, selected, fightPair, pairRecords, freshPosts]);
 
   const makeMarker = useCallback(
     (m: Marker): THREE.Object3D => {
       const color = m.active ? COLOR_ACTIVE : COLOR_HISTORICAL;
       const zoomFactor = Math.min(1, Math.max(0.38, 0.3 + altitude * 0.32));
+      if (m.kind === 'news') {
+        const icon = new THREE.Sprite(
+          new THREE.SpriteMaterial({ map: platformTexture(m.platform!), depthWrite: false }),
+        );
+        const is = 1.9 * zoomFactor;
+        icon.scale.set(is, is, 1);
+        // sprite.center below 0 lifts the icon above the pin it belongs to
+        icon.center.set(0.5, 0.5 - (m.pinSize! * zoomFactor * 0.72 + is * 0.7) / is);
+        icon.renderOrder = 4;
+        return icon;
+      }
       const label = m.kind === 'cluster' ? String(m.members!.length) : null;
       const material = new THREE.SpriteMaterial({
         map: badgeTexture(color, label, m.selected, m.ghost || m.dim),
@@ -435,34 +481,18 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
                 : 2.2) * zoomFactor;
       sprite.scale.set(s, s, 1);
       sprite.renderOrder = m.selected ? 3 : m.kind === 'cluster' ? 2 : m.ghost ? 0 : 1;
-      // teams that posted this week wear their platform's icon above the
-      // pin; a cluster shows it when any member posted, so the signal
-      // survives the zoomed-out view
-      const platform =
-        m.ghost || m.dim
-          ? undefined
-          : m.kind === 'single'
-            ? freshPosts[m.point!.id]
-            : m.members!.map((p) => freshPosts[p.id]).find(Boolean);
-      if (!platform) return sprite;
-      const group = new THREE.Group();
-      group.add(sprite);
-      const icon = new THREE.Sprite(
-        new THREE.SpriteMaterial({ map: platformTexture(platform), depthWrite: false }),
-      );
-      const is = 1.9 * zoomFactor;
-      icon.scale.set(is, is, 1);
-      icon.position.set(0, s * 0.72 + is * 0.7, 0);
-      icon.renderOrder = 4;
-      group.add(icon);
-      return group;
+      return sprite;
     },
-    [altitude, freshPosts],
+    [altitude],
   );
 
   const handleMarkerClick = useCallback(
     (m: Marker) => {
       setPopover(null);
+      if (m.kind === 'news') {
+        onOpenNews(m.point!.id);
+        return;
+      }
       if (m.kind === 'single') {
         onSelect(m.point!);
         return;
@@ -480,7 +510,7 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
         setPopover({ members: m.members!, x: cursor.x, y: cursor.y });
       }
     },
-    [onSelect, altitude, cursor],
+    [onSelect, onOpenNews, altitude, cursor],
   );
 
   const rings = useMemo(() => {
@@ -649,6 +679,14 @@ export default function BotGlobe({ points, allPoints, freshPosts, selected, onSe
       />
       {CAN_HOVER && hovered?.kind === 'single' && hovered.point && (
         <HoverCard point={hovered.point} x={cursor.x} y={cursor.y} />
+      )}
+      {CAN_HOVER && hovered?.kind === 'news' && (
+        <div className="globe-tip" style={{ left: cursor.x + 14, top: cursor.y + 14 }}>
+          <div className="globe-tip-text">
+            <div className="globe-tip-bot">Fresh from {hovered.point!.team ?? hovered.point!.bot}</div>
+            <div className="globe-tip-place">click to read the news</div>
+          </div>
+        </div>
       )}
       {CAN_HOVER && hovered?.kind === 'cluster' && (
         <div className="globe-tip cluster-tip" style={{ left: cursor.x + 14, top: cursor.y + 14 }}>
