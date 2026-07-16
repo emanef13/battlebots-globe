@@ -2,11 +2,27 @@
 
 **Live: [battlebotsglobe.com](https://battlebotsglobe.com)**
 
-An interactive 3D globe of the entire BattleBots universe: 130 robots — the
-Pro League 2026 roster and historical competitors — plotted on their
-hometowns, with fight-history arcs between rivals, embedded fight videos per
-matchup, team panels with photos and arena records, country navigation, and
-search across bots, teams, cities and countries.
+An interactive 3D globe of the entire BattleBots universe: **135 robots from
+12 countries** — the 24-bot Pro League 2026 roster and the historical
+competitors — plotted on their hometowns, with **849 recorded 1v1 fights**
+drawn as rivalry arcs, **474 embedded fight videos**, and a Street
+Fighter-style head-to-head **Fight Mode** for staging any matchup.
+
+Highlights:
+
+- **Robot panels** — team photo, weapon, builder, seasons, arena record, and
+  fight highlights per bot; selecting a robot spotlights its rivals on the
+  globe and dims everyone it never fought.
+- **Fight Mode** — pick a challenger, click an opponent (or search
+  `tombstone vs minotaur`): tale of the tape, head-to-head record, and the
+  actual fight footage.
+- **Team view** — 111 teams; filter the globe to one team's garage from the
+  header stat, the search bar, or the team name in any robot panel.
+- **Search & navigation** — bots, teams, cities, countries; country and
+  team stat popovers; deep links (`/?bot=minotaur`); a static, indexable
+  page per robot (+ sitemap) for SEO.
+- **Mobile** — full touch experience: bottom-sheet panels with swipe-to-
+  minimize, tap-friendly filters, draggable overlay controls.
 
 Built by [Manolis Efthymiou](https://www.linkedin.com/in/manolis-efthymiou-054574157/)
 for the **#BattleBotsDev** competition, powered by [Bright Data](https://brightdata.com).
@@ -17,22 +33,34 @@ for the **#BattleBotsDev** competition, powered by [Bright Data](https://brightd
 pipeline/  Python collection jobs (Bright Data Web Unlocker / Scraper API)
    collect_teams.py     fetch roster & wiki pages via Web Unlocker -> data/raw/pages/
    geocode.py           hometowns -> lat/lng (Nominatim, cached) -> data/teams.json
-data/      canonical datasets (raw inputs + generated teams.json)
-web/       Vite + React + globe.gl frontend (reads /data/teams.json)
+data/      canonical datasets (teams, fights, videos, curated news)
+web/       Vite + React + globe.gl frontend (reads /data/*.json)
+   scripts/build-pages.mjs   post-build: static per-robot pages + sitemap.xml
+api/       Vercel serverless functions
+   news.mjs   arena-news scraper: Google News / Reddit / battlebots.com via
+              Bright Data, permanent archive in Vercel Blob, CDN-cached hourly
+   chat.mjs   "Pit Boss" arena-guide chat: Claude with tool-calling RAG over
+              the same JSON datasets (streaming, rate-limited, origin-checked)
 ```
 
 Data is **pre-collected** on a schedule rather than scraped per-request: Bright
 Data scraper jobs run in the pipeline, results land in `data/`, and the site
-serves the generated JSON.
+serves the generated JSON. Fight records (`data/fights.json`) are curated from
+the BattleBots Wiki — 1v1 bouts between rostered bots only.
+
+The news ticker and the Pit Boss chat ship behind feature flags
+(`NEWS_ENABLED` / `CHAT_ENABLED` in `web/src/App.tsx`) and are currently off.
 
 ## Bright Data usage
 
 - **Web Unlocker** (`POST https://api.brightdata.com/request`) fetches roster and
-  wiki pages as LLM-ready markdown — see `pipeline/brightdata_client.py`.
+  wiki pages as LLM-ready markdown — see `pipeline/brightdata_client.py` — and
+  fronts the live news sources in `api/news.mjs`.
 - **Web Scraper API** (trigger → poll snapshot → download) drives YouTube video
   discovery — per-bot highlights (`collect_videos.py`) and per-matchup fight
   videos (`collect_match_videos.py`); both ship with a `--seed` dev scraper for
-  working without an API token.
+  working without an API token. The news function uses the same flow for
+  Instagram posts, run as a state machine across cached invocations.
 
 ## Running it
 
@@ -66,13 +94,24 @@ becomes a transparent sprite in `web/public/bots/`.
 
 Textures: three-globe example earth maps (NASA-derived Blue Marble / Black Marble).
 
+## Serverless & analytics (optional)
+
+All secrets live in Vercel/local env — never in the repo.
+
+| Env var | Where | Enables |
+|---|---|---|
+| `BRIGHTDATA_API_TOKEN` | Vercel | live news scraping in `api/news.mjs` |
+| `BLOB_READ_WRITE_TOKEN` | Vercel (Blob store) | permanent news archive |
+| `ANTHROPIC_API_KEY` (+ optional `CHAT_MODEL`) | Vercel | Pit Boss chat backend |
+| `VITE_POSTHOG_KEY` | Vercel | product analytics (PostHog EU) |
+
 ## Deployment
 
-The app is fully static — `cd web && npm run build` produces `web/dist/`,
-servable by any static host. Production runs on Vercel (root `web/`, build
-`npm run build`, output `dist`); pushing to `main` redeploys automatically.
-To refresh data after new episodes: re-run the pipeline, commit the updated
-JSON, push.
+The app is fully static plus the two serverless functions — `cd web && npm run
+build` produces `web/dist/` (and the per-robot static pages), servable by any
+static host. Production runs on Vercel; pushing to `main` redeploys
+automatically. To refresh data after new episodes: re-run the pipeline, commit
+the updated JSON, push.
 
 ## Credits
 
@@ -85,7 +124,8 @@ JSON, push.
 - Earth textures: three-globe examples (NASA-derived imagery).
   Land/city vector data: [Natural Earth](https://www.naturalearthdata.com) (public domain).
 - Geocoding: [Nominatim / OpenStreetMap](https://nominatim.org).
-- Data collection powered by [Bright Data](https://brightdata.com).
+- Data collection powered by [Bright Data](https://brightdata.com);
+  Pit Boss chat powered by [Claude](https://www.anthropic.com).
 
 BattleBots is a trademark of BattleBots Inc. This is an unofficial fan
 project built for the #BattleBotsDev community competition.
