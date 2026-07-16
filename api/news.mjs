@@ -4,7 +4,7 @@
 // Gazette is a permanent chronological record, not a snapshot. When
 // BRIGHTDATA_API_TOKEN is set, requests route through Bright Data's Web
 // Unlocker (datacenter IPs are commonly blocked by Reddit).
-import { list, put } from '@vercel/blob';
+import { get as blobGet, put } from '@vercel/blob';
 import teamFeedsFile from '../data/team_feeds.json' with { type: 'json' };
 
 // Vercel injects the store token as BLOB_READ_WRITE_TOKEN — unless the
@@ -326,12 +326,9 @@ export async function collect() {
 async function readArchive() {
   if (!BLOB_TOKEN) return { items: [], state: {} };
   try {
-    const { blobs } = await list({ prefix: ARCHIVE_PATH, token: BLOB_TOKEN });
-    const blob = blobs.find((b) => b.pathname === ARCHIVE_PATH);
-    if (!blob) return { items: [], state: {} };
-    const r = await fetch(`${blob.url}?ts=${Date.now()}`);
-    if (!r.ok) return { items: [], state: {} };
-    const doc = await r.json();
+    const res = await blobGet(ARCHIVE_PATH, { token: BLOB_TOKEN, useCache: false });
+    if (!res || res.statusCode !== 200) return { items: [], state: {} };
+    const doc = JSON.parse(await new Response(res.stream).text());
     const items = (doc.items ?? []).filter(
       (i) => !(i.team_id === 'monsoon' && i.platform === 'youtube'),
     );
@@ -347,10 +344,10 @@ async function writeArchive(items, state) {
     ARCHIVE_PATH,
     JSON.stringify({ updated_at: new Date().toISOString(), items, state }),
     {
-      access: 'public',
+      access: 'private', // the store is private-type; reads go through get()
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json',
-      cacheControlMaxAge: 60,
       token: BLOB_TOKEN,
     },
   );
