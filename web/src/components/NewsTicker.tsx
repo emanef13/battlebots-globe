@@ -36,7 +36,7 @@ interface NewsTickerProps {
 
 const SEEN_KEY = 'bb-news-seen';
 
-/** Floating "Arena News" pill under the site title. Hover (or tap) opens a
+/** Floating "Global News" pill under the site title. Hover (or tap) opens a
  * simple branded dropdown with the community feed: official posts,
  * r/battlebots, and the teams' own channels. */
 export default function NewsTicker({ items, markers, openRequest, onOpen }: NewsTickerProps) {
@@ -104,10 +104,10 @@ export default function NewsTicker({ items, markers, openRequest, onOpen }: News
         className="news-pill"
         onClick={() => (open ? setOpen(false) : openFeed())}
         aria-expanded={open}
-        aria-label="Arena news"
+        aria-label="Global news"
       >
         <span className="news-live-dot" aria-hidden="true" />
-        Arena News
+        Global News
         {newCount > 0 && <span className="news-new-count">{newCount > 9 ? '9+' : newCount}</span>}
       </button>
 
