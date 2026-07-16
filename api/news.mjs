@@ -188,6 +188,10 @@ const norm = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 async function socialStep(key, state = {}) {
   const cfg = SOCIAL_PLATFORMS[key];
   if (!process.env.BRIGHTDATA_API_TOKEN) return { items: [], state, changed: false };
+  // No blob persistence means snapshot ids can't be remembered: every
+  // invocation would trigger (and pay for) a brand-new crawl and never
+  // collect any. Refuse to spend until the archive can be written.
+  if (!process.env.BLOB_READ_WRITE_TOKEN) return { items: [], state, changed: false };
   try {
     // resolve the "<platform> posts" dataset id once, then remember it
     if (!state.dataset_id) {
@@ -372,7 +376,14 @@ export default async function handler(req, res) {
       await writeArchive(merged, { ...archive.state, ig: ig.state, fb: fb.state });
     }
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
-    res.status(200).json({ generated_at: new Date().toISOString(), added, items: merged });
+    res.status(200).json({
+      generated_at: new Date().toISOString(),
+      added,
+      // diagnosability: false = archive is NOT persisting (check the
+      // BLOB_READ_WRITE_TOKEN env var / store-project connection)
+      persistence: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      items: merged,
+    });
   } catch (e) {
     res.setHeader('Cache-Control', 's-maxage=600');
     res.status(200).json({ generated_at: new Date().toISOString(), items: [], error: String(e) });
