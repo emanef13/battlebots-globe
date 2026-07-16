@@ -142,6 +142,8 @@ async function bd(path, opts = {}) {
 const SOCIAL_PLATFORMS = {
   ig: {
     platform: 'instagram',
+    // "Instagram - Posts - discover by url" (id from the control panel)
+    datasetId: 'gd_lk5ns7kz1pck8jpis',
     dataset: (name) => /instagram/i.test(name) && /post/i.test(name),
     targets: () => teamFeedsFile.instagram,
   },
@@ -200,7 +202,10 @@ async function socialStep(key, state = {}) {
   // collect any. Refuse to spend until the archive can be written.
   if (!BLOB_TOKEN) return { items: [], state, changed: false };
   try {
-    // resolve the "<platform> posts" dataset id once, then remember it
+    // known dataset ids are pinned; otherwise resolve by name once
+    if (!state.dataset_id && cfg.datasetId) {
+      state = { ...state, dataset_id: cfg.datasetId };
+    }
     if (!state.dataset_id) {
       const sets = await bd('/datasets/list');
       const ds = sets.find((d) => cfg.dataset(d.name));
@@ -326,7 +331,7 @@ export async function collect() {
 async function readArchive() {
   if (!BLOB_TOKEN) return { items: [], state: {} };
   try {
-    const res = await blobGet(ARCHIVE_PATH, { token: BLOB_TOKEN, useCache: false });
+    const res = await blobGet(ARCHIVE_PATH, { access: 'private', token: BLOB_TOKEN, useCache: false });
     if (!res || res.statusCode !== 200) return { items: [], state: {} };
     const doc = JSON.parse(await new Response(res.stream).text());
     const items = (doc.items ?? []).filter(
