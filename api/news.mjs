@@ -7,6 +7,13 @@
 import { list, put } from '@vercel/blob';
 import teamFeedsFile from '../data/team_feeds.json' with { type: 'json' };
 
+// Vercel injects the store token as BLOB_READ_WRITE_TOKEN — unless the
+// store was connected with a prefix, which yields e.g.
+// MYSTORE_BLOB_READ_WRITE_TOKEN. Accept any spelling.
+const BLOB_TOKEN =
+  process.env.BLOB_READ_WRITE_TOKEN ??
+  Object.entries(process.env).find(([k]) => k.endsWith('_READ_WRITE_TOKEN'))?.[1];
+
 const ARCHIVE_PATH = 'news-archive.json';
 const ARCHIVE_CAP = 300;
 
@@ -191,7 +198,7 @@ async function socialStep(key, state = {}) {
   // No blob persistence means snapshot ids can't be remembered: every
   // invocation would trigger (and pay for) a brand-new crawl and never
   // collect any. Refuse to spend until the archive can be written.
-  if (!process.env.BLOB_READ_WRITE_TOKEN) return { items: [], state, changed: false };
+  if (!BLOB_TOKEN) return { items: [], state, changed: false };
   try {
     // resolve the "<platform> posts" dataset id once, then remember it
     if (!state.dataset_id) {
@@ -317,9 +324,9 @@ export async function collect() {
 }
 
 async function readArchive() {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) return { items: [], state: {} };
+  if (!BLOB_TOKEN) return { items: [], state: {} };
   try {
-    const { blobs } = await list({ prefix: ARCHIVE_PATH });
+    const { blobs } = await list({ prefix: ARCHIVE_PATH, token: BLOB_TOKEN });
     const blob = blobs.find((b) => b.pathname === ARCHIVE_PATH);
     if (!blob) return { items: [], state: {} };
     const r = await fetch(`${blob.url}?ts=${Date.now()}`);
@@ -335,7 +342,7 @@ async function readArchive() {
 }
 
 async function writeArchive(items, state) {
-  if (!process.env.BLOB_READ_WRITE_TOKEN) return;
+  if (!BLOB_TOKEN) return;
   await put(
     ARCHIVE_PATH,
     JSON.stringify({ updated_at: new Date().toISOString(), items, state }),
@@ -344,6 +351,7 @@ async function writeArchive(items, state) {
       addRandomSuffix: false,
       contentType: 'application/json',
       cacheControlMaxAge: 60,
+      token: BLOB_TOKEN,
     },
   );
 }
@@ -381,7 +389,7 @@ export default async function handler(req, res) {
       added,
       // diagnosability: false = archive is NOT persisting (check the
       // BLOB_READ_WRITE_TOKEN env var / store-project connection)
-      persistence: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      persistence: Boolean(BLOB_TOKEN),
       items: merged,
     });
   } catch (e) {
