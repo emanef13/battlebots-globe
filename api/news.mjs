@@ -132,7 +132,10 @@ async function bd(path, opts = {}) {
       ...(opts.headers ?? {}),
     },
   });
-  if (!r.ok) throw new Error(`brightdata ${path} ${r.status}`);
+  if (!r.ok) {
+    const body = await r.text().catch(() => '');
+    throw new Error(`brightdata ${path} ${r.status}: ${body.slice(0, 200)}`);
+  }
   return r.json();
 }
 
@@ -143,7 +146,7 @@ const SOCIAL_PLATFORMS = {
   ig: {
     platform: 'instagram',
     // "Instagram - Posts - discover by url" (id from the control panel)
-    datasetId: 'gd_lk5ns7kz1pck8jpis',
+    datasetId: 'gd_lk5ns7kz21pck8jpis',
     dataset: (name) => /instagram/i.test(name) && /post/i.test(name),
     targets: () => teamFeedsFile.instagram,
   },
@@ -242,8 +245,13 @@ async function socialStep(key, state = {}) {
         return { items: [], state: { ...state, snapshot_id: res.snapshot_id }, changed: true };
       }
     }
-  } catch {
-    // any Bright Data hiccup: try again on a later invocation
+  } catch (e) {
+    // remember the failure so the archive state shows what went wrong
+    return {
+      items: [],
+      state: { ...state, last_error: String(e).slice(0, 300), last_error_at: new Date().toISOString() },
+      changed: true,
+    };
   }
   return { items: [], state, changed: false };
 }
