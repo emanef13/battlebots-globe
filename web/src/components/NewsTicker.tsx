@@ -7,7 +7,11 @@ export interface NewsItem {
   vs?: [string, string] | null;
   url?: string | null;
   /** scraped items carry their origin; curated globe updates have none */
-  source?: 'official' | 'instagram' | 'reddit' | 'news' | string;
+  source?: 'official' | 'instagram' | 'reddit' | 'news' | 'team' | string;
+  /** team-channel posts: which bot/team posted, and on which platform */
+  team_id?: string;
+  team?: string;
+  platform?: string;
 }
 
 // real brand glyphs (simple-icons paths, 24x24 viewBox)
@@ -23,6 +27,7 @@ const SOURCE_META: Record<string, { label: string; handle: string; color: string
   instagram: { label: 'Instagram', handle: 'battlebots', color: '#FF0069' },
   reddit: { label: 'Reddit', handle: 'r/battlebots', color: '#FF4500' },
   news: { label: 'News', handle: 'Google News', color: '#4285F4' },
+  team: { label: 'Teams', handle: 'Team channel', color: '#eda100' },
   globe: { label: 'Globe', handle: 'battlebotsglobe.com', color: '#eda100' },
 };
 const sourceOf = (n: NewsItem) => (n.source && SOURCE_META[n.source] ? n.source : 'globe');
@@ -40,179 +45,164 @@ function SourceIcon({ source, size = 18 }: { source: string; size?: number }) {
 
 interface NewsTickerProps {
   items: NewsItem[];
+  /** id -> globe marker sprite, for team-post avatars */
+  markers: Record<string, string | null | undefined>;
   onOpen: (item: NewsItem) => void;
 }
 
-const ROTATE_MS = 8000;
+const SEEN_KEY = 'bb-news-seen';
 
-/** Broadcast-style lower third: red ARENA NEWS badge, rotating headlines,
- * manual prev/next navigation. Clicking a headline jumps to the bot or
- * fight it mentions. */
-export default function NewsTicker({ items, onOpen }: NewsTickerProps) {
-  // the bar rotates only the freshest stories; the Gazette shows everything
-  const ticker = items.slice(0, 8);
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [archiveOpen, setArchiveOpen] = useState(false);
+/** Floating "Arena News" pill under the site title. Hover (or tap) opens a
+ * simple branded dropdown with the community feed: official posts,
+ * r/battlebots, and the teams' own channels. */
+export default function NewsTicker({ items, markers, onOpen }: NewsTickerProps) {
+  const [open, setOpen] = useState(false);
   const [feedFilter, setFeedFilter] = useState('all');
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  // "N new since your last visit" — the reason to click back in
+  const [lastSeen, setLastSeen] = useState(() => localStorage.getItem(SEEN_KEY) ?? '');
+  const newCount = items.filter((n) => n.date > lastSeen).length;
 
-  // capture-phase so Escape closes the paper without also reaching the
-  // app-level handler that closes panels / fight mode
+  const openFeed = () => {
+    setOpen(true);
+    const today = new Date().toISOString().slice(0, 10);
+    localStorage.setItem(SEEN_KEY, today);
+    setLastSeen(today);
+  };
+
+  // Esc closes before the app-level handler; outside tap closes on touch
   useEffect(() => {
-    if (!archiveOpen) return;
+    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.stopPropagation();
-        setArchiveOpen(false);
+        setOpen(false);
       }
     };
+    const onOutside = (e: PointerEvent) => {
+      if (!(e.target as Element | null)?.closest('.news-float')) setOpen(false);
+    };
     window.addEventListener('keydown', onKey, true);
-    return () => window.removeEventListener('keydown', onKey, true);
-  }, [archiveOpen]);
-
-  // restarting on index change gives a full interval after manual moves too
-  useEffect(() => {
-    if (paused || ticker.length < 2) return;
-    const id = setInterval(() => setIndex((i) => (i + 1) % ticker.length), ROTATE_MS);
-    return () => clearInterval(id);
-  }, [paused, ticker.length, index]);
+    document.addEventListener('pointerdown', onOutside, true);
+    return () => {
+      window.removeEventListener('keydown', onKey, true);
+      document.removeEventListener('pointerdown', onOutside, true);
+    };
+  }, [open]);
 
   if (items.length === 0) return null;
-  const item = ticker[index % ticker.length];
-  const clickable = Boolean(item.bot || item.vs || item.url);
-  const step = (d: number) => setIndex((i) => (i + d + ticker.length) % ticker.length);
-  const day = new Date(`${item.date}T00:00:00Z`).toLocaleDateString('en', {
-    month: 'short',
-    day: 'numeric',
-  });
 
   return (
-    <>
     <div
-      className="news-chyron"
-      role="region"
-      aria-label="Latest news"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      className="news-float"
+      onMouseEnter={canHover ? openFeed : undefined}
+      onMouseLeave={canHover ? () => setOpen(false) : undefined}
     >
       <button
-        className="news-badge"
-        onClick={() => setArchiveOpen(true)}
-        title="Open the Arena Gazette"
+        className="news-pill"
+        onClick={() => (open ? setOpen(false) : openFeed())}
+        aria-expanded={open}
+        aria-label="Arena news"
       >
         <span className="news-live-dot" aria-hidden="true" />
         Arena News
+        {newCount > 0 && <span className="news-new-count">{newCount > 9 ? '9+' : newCount}</span>}
       </button>
-      <button
-        key={index}
-        className={`news-headline${clickable ? ' is-clickable' : ''}`}
-        onClick={() => clickable && onOpen(item)}
-        disabled={!clickable}
-      >
-        <span className="news-date">{day}</span>
-        <span className="news-text">{item.text}</span>
-      </button>
-      {ticker.length > 1 && (
-        <span className="news-nav">
-          <button className="news-arrow" onClick={() => step(-1)} aria-label="Previous headline">
-            ‹
-          </button>
-          <span className="news-dots">
-            {ticker.map((_, i) => (
-              <button
-                key={i}
-                className={i === index % ticker.length ? 'is-on' : ''}
-                onClick={() => setIndex(i)}
-                aria-label={`Headline ${i + 1}`}
-              />
-            ))}
-          </span>
-          <button className="news-arrow" onClick={() => step(1)} aria-label="Next headline">
-            ›
-          </button>
-        </span>
-      )}
-    </div>
-      {archiveOpen && (
-        <div
-          className="phone-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Arena news feed"
-          onClick={() => setArchiveOpen(false)}
-        >
-          <div className="phone" onClick={(e) => e.stopPropagation()}>
-            <div className="phone-notch" aria-hidden="true" />
-            <button
-              className="phone-close"
-              onClick={() => setArchiveOpen(false)}
-              aria-label="Close news feed"
-            >
-              ×
-            </button>
-            <header className="phone-appbar">
-              <span className="news-live-dot" aria-hidden="true" />
-              <span className="phone-appname">Arena News</span>
-            </header>
-            <nav className="phone-tabs" aria-label="Filter by source">
-              {['all', ...Object.keys(SOURCE_META).filter((k) => items.some((n) => sourceOf(n) === k))].map(
-                (k) => (
+
+      {open && (
+        <div className="news-panel" role="region" aria-label="Community news feed">
+          <nav className="news-tabs" aria-label="Filter by source">
+            {Object.keys(SOURCE_META)
+              .filter((k) => k !== 'globe' || items.some((n) => sourceOf(n) === 'globe'))
+              .filter((k) => items.some((n) => sourceOf(n) === k))
+              .map((k) => (
+                <button
+                  key={k}
+                  className={`news-tab${feedFilter === k ? ' is-on' : ''}`}
+                  style={{ '--tab': SOURCE_META[k].color } as React.CSSProperties}
+                  onClick={() => setFeedFilter((f) => (f === k ? 'all' : k))}
+                  aria-pressed={feedFilter === k}
+                  title={
+                    feedFilter === k
+                      ? 'Show all sources'
+                      : `Only ${SOURCE_META[k].label}`
+                  }
+                >
+                  {k === 'team' ? (
+                    <img src="/icons/youtube.png" alt="Teams" />
+                  ) : (
+                    <SourceIcon source={k} size={15} />
+                  )}
+                </button>
+              ))}
+          </nav>
+          <div className="news-list">
+            {items
+              .filter((n) => feedFilter === 'all' || sourceOf(n) === feedFilter)
+              .map((n, i) => {
+                const key = sourceOf(n);
+                const meta = SOURCE_META[key];
+                const isTeam = key === 'team' && n.team_id;
+                const marker = isTeam ? markers[n.team_id!] : null;
+                const canOpen = Boolean(n.bot || n.vs || n.url);
+                const date = new Date(`${n.date}T00:00:00Z`).toLocaleDateString('en', {
+                  month: 'short',
+                  day: 'numeric',
+                });
+                return (
                   <button
-                    key={k}
-                    className={`phone-tab${feedFilter === k ? ' is-on' : ''}`}
-                    style={k !== 'all' ? ({ '--tab': SOURCE_META[k].color } as React.CSSProperties) : undefined}
-                    onClick={() => setFeedFilter(k)}
-                    title={k === 'all' ? 'All sources' : SOURCE_META[k].label}
+                    key={`${n.url ?? n.text}-${i}`}
+                    className="news-post"
+                    disabled={!canOpen}
+                    onClick={() => {
+                      if (!canOpen) return;
+                      setOpen(false);
+                      onOpen(n);
+                    }}
                   >
-                    {k === 'all' ? 'All' : <SourceIcon source={k} />}
-                  </button>
-                ),
-              )}
-            </nav>
-            <div className="phone-feed">
-              {items
-                .filter((n) => feedFilter === 'all' || sourceOf(n) === feedFilter)
-                .map((n, i) => {
-                  const key = sourceOf(n);
-                  const meta = SOURCE_META[key];
-                  const canOpen = Boolean(n.bot || n.vs || n.url);
-                  const date = new Date(`${n.date}T00:00:00Z`).toLocaleDateString('en', {
-                    month: 'short',
-                    day: 'numeric',
-                  });
-                  return (
-                    <button
-                      key={`${n.url ?? n.text}-${i}`}
-                      className="phone-post"
-                      disabled={!canOpen}
-                      onClick={() => {
-                        if (!canOpen) return;
-                        setArchiveOpen(false);
-                        onOpen(n);
-                      }}
-                    >
-                      <span className="phone-post-head">
-                        <span className="phone-avatar" style={{ background: meta.color }}>
-                          <SourceIcon source={key} size={15} />
+                    <span className="news-post-head">
+                      {marker ? (
+                        <span className="news-avatar is-bot">
+                          <img src={marker} alt="" loading="lazy" />
                         </span>
-                        <span className="phone-handle">{meta.handle}</span>
-                        <span className="phone-date">{date}</span>
-                      </span>
-                      <span className="phone-post-text">{n.text}</span>
-                      <span className="phone-post-actions" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" width="17" height="17"><path d="M12 21s-7.5-4.9-10-9.2C.6 9 2 5.5 5.4 5c2-.3 3.9.6 4.9 2.2h1.4C12.7 5.6 14.6 4.7 16.6 5 20 5.5 21.4 9 20 11.8 17.5 16.1 12 21 12 21z" fill="none" stroke="currentColor" strokeWidth="1.7"/></svg>
-                        <svg viewBox="0 0 24 24" width="17" height="17"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3c-1.6 0-3-.4-4.3-1L3 20l1.3-4.9a8 8 0 0 1-1.3-4.4A8.4 8.4 0 0 1 11.5 3 8.4 8.4 0 0 1 21 11.5z" fill="none" stroke="currentColor" strokeWidth="1.7"/></svg>
-                        <svg viewBox="0 0 24 24" width="17" height="17"><path d="M21 3 9.7 14.3M21 3l-7 18-3.3-6.7L3 11z" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/></svg>
-                        {n.url && n.url.startsWith('http') && <span className="phone-open">open ↗</span>}
-                      </span>
-                    </button>
-                  );
-                })}
-            </div>
-            <div className="phone-homebar" aria-hidden="true" />
+                      ) : (
+                        <span className="news-avatar" style={{ background: meta.color }}>
+                          <SourceIcon source={key} size={13} />
+                        </span>
+                      )}
+                      <span className="news-handle">{isTeam ? n.team : meta.handle}</span>
+                      {isTeam && n.platform && (
+                        <img className="news-platform" src={`/icons/${n.platform}.png`} alt={n.platform} />
+                      )}
+                      <span className="news-item-date">{date}</span>
+                      {isTeam && (
+                        <span
+                          role="button"
+                          tabIndex={0}
+                          className="news-globe-btn"
+                          title={`Find ${n.team} on the globe`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setOpen(false);
+                            onOpen({ ...n, url: null, bot: n.team_id });
+                          }}
+                          onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.click()}
+                        >
+                          📍
+                        </span>
+                      )}
+                    </span>
+                    <span className="news-post-text">
+                      {isTeam && n.team && n.text.startsWith(`${n.team}: `)
+                        ? n.text.slice(n.team.length + 2)
+                        : n.text}
+                    </span>
+                  </button>
+                );
+              })}
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

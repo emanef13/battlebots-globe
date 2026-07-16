@@ -6,8 +6,7 @@ import FightMode from './components/FightMode';
 import Header from './components/Header';
 import NewsTicker, { type NewsItem } from './components/NewsTicker';
 
-// Arena News footer is parked for now — flip to re-enable the chyron + feed.
-const NEWS_ENABLED = false;
+const NEWS_ENABLED = true;
 const CHAT_ENABLED = false;
 import TeamPanel, { type ContactGroups } from './components/TeamPanel';
 import VideoModal from './components/VideoModal';
@@ -435,7 +434,13 @@ export default function App() {
         />
       )}
       {playing && <VideoModal video={playing} onClose={() => setPlaying(null)} />}
-      {NEWS_ENABLED && !fightPair && <NewsTicker items={news} onOpen={openNews} />}
+      {NEWS_ENABLED && !fightPair && (
+        <NewsTicker
+          items={news}
+          markers={Object.fromEntries(points.map((p) => [p.id, p.marker]))}
+          onOpen={openNews}
+        />
+      )}
       {CHAT_ENABLED && (
         <ChatWidget
           hidden={Boolean(selected) || Boolean(fightPair) || Boolean(playing)}

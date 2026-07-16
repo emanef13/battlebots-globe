@@ -5,6 +5,7 @@
 // BRIGHTDATA_API_TOKEN is set, requests route through Bright Data's Web
 // Unlocker (datacenter IPs are commonly blocked by Reddit).
 import { list, put } from '@vercel/blob';
+import teamFeedsFile from '../data/team_feeds.json' with { type: 'json' };
 
 const ARCHIVE_PATH = 'news-archive.json';
 const ARCHIVE_CAP = 200;
@@ -133,21 +134,42 @@ async function instagramStep(state = {}) {
       if (!ds) return { items: [], state, changed: false };
       state = { ...state, dataset_id: ds.id };
     }
-    // download a finished snapshot
+    // download a finished snapshot and map rows back to their accounts
     if (state.snapshot_id) {
       const prog = await bd(`/datasets/v3/snapshot/${state.snapshot_id}/progress`);
       if (prog.status === 'ready') {
         const rows = await bd(`/datasets/v3/snapshot/${state.snapshot_id}/data?format=json`);
+        const byHandle = new Map(teamFeedsFile.instagram.map((a) => [a.handle, a]));
         const items = (Array.isArray(rows) ? rows : [])
-          .filter((r) => r.caption && r.url)
-          .slice(0, 5)
-          .map((r) => ({
-            date: iso(r.timestamp ?? r.date_posted ?? Date.now()),
-            text: `Instagram: ${String(r.caption).replace(/\s+/g, ' ')}`.slice(0, 140),
-            url: r.url,
-            auto: true,
-            source: 'instagram',
-          }));
+          .map((r) => {
+            const caption = String(r.caption ?? r.description ?? '').replace(/\s+/g, ' ').trim();
+            const url = r.url ?? r.post_url;
+            const posted = r.date_posted ?? r.timestamp;
+            const handle = String(r.user_posted ?? r.user_username ?? r.profile_username ?? '')
+              .toLowerCase();
+            const acct = byHandle.get(handle);
+            if (!caption || !url || !posted || !acct || !fresh(posted)) return null;
+            return acct.official
+              ? {
+                  date: iso(posted),
+                  text: `Instagram: ${caption}`.slice(0, 140),
+                  url,
+                  auto: true,
+                  source: 'instagram',
+                }
+              : {
+                  date: iso(posted),
+                  text: `${acct.team ?? acct.bot}: ${caption}`.slice(0, 140),
+                  url,
+                  auto: true,
+                  source: 'team',
+                  platform: 'instagram',
+                  team_id: acct.id,
+                  team: acct.team ?? acct.bot,
+                };
+          })
+          .filter(Boolean)
+          .slice(0, 40);
         return { items, state: { ...state, snapshot_id: null, last_done: Date.now() }, changed: true };
       }
       if (prog.status === 'failed') {
@@ -155,14 +177,15 @@ async function instagramStep(state = {}) {
       }
       return { items: [], state, changed: false }; // still running
     }
-    // trigger a fresh snapshot at most once a day
+    // trigger one batched snapshot a day: official + every pro-league team
     if (!state.last_done || Date.now() - state.last_done > IG_EVERY_MS) {
+      const targets = teamFeedsFile.instagram.map((a) => ({
+        url: a.url,
+        num_of_posts: a.official ? 3 : 2,
+      }));
       const res = await bd(
         `/datasets/v3/trigger?dataset_id=${state.dataset_id}&type=discover_new&discover_by=url&include_errors=true`,
-        {
-          method: 'POST',
-          body: JSON.stringify([{ url: 'https://www.instagram.com/battlebots/', num_of_posts: 6 }]),
-        },
+        { method: 'POST', body: JSON.stringify(targets) },
       );
       if (res.snapshot_id) {
         return { items: [], state: { ...state, snapshot_id: res.snapshot_id }, changed: true };
@@ -172,6 +195,49 @@ async function instagramStep(state = {}) {
     // any Bright Data hiccup: try again on a later invocation
   }
   return { items: [], state, changed: false };
+}
+
+// Team channel updates via YouTube's free RSS feeds — no scraping, no cost.
+// data/team_feeds.json is generated from the verified contact links; several
+// bots share one channel (Team Whyachi), so fetch each channel once.
+async function teamYouTube() {
+  const byChannel = new Map();
+  for (const f of teamFeedsFile.youtube) {
+    const cur = byChannel.get(f.channel_id);
+    if (!cur || (f.active && !cur.active)) byChannel.set(f.channel_id, f);
+  }
+  const results = await Promise.allSettled(
+    [...byChannel.values()].map(async (ch) => {
+      // plain fetch: RSS is never bot-blocked, don't spend Unlocker requests
+      const r = await fetch(
+        `https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channel_id}`,
+        { headers: { 'User-Agent': UA } },
+      );
+      if (!r.ok) return [];
+      const xml = await r.text();
+      const items = [];
+      for (const m of xml.matchAll(/<entry>(.*?)<\/entry>/gs)) {
+        const block = m[1];
+        const title = decode(block.match(/<title>(.*?)<\/title>/s)?.[1] ?? '');
+        const link = block.match(/<link rel="alternate" href="([^"]+)"/)?.[1];
+        const pub = block.match(/<published>(.*?)<\/published>/s)?.[1];
+        if (!title || !link || !pub || !fresh(pub) || JUNK.test(title)) continue;
+        items.push({
+          date: iso(pub),
+          text: `${ch.team ?? ch.bot}: ${title}`.slice(0, 140),
+          url: link,
+          auto: true,
+          source: 'team',
+          platform: 'youtube',
+          team_id: ch.id,
+          team: ch.team ?? ch.bot,
+        });
+        if (items.length >= 2) break; // per-channel cap keeps the feed varied
+      }
+      return items;
+    }),
+  );
+  return results.flatMap((r) => (r.status === 'fulfilled' ? r.value : [])).slice(0, 12);
 }
 
 async function redditTop() {
@@ -191,7 +257,12 @@ async function redditTop() {
 }
 
 export async function collect() {
-  const results = await Promise.allSettled([googleNews(), redditTop(), officialNews()]);
+  const results = await Promise.allSettled([
+    googleNews(),
+    redditTop(),
+    officialNews(),
+    teamYouTube(),
+  ]);
   const items = results.flatMap((r) => (r.status === 'fulfilled' ? r.value : []));
   const seen = new Set();
   const unique = items
@@ -201,7 +272,7 @@ export async function collect() {
   for (const item of unique) {
     if (!kept.some((k) => similar(k.text, item.text))) kept.push(item);
   }
-  return kept.slice(0, 8);
+  return kept.slice(0, 30);
 }
 
 async function readArchive() {
