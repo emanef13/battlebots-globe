@@ -20,7 +20,7 @@ async function hogql(query) {
 
 // windowed queries take the range from ?days=N (whitelisted below);
 // "now", "today" and the live stream are inherently fixed windows
-const queries = (days) => ({
+const queries = (days, liveHours) => ({
   now_active: `SELECT count(DISTINCT person_id) FROM events
                WHERE timestamp > now() - INTERVAL 15 MINUTE`,
   today: `SELECT count(DISTINCT person_id), countIf(event = '$pageview') FROM events
@@ -54,11 +54,12 @@ const queries = (days) => ({
                          properties.country, properties.$geoip_country_name, '')
          FROM events
          WHERE event NOT IN ('$autocapture', '$web_vitals', '$pageleave', '$rageclick')
-           AND timestamp > now() - INTERVAL 2 HOUR
-         ORDER BY timestamp DESC LIMIT 25`,
+           AND timestamp > now() - INTERVAL ${liveHours} HOUR
+         ORDER BY timestamp DESC LIMIT 50`,
 });
 
 const ALLOWED_DAYS = [1, 7, 14, 30, 90, 365];
+const ALLOWED_LIVE_HOURS = [2, 12, 24, 72, 168];
 
 export default async function handler(req, res) {
   if ((req.headers['x-admin-key'] ?? '') !== (process.env.ADMIN_KEY ?? '')
@@ -75,11 +76,13 @@ export default async function handler(req, res) {
     const url = new URL(req.url, 'http://x');
     const requested = Number(url.searchParams.get('days'));
     const days = ALLOWED_DAYS.includes(requested) ? requested : 7;
-    const QUERIES = queries(days);
+    const liveReq = Number(url.searchParams.get('live'));
+    const liveHours = ALLOWED_LIVE_HOURS.includes(liveReq) ? liveReq : 2;
+    const QUERIES = queries(days, liveHours);
     const names = Object.keys(QUERIES);
     const results = await Promise.all(names.map((n) => hogql(QUERIES[n])));
     const data = Object.fromEntries(names.map((n, i) => [n, results[i]]));
-    res.status(200).json({ generated_at: new Date().toISOString(), days, ...data });
+    res.status(200).json({ generated_at: new Date().toISOString(), days, live_hours: liveHours, ...data });
   } catch (e) {
     res.status(502).json({ error: String(e) });
   }

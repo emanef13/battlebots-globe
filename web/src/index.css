@@ -2635,3 +2635,78 @@ body,
   color: #1a1206;
   background: var(--brand);
 }
+
+/* chart with real axes: y ticks on a nice scale, gridlines, thinned x labels */
+.adm-chart-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.adm-yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  padding-bottom: 20px; /* clears the x-label row */
+  min-width: 26px;
+}
+
+.adm-plot {
+  position: relative;
+  flex: 1;
+}
+
+.adm-gridline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin-bottom: 20px; /* sit above the x-label row */
+}
+
+.adm-plot .adm-chart {
+  position: relative;
+  height: 150px;
+}
+
+/* small variant of the range control + live card header row */
+.adm-live-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.adm-live-head h2 {
+  margin-bottom: 0;
+}
+
+.adm-ranges-sm .adm-range {
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+/* long first-column values (referrer domains) must never overflow the card */
+.adm-card table {
+  table-layout: fixed;
+}
+
+.adm-card td,
+.adm-card th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adm-card th.adm-num,
+.adm-card td.adm-num {
+  width: 58px;
+}
+
+.adm-card .adm-time {
+  width: 92px;
+}

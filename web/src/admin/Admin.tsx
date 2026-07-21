@@ -32,6 +32,23 @@ const RANGES: { days: number; label: string }[] = [
 ];
 const rangeLabel = (d: number) => (d === 1 ? 'today' : d === 365 ? 'all time' : `${d}d`);
 
+const LIVE_STORE = 'bb-admin-live';
+const LIVE_RANGES: { hours: number; label: string }[] = [
+  { hours: 2, label: '2h' },
+  { hours: 24, label: '24h' },
+  { hours: 72, label: '3d' },
+  { hours: 168, label: '7d' },
+];
+
+/** y-axis that ends on a round number: step from {1,2,5}×10^k, 4 steps */
+function niceScale(max: number): { top: number; ticks: number[] } {
+  const raw = Math.max(1, max) / 4;
+  const pow = 10 ** Math.floor(Math.log10(raw));
+  const step = ([1, 2, 5].find((s) => s * pow >= raw) ?? 10) * pow;
+  const top = step * 4;
+  return { top, ticks: [4, 3, 2, 1, 0].map((i) => i * step) };
+}
+
 function Table({ title, rows, cols }: { title: string; rows: Rows; cols: [string, string] }) {
   return (
     <section className="adm-card">
@@ -66,15 +83,19 @@ export default function Admin() {
     const d = Number(localStorage.getItem(DAYS_STORE));
     return RANGES.some((r) => r.days === d) ? d : 7;
   });
+  const [liveH, setLiveH] = useState(() => {
+    const h = Number(localStorage.getItem(LIVE_STORE));
+    return LIVE_RANGES.some((r) => r.hours === h) ? h : 2;
+  });
   const [draft, setDraft] = useState('');
   const [stats, setStats] = useState<Stats | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const load = useCallback(async (k: string, d: number) => {
+  const load = useCallback(async (k: string, d: number, lh: number) => {
     setLoading(true);
     try {
-      const r = await fetch(`/api/admin-stats?days=${d}`, { headers: { 'x-admin-key': k } });
+      const r = await fetch(`/api/admin-stats?days=${d}&live=${lh}`, { headers: { 'x-admin-key': k } });
       if (r.status === 401) {
         localStorage.removeItem(KEY_STORE);
         setKey('');
@@ -98,10 +119,10 @@ export default function Admin() {
 
   useEffect(() => {
     if (!key) return;
-    load(key, days);
-    const t = setInterval(() => load(key, days), REFRESH_MS);
+    load(key, days, liveH);
+    const t = setInterval(() => load(key, days, liveH), REFRESH_MS);
     return () => clearInterval(t);
-  }, [key, days, load]);
+  }, [key, days, liveH, load]);
 
   if (!key) {
     return (
@@ -134,7 +155,8 @@ export default function Admin() {
   const [fightsN, fightersN] = (stats?.fights?.[0] ?? [0, 0]).map(Number);
   const rl = rangeLabel(days);
   const daily = stats?.daily ?? [];
-  const maxDaily = Math.max(1, ...daily.map((d) => Number(d[1])));
+  const { top: yTop, ticks: yTicks } = niceScale(Math.max(...daily.map((d) => Number(d[1])), 0));
+  const xEvery = Math.ceil(daily.length / 10); // at most ~10 x labels
 
   return (
     <div className="adm">
@@ -159,7 +181,7 @@ export default function Admin() {
             </button>
           ))}
         </nav>
-        <button className="adm-refresh" onClick={() => load(key, days)} disabled={loading}>
+        <button className="adm-refresh" onClick={() => load(key, days, liveH)} disabled={loading}>
           ↻ Refresh
         </button>
         <a className="adm-back" href="/">
@@ -190,14 +212,32 @@ export default function Admin() {
       </div>
 
       <section className="adm-card adm-chart-card">
-        <h2>Visitors — {rl}</h2>
-        <div className="adm-chart">
-          {daily.map((d, i) => (
-            <div key={i} className="adm-bar-wrap" title={`${d[0]}: ${d[1]} visitors, ${d[2]} views`}>
-              <div className="adm-bar" style={{ height: `${(Number(d[1]) / maxDaily) * 100}%` }} />
-              <span className="adm-bar-label">{String(d[0]).slice(5)}</span>
+        <h2>Visitors per day — {rl}</h2>
+        <div className="adm-chart-wrap">
+          <div className="adm-yaxis" aria-hidden="true">
+            {yTicks.map((v) => (
+              <span key={v}>{v}</span>
+            ))}
+          </div>
+          <div className="adm-plot">
+            {yTicks.map((v) => (
+              <div
+                key={v}
+                className="adm-gridline"
+                style={{ bottom: `${(v / yTop) * 100}%` }}
+              />
+            ))}
+            <div className="adm-chart">
+              {daily.map((d, i) => (
+                <div key={i} className="adm-bar-wrap" title={`${d[0]}: ${d[1]} visitors, ${d[2]} pageviews`}>
+                  <div className="adm-bar" style={{ height: `${(Number(d[1]) / yTop) * 100}%` }} />
+                  <span className="adm-bar-label">
+                    {i % xEvery === 0 ? String(d[0]).slice(5) : '\u00a0'}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -208,7 +248,23 @@ export default function Admin() {
         <Table title={`Devices (${rl})`} rows={stats?.devices ?? []} cols={['device', 'visitors']} />
         <Table title={`Referrers (${rl})`} rows={stats?.referrers ?? []} cols={['domain', 'visitors']} />
         <section className="adm-card">
-          <h2>Live events (2h)</h2>
+          <div className="adm-live-head">
+            <h2>Live events</h2>
+            <nav className="adm-ranges adm-ranges-sm" aria-label="Live events range">
+              {LIVE_RANGES.map((r) => (
+                <button
+                  key={r.hours}
+                  className={`adm-range${liveH === r.hours ? ' is-on' : ''}`}
+                  onClick={() => {
+                    localStorage.setItem(LIVE_STORE, String(r.hours));
+                    setLiveH(r.hours);
+                  }}
+                >
+                  {r.label}
+                </button>
+              ))}
+            </nav>
+          </div>
           {(stats?.live ?? []).length === 0 ? (
             <p className="adm-empty">quiet…</p>
           ) : (
@@ -217,7 +273,11 @@ export default function Admin() {
                 {(stats?.live ?? []).map((r, i) => (
                   <tr key={i}>
                     <td className="adm-time">
-                      {new Date(String(r[0])).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      {new Date(String(r[0])).toLocaleString([], {
+                        ...(liveH > 24 ? { month: 'short', day: 'numeric' } : {}),
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
                     </td>
                     <td>{String(r[1]).replace('$', '')}</td>
                     <td className="adm-detail">{String(r[2] ?? '')}</td>
