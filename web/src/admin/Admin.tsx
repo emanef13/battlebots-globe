@@ -19,7 +19,18 @@ interface Stats {
 }
 
 const KEY_STORE = 'bb-admin-key';
+const DAYS_STORE = 'bb-admin-days';
 const REFRESH_MS = 120_000;
+
+/** whitelisted on the server too — anything else falls back to 7 */
+const RANGES: { days: number; label: string }[] = [
+  { days: 1, label: 'Today' },
+  { days: 7, label: '7d' },
+  { days: 14, label: '14d' },
+  { days: 30, label: '30d' },
+  { days: 365, label: 'All' },
+];
+const rangeLabel = (d: number) => (d === 1 ? 'today' : d === 365 ? 'all time' : `${d}d`);
 
 function Table({ title, rows, cols }: { title: string; rows: Rows; cols: [string, string] }) {
   return (
@@ -51,15 +62,19 @@ function Table({ title, rows, cols }: { title: string; rows: Rows; cols: [string
 
 export default function Admin() {
   const [key, setKey] = useState(() => localStorage.getItem(KEY_STORE) ?? '');
+  const [days, setDays] = useState(() => {
+    const d = Number(localStorage.getItem(DAYS_STORE));
+    return RANGES.some((r) => r.days === d) ? d : 7;
+  });
   const [draft, setDraft] = useState('');
   const [stats, setStats] = useState<Stats | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const load = useCallback(async (k: string) => {
+  const load = useCallback(async (k: string, d: number) => {
     setLoading(true);
     try {
-      const r = await fetch('/api/admin-stats', { headers: { 'x-admin-key': k } });
+      const r = await fetch(`/api/admin-stats?days=${d}`, { headers: { 'x-admin-key': k } });
       if (r.status === 401) {
         localStorage.removeItem(KEY_STORE);
         setKey('');
@@ -83,10 +98,10 @@ export default function Admin() {
 
   useEffect(() => {
     if (!key) return;
-    load(key);
-    const t = setInterval(() => load(key), REFRESH_MS);
+    load(key, days);
+    const t = setInterval(() => load(key, days), REFRESH_MS);
     return () => clearInterval(t);
-  }, [key, load]);
+  }, [key, days, load]);
 
   if (!key) {
     return (
@@ -116,7 +131,8 @@ export default function Admin() {
 
   const active = Number(stats?.now_active?.[0]?.[0] ?? 0);
   const [visitorsToday, viewsToday] = (stats?.today?.[0] ?? [0, 0]).map(Number);
-  const [fights7d, fighters7d] = (stats?.fights?.[0] ?? [0, 0]).map(Number);
+  const [fightsN, fightersN] = (stats?.fights?.[0] ?? [0, 0]).map(Number);
+  const rl = rangeLabel(days);
   const daily = stats?.daily ?? [];
   const maxDaily = Math.max(1, ...daily.map((d) => Number(d[1])));
 
@@ -129,7 +145,21 @@ export default function Admin() {
         <span className="adm-updated">
           {loading ? 'refreshing…' : stats ? `updated ${new Date(stats.generated_at).toLocaleTimeString()}` : ''}
         </span>
-        <button className="adm-refresh" onClick={() => load(key)} disabled={loading}>
+        <nav className="adm-ranges" aria-label="Date range">
+          {RANGES.map((r) => (
+            <button
+              key={r.days}
+              className={`adm-range${days === r.days ? ' is-on' : ''}`}
+              onClick={() => {
+                localStorage.setItem(DAYS_STORE, String(r.days));
+                setDays(r.days);
+              }}
+            >
+              {r.label}
+            </button>
+          ))}
+        </nav>
+        <button className="adm-refresh" onClick={() => load(key, days)} disabled={loading}>
           ↻ Refresh
         </button>
         <a className="adm-back" href="/">
@@ -154,13 +184,13 @@ export default function Admin() {
           <span className="adm-stat-label">pageviews today</span>
         </section>
         <section className="adm-stat">
-          <span className="adm-stat-value">{fights7d}</span>
-          <span className="adm-stat-label">fights staged (7d, {fighters7d} visitors)</span>
+          <span className="adm-stat-value">{fightsN}</span>
+          <span className="adm-stat-label">fights staged ({rl}, {fightersN} visitors)</span>
         </section>
       </div>
 
       <section className="adm-card adm-chart-card">
-        <h2>Visitors — last 14 days</h2>
+        <h2>Visitors — {rl}</h2>
         <div className="adm-chart">
           {daily.map((d, i) => (
             <div key={i} className="adm-bar-wrap" title={`${d[0]}: ${d[1]} visitors, ${d[2]} views`}>
@@ -172,11 +202,11 @@ export default function Admin() {
       </section>
 
       <div className="adm-grid">
-        <Table title="Top robots (7d)" rows={stats?.top_bots ?? []} cols={['bot', 'views']} />
-        <Table title="Searches (7d)" rows={stats?.searches ?? []} cols={['query', 'picks']} />
-        <Table title="Visitor countries (7d)" rows={stats?.countries ?? []} cols={['country', 'visitors']} />
-        <Table title="Devices (7d)" rows={stats?.devices ?? []} cols={['device', 'visitors']} />
-        <Table title="Referrers (7d)" rows={stats?.referrers ?? []} cols={['domain', 'visitors']} />
+        <Table title={`Top robots (${rl})`} rows={stats?.top_bots ?? []} cols={['bot', 'views']} />
+        <Table title={`Searches (${rl})`} rows={stats?.searches ?? []} cols={['query', 'picks']} />
+        <Table title={`Visitor countries (${rl})`} rows={stats?.countries ?? []} cols={['country', 'visitors']} />
+        <Table title={`Devices (${rl})`} rows={stats?.devices ?? []} cols={['device', 'visitors']} />
+        <Table title={`Referrers (${rl})`} rows={stats?.referrers ?? []} cols={['domain', 'visitors']} />
         <section className="adm-card">
           <h2>Live events (2h)</h2>
           {(stats?.live ?? []).length === 0 ? (

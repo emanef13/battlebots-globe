@@ -2604,3 +2604,34 @@ body,
     transform: rotate(360deg);
   }
 }
+
+/* admin date-range segmented control */
+.adm-ranges {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.adm-range {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 7px;
+  background: none;
+  color: var(--ink-secondary);
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.adm-range:hover {
+  color: var(--ink-primary);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.adm-range.is-on {
+  color: #1a1206;
+  background: var(--brand);
+}
